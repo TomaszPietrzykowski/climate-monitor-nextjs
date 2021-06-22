@@ -1,14 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Head from "next/head"
 import { ThemeProvider } from "@material-ui/core/styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import theme from "../src/ui/Theme"
+import Header from "../src/ui/Header"
+import Footer from "../src/ui/Footer"
 import "../src/styles/globals.css"
 
 export default function MyApp(props) {
   const { Component, pageProps } = props
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -28,8 +29,9 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} setValue={setValue} />
+        <Header setValue={setValue} value={value} />
+        <Component {...pageProps} setValue={setValue} value={value} />
+        <Footer setValue={setValue} value={value} />
       </ThemeProvider>
     </React.Fragment>
   )

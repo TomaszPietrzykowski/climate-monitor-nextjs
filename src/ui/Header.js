@@ -170,7 +170,7 @@ const Header = ({ value, setValue }) => {
       }
     })
     // eslint-disable-next-line
-  }, [value, routes])
+  }, [value, routes, window.location.pathname])
 
   const handleChange = (e, value) => {
     setValue(value)
@@ -187,27 +187,22 @@ const Header = ({ value, setValue }) => {
         {routes.map(
           (route, i) =>
             i < routes.length - 1 && (
-              <Tab
-                disableRipple
-                key={`${route.link}${i}`}
-                className={classes.tab}
-                label={route.name}
-                component={Link}
-                href={route.link}
-              />
+              <Link key={`${route.link}${i}`} href={route.link} value={i}>
+                <Tab disableRipple className={classes.tab} label={route.name} />
+              </Link>
             )
         )}
+        <Link href="public_api">
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            onClick={() => setValue(5)}
+          >
+            Public API
+          </Button>
+        </Link>
       </Tabs>
-      {/* <Link href="public_api">
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          onClick={() => setValue(5)}
-        >
-          Public API
-        </Button>
-      </Link> */}
     </Fragment>
   )
 
@@ -224,37 +219,38 @@ const Header = ({ value, setValue }) => {
         <div className={classes.toolbarMargin} />
         <List disablePadding>
           {routes.map((route, i) => (
-            <ListItem
-              key={`${route.link}`}
-              disableRipple
-              onClick={() => {
-                setOpenDrawer(false)
-                setValue(i)
-              }}
-              divider
-              button
-              component={Link}
-              href={route.link}
-              className={
-                i === routes.length - 1
-                  ? classes.backgroundAPI
-                  : classes.drawerBackground
-              }
-              selected={value === i && value < routes.length - 1 ? true : false}
-            >
-              <ListItemText
-                disableTypography
+            <Link key={`${route.link}`} href={route.link}>
+              <ListItem
+                disableRipple
+                onClick={() => {
+                  setOpenDrawer(false)
+                  setValue(i)
+                }}
+                divider
+                button
                 className={
                   i === routes.length - 1
-                    ? classes.drawerItemAPI
-                    : value === i
-                    ? classes.selectedText
-                    : classes.drawerItem
+                    ? classes.backgroundAPI
+                    : classes.drawerBackground
+                }
+                selected={
+                  value === i && value < routes.length - 1 ? true : false
                 }
               >
-                {route.name}
-              </ListItemText>
-            </ListItem>
+                <ListItemText
+                  disableTypography
+                  className={
+                    i === routes.length - 1
+                      ? classes.drawerItemAPI
+                      : value === i
+                      ? classes.selectedText
+                      : classes.drawerItem
+                  }
+                >
+                  {route.name}
+                </ListItemText>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </SwipeableDrawer>
@@ -273,19 +269,19 @@ const Header = ({ value, setValue }) => {
       <ElevationScroll>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolBar} disableGutters={true}>
-            <Button
-              disableRipple
-              className={classes.logoContainer}
-              component={Link}
-              href="/"
-              onClick={() => setValue(0)}
-            >
-              <img
-                src="/logotype.svg"
-                alt="climate monitor logo"
-                className={classes.logo}
-              />
-            </Button>
+            <Link href="/">
+              <Button
+                disableRipple
+                className={classes.logoContainer}
+                onClick={() => setValue(0)}
+              >
+                <img
+                  src="/logotype.svg"
+                  alt="climate monitor logo"
+                  className={classes.logo}
+                />
+              </Button>
+            </Link>
             {matches ? drawer : tabs}
           </Toolbar>
         </AppBar>
