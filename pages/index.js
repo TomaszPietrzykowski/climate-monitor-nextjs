@@ -1,24 +1,20 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import ProTip from '../src/ProTip';
-import Link from '../src/Link';
-import Copyright from '../src/Copyright';
+import React, { Fragment } from "react"
 
-export default function Index() {
+import Hero from "../src/components/home/Hero"
+import LatestReadings from "../src/components/home/LatestReadings"
+import Description from "../src/components/home/Description"
+import Amazon from "../src/components/home/Amazon"
+import GetInvolved from "../src/components/home/GetInvolved"
+
+const Index = ({ setValue }) => {
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
-  );
+    <Fragment>
+      <Hero />
+      <Description />
+      <Amazon />
+      <GetInvolved />
+    </Fragment>
+  )
 }
+
+export default Index

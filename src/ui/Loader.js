@@ -1,6 +1,6 @@
-import React from "react";
-import loader from "../../assets/loader.gif";
-import { makeStyles } from "@material-ui/styles";
+import React from "react"
+
+import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
   containerStyle: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: "50vh"
+    marginBottom: "50vh",
   },
   spinnerStyle: {
     height: "4rem",
@@ -30,21 +30,21 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "0.85rem",
     },
   },
-}));
+}))
 
 const Loader = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.containerStyle}>
       <h1 className={classes.label}>fetching data...</h1>
       <img
-        src={loader}
+        src="/loader.gif"
         alt="fetching data..."
         className={classes.spinnerStyle}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

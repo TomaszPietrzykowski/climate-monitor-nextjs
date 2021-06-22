@@ -1,13 +1,14 @@
 import React, { Fragment } from "react"
+import Link from "next/link"
+
 import { makeStyles } from "@material-ui/styles"
 import Grid from "@material-ui/core/Grid"
 import Hidden from "@material-ui/core/Hidden"
-import { Link } from "react-router-dom"
-import DevTag from "./DevTag"
-import reef from "../../assets/reef10.png"
 import Facebook from "@material-ui/icons/Facebook"
 import Twitter from "@material-ui/icons/Twitter"
 import Instagram from "@material-ui/icons/Instagram"
+
+import DevTag from "./DevTag"
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -87,7 +88,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/"
+                  href="/"
                   onClick={() => setValue(0)}
                 >
                   Home
@@ -100,7 +101,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data"
+                  href="/data"
                   onClick={() => setValue(1)}
                 >
                   All data
@@ -109,7 +110,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/co2"
+                  href="/data/co2"
                   onClick={() => setValue(1)}
                 >
                   Carbon dioxide CO2
@@ -118,7 +119,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/ch4"
+                  href="/data/ch4"
                   onClick={() => setValue(1)}
                 >
                   Methane CH4
@@ -127,7 +128,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/sf6"
+                  href="/data/sf6"
                   onClick={() => setValue(1)}
                 >
                   Sulfur hexafluoride SF6
@@ -136,7 +137,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/n2o"
+                  href="/data/n2o"
                   onClick={() => setValue(1)}
                 >
                   Dinitrogen oxide N2O
@@ -149,7 +150,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/temperatures"
+                  href="/data/temperatures"
                   onClick={() => setValue(1)}
                 >
                   Temperatures
@@ -158,7 +159,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/sealevels"
+                  href="/data/sealevels"
                   onClick={() => setValue(1)}
                 >
                   Sea levels
@@ -167,7 +168,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/data/glaciers"
+                  href="/data/glaciers"
                   onClick={() => setValue(1)}
                 >
                   Glaciers
@@ -180,7 +181,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/news"
+                  href="/news"
                   onClick={() => setValue(2)}
                 >
                   Newsfeed
@@ -189,20 +190,20 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/about"
+                  href="/about"
                   onClick={() => setValue(3)}
                 >
                   About
                 </Grid>
-                <Grid
-                  item
-                  className={classes.link}
-                  component={Link}
-                  to="/public_api"
-                  onClick={() => setValue(5)}
-                >
-                  Public API
-                </Grid>
+                {/* <Link href="/public_api">
+                  <Grid
+                    item
+                    className={classes.link}
+                    onClick={() => setValue(5)}
+                  >
+                    Public API
+                  </Grid>
+                </Link> */}
               </Grid>
             </Grid>
             <Grid item className={classes.gridItem}>
@@ -211,7 +212,7 @@ const Footer = ({ setValue }) => {
                   item
                   className={classes.link}
                   component={Link}
-                  to="/contact"
+                  href="/contact"
                   onClick={() => setValue(4)}
                 >
                   Contact
@@ -220,7 +221,7 @@ const Footer = ({ setValue }) => {
             </Grid>
           </Grid>
         </Hidden>
-        <img src={reef} alt="polar bear" className={classes.footerImg} />
+        <img src="/reef10.png" alt="polar bear" className={classes.footerImg} />
         <Grid container justify="flex-end" className={classes.social}>
           <Grid
             item

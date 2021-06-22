@@ -1,12 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react"
+import Link from "next/link"
+
+import { makeStyles } from "@material-ui/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
-import { makeStyles } from "@material-ui/styles"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Button from "@material-ui/core/Button"
-import { Link } from "react-router-dom"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useTheme } from "@material-ui/core/styles"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
@@ -15,8 +16,6 @@ import MenuIcon from "@material-ui/icons/Menu"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-
-import logo from "../../assets/logotype.svg"
 
 function ElevationScroll(props) {
   const { children } = props
@@ -194,21 +193,21 @@ const Header = ({ value, setValue }) => {
                 className={classes.tab}
                 label={route.name}
                 component={Link}
-                to={route.link}
+                href={route.link}
               />
             )
         )}
       </Tabs>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        component={Link}
-        to="/public_api"
-        onClick={() => setValue(5)}
-      >
-        Public API
-      </Button>
+      {/* <Link href="public_api">
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={() => setValue(5)}
+        >
+          Public API
+        </Button>
+      </Link> */}
     </Fragment>
   )
 
@@ -235,7 +234,7 @@ const Header = ({ value, setValue }) => {
               divider
               button
               component={Link}
-              to={route.link}
+              href={route.link}
               className={
                 i === routes.length - 1
                   ? classes.backgroundAPI
@@ -278,11 +277,11 @@ const Header = ({ value, setValue }) => {
               disableRipple
               className={classes.logoContainer}
               component={Link}
-              to="/"
+              href="/"
               onClick={() => setValue(0)}
             >
               <img
-                src={logo}
+                src="/logotype.svg"
                 alt="climate monitor logo"
                 className={classes.logo}
               />
