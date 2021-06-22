@@ -149,13 +149,7 @@ const LatestPrimaryCard = ({ latest }) => {
         <CardContent className={classes.cardContent}>
           <div className={classes.label}>Current atmospheric CO2:</div>
           <div className={classes.value}>
-            <Spring
-              from={{ number: 0 }}
-              to={{ number: latest.values[0] }}
-              config={{ tension: 300, friction: 100 }}
-            >
-              {(props) => <div style={props}>{props.number.toFixed(2)} </div>}
-            </Spring>
+            <div>{latest.values[0]}</div>
             <Spring
               from={{ opacity: 0 }}
               to={{ opacity: 1 }}
@@ -179,13 +173,7 @@ const LatestPrimaryCard = ({ latest }) => {
         <CardContent className={classes.cardContent}>
           <div className={classes.labelSecondary}>Trend for the date:</div>
           <div className={classes.valueSecondary}>
-            <Spring
-              from={{ number: 0 }}
-              to={{ number: latest.trend[0] }}
-              config={{ tension: 200, friction: 100 }}
-            >
-              {(props) => <div style={props}>{props.number.toFixed(2)} </div>}
-            </Spring>
+            <div>{latest.trend[0]}</div>
             <Spring
               from={{ opacity: 0 }}
               to={{ opacity: 1 }}
@@ -204,13 +192,7 @@ const LatestPrimaryCard = ({ latest }) => {
           </div>
           <div className={classes.labelSecondary}>Increase since 1800:</div>
           <div className={classes.valueSecondary}>
-            <Spring
-              from={{ number: 0 }}
-              to={{ number: parseFloat(latest.values[0] - 292.9).toFixed(2) }}
-              config={{ delay: 3500, tension: 450, friction: 100 }}
-            >
-              {(props) => <div style={props}>{props.number.toFixed(2)} </div>}
-            </Spring>
+            <div>{parseFloat(latest.values[0] - 292.9).toFixed(2)} </div>
             <Spring
               from={{ opacity: 0 }}
               to={{ opacity: 1 }}

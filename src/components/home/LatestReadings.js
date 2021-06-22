@@ -125,16 +125,16 @@ const LatestReadings = ({ setValue }) => {
               ))}
             </div>
             <div className={classes.btnContainer}>
-              <Button
-                variant="outlined"
-                color="primary"
-                className={classes.btn}
-                component={Link}
-                href="/data"
-                onClick={() => setValue(1)}
-              >
-                More&nbsp;Data
-              </Button>
+              <Link href="/data">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className={classes.btn}
+                  onClick={() => setValue(1)}
+                >
+                  More&nbsp;Data
+                </Button>
+              </Link>
             </div>
           </Fragment>
         )}

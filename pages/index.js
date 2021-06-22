@@ -10,6 +10,7 @@ const Index = ({ setValue }) => {
   return (
     <Fragment>
       <Hero />
+      <LatestReadings />
       <Description />
       <Amazon />
       <GetInvolved />
