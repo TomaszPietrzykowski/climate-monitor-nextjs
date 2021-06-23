@@ -14,6 +14,7 @@ export default createMuiTheme({
       green: `${green}`,
       footer: `${whitish}`,
       darkBlue: `${darkBlue}`,
+      activeTab: `rgba(0, 41, 67, 1)`,
     },
     gradient: {
       grad01: "rgba(0, 255, 0, 0)",
@@ -28,9 +29,14 @@ export default createMuiTheme({
     },
   },
   typography: {
-    tab: {
+    pop: {
       fontFamily: "Poppins, sans",
+    },
+  },
+  utils: {
+    tab: {
       textTransform: "none",
+      minWidth: 30,
       fontWeight: 600,
       fontSize: "1rem",
       marginLeft: "25px",

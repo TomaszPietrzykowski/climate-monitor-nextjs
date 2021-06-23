@@ -75,8 +75,17 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
   },
   tab: {
-    ...theme.typography.tab,
-    minWidth: 30,
+    ...theme.utils.tab,
+    ...theme.typography.pop,
+    color: theme.palette.text.secondary,
+    "&:hover": {
+      color: theme.palette.text.primary,
+    },
+  },
+  tabActive: {
+    ...theme.utils.tab,
+    ...theme.typography.pop,
+    color: theme.palette.common.activeTab,
   },
   button: {
     ...theme.typography.tab,
@@ -143,12 +152,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const routes = [
-  { name: "Home", link: "/" },
-  { name: "Data", link: "/data" },
-  { name: "News", link: "/news" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
-  { name: "Public API", link: "/public_api" },
+  { name: "Home", link: "/", activeIndex: 0 },
+  { name: "Data", link: "/data", activeIndex: 1 },
+  { name: "News", link: "/news", activeIndex: 2 },
+  { name: "About", link: "/about", activeIndex: 3 },
+  { name: "Contact", link: "/contact", activeIndex: 4 },
+  { name: "Public API", link: "/public_api", activeIndex: 5 },
 ]
 
 const Header = ({ value, setValue }) => {
@@ -158,19 +167,19 @@ const Header = ({ value, setValue }) => {
   const matches = useMediaQuery(theme.breakpoints.down("md"))
 
   const [openDrawer, setOpenDrawer] = useState(false)
+  // check for window object
+  const path = typeof window !== "undefined" ? window.location.pathname : null
+  // check for active index
+  const activeIndex = () => {
+    const found = routes.find(({ link }) => link === path)
+    if (found) {
+      setValue(found.activeIndex)
+    }
+  }
 
   useEffect(() => {
-    routes.forEach((route, i) => {
-      switch (window.location.pathname) {
-        case `${route.link}`:
-          if (value !== i) setValue(i)
-          break
-        default:
-          break
-      }
-    })
-    // eslint-disable-next-line
-  }, [value, routes, window.location.pathname])
+    activeIndex()
+  }, [path])
 
   const handleChange = (e, value) => {
     setValue(value)
@@ -184,24 +193,17 @@ const Header = ({ value, setValue }) => {
         className={classes.tabContainer}
         indicatorColor="secondary"
       >
-        {routes.map(
-          (route, i) =>
-            i < routes.length - 1 && (
-              <Link key={`${route.link}${i}`} href={route.link} value={i}>
-                <Tab disableRipple className={classes.tab} label={route.name} />
-              </Link>
-            )
-        )}
-        <Link href="public_api">
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            onClick={() => setValue(5)}
-          >
-            Public API
-          </Button>
-        </Link>
+        {routes.map((route, i) => (
+          <Link key={`${route.link}${i}`} href={route.link} value={i}>
+            <Tab
+              disableRipple
+              className={
+                route.activeIndex === value ? classes.tabActive : classes.tab
+              }
+              label={route.name}
+            />
+          </Link>
+        ))}
       </Tabs>
     </Fragment>
   )
