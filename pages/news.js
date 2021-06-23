@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
-import Pagination from "@material-ui/lab/Pagination"
+import Head from "next/head"
+
 import { makeStyles } from "@material-ui/core/styles"
+import Pagination from "@material-ui/lab/Pagination"
+
 import NewsTab from "../src/components/news/NewsTab"
 
 const useStyles = makeStyles((theme) => ({
@@ -106,6 +109,14 @@ const News = () => {
 
   return (
     <>
+      <Head>
+        <title key="title">Latest climate news | Climate Monitor</title>
+        <meta
+          name="description"
+          key="description"
+          content="Latest climate news at Climate Monitor - free public REST API with json data on climate change."
+        />
+      </Head>
       <div className={classes.titleBar}>
         <div className={classes.sectionHeader}>Climate news</div>
       </div>

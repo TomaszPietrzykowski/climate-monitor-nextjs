@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react"
 import Link from "next/link"
+import Head from "next/head"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import { datasets } from "../../src/components/data/Datasets"
@@ -84,10 +85,6 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
   },
-  // loaderContainer: {
-  //   // minHeight: "90vh",
-  //   width: "100%",
-  // }
 }))
 
 const DataDisplay = ({ dataset }) => {
@@ -123,6 +120,14 @@ const DataDisplay = ({ dataset }) => {
 
   return (
     <Fragment>
+      <Head>
+        <title key="title">{`${activeDataset.header} | Climate Monitor`}</title>
+        <meta
+          name="description"
+          key="description"
+          content={`${activeDataset.header}, ${activeDataset.title}, Climate Monitor - free public REST API with json data on climate change`}
+        />
+      </Head>
       <div className={classes.titleBar}>
         <div className={classes.sectionHeader}>{activeDataset.header}</div>
       </div>

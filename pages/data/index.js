@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import Link from "next/link"
+import Head from "next/head"
 
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
@@ -92,6 +93,9 @@ const DataDashboard = () => {
 
   return (
     <Fragment>
+      <Head>
+        <title key="title">Climate data | Climate Monitor</title>
+      </Head>
       <div className={classes.titleBar}>
         <div className={classes.sectionHeader}>
           <div className={classes.sectionHeaderContainer}>All data</div>

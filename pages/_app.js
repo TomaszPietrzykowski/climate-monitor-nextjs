@@ -22,10 +22,15 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title key="title">Climate Monitor | Home</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <meta
+          name="description"
+          key="description"
+          content="Free public climate REST API. Json data on earth atmospheric co2, other greenhouse gases, sea levels, land/sea temperatures and melting glaciers. Latest and historical climate data just miliseconds away"
         />
       </Head>
       <ThemeProvider theme={theme}>

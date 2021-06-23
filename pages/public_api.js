@@ -1,4 +1,6 @@
 import React from "react"
+import Head from "next/head"
+
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +44,9 @@ const PublicAPI = () => {
   const classes = useStyles()
   return (
     <>
+      <Head>
+        <title key="title">Public climate API | Climate Monitor</title>
+      </Head>
       <div className={classes.titleBar}>
         <div className={classes.sectionHeader}>Public REST API</div>
       </div>
