@@ -60,6 +60,10 @@ const Chart = ({ displayData, label, grad }) => {
     maintainAspectRatio: false,
     legend: { display: !isMobile },
     redraw: true,
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
   }
 
   return (

@@ -1,12 +1,11 @@
 import React, { useState, useEffect, Fragment } from "react"
 import Link from "next/link"
-// import fs from "fs/promises"
-import { useRouter } from "next/router"
 import Head from "next/head"
+//mui
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
+// custom
 import { datasets } from "../../src/components/data/Datasets"
-
 import Content from "../../src/components/data/Content"
 import CategoryDescription from "../../src/components/data/CategoryDescription"
 import Loader from "../../src/ui/Loader"
@@ -89,9 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const DataDisplay = () => {
-  const router = useRouter()
-  const dataset = router.query.dataset
+const DataDisplay = ({ dataset }) => {
   const [activeData, setActiveData] = useState(datasets[dataset].scopes[0])
   const [index, setIndex] = useState(0)
   const [loading, setLoading] = useState(false)
@@ -160,19 +157,19 @@ const DataDisplay = () => {
             </div>
           </div>
         </Hidden>
-        {loading || !activeData.labels ? (
-          <div style={{ width: "100%", marginTop: "7rem" }}>
-            <Loader />
-          </div>
-        ) : (
-          <div>
+        <div>
+          {loading || !activeData.labels ? (
+            <div style={{ width: "100%", marginTop: "7rem" }}>
+              <Loader />
+            </div>
+          ) : (
             <Content
               activeData={activeData}
               gradient={datasets[dataset].gradient}
             />
-            <CategoryDescription desc={datasets[dataset].desc} />
-          </div>
-        )}
+          )}
+          <CategoryDescription desc={datasets[dataset].desc} />
+        </div>
       </div>
     </Fragment>
   )
