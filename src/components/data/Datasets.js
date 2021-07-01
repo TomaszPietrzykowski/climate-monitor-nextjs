@@ -19,6 +19,7 @@ exports.datasets = {
       "Category (co2) description line/pargraph 2",
       "Category (co2) description line/pargraph 3",
     ],
+    gradient: "co2",
   },
   ch4: {
     header: "Methane CH4",
@@ -32,6 +33,7 @@ exports.datasets = {
       "Category (ch4) description line/pargraph 2",
       "Category (ch4) description line/pargraph 3",
     ],
+    gradient: "ch4",
   },
   sf6: {
     header: "Sulfur hexafluoride SF6",
@@ -45,6 +47,7 @@ exports.datasets = {
       "Category (sf6) description line/pargraph 2",
       "Category (sf6) description line/pargraph 3",
     ],
+    gradient: "sf6",
   },
   n2o: {
     header: "Dinitrogen oxide N2O",
@@ -58,6 +61,7 @@ exports.datasets = {
       "Category (n2o) description line/pargraph 2",
       "Category (n2o) description line/pargraph 3",
     ],
+    gradient: "n2o",
   },
   temperatures: {
     header: "Temperatures",
@@ -129,6 +133,7 @@ exports.datasets = {
       "Category (temperatures) description line/pargraph 2",
       "Category (temperatures) description line/pargraph 3",
     ],
+    gradient: "temperatures",
   },
   sealevels: {
     header: "Sea levels",
@@ -141,6 +146,7 @@ exports.datasets = {
       "Category (sealevels) description line/pargraph 2",
       "Category (sealevels) description line/pargraph 3",
     ],
+    gradient: "sealevels",
   },
   glaciers: {
     header: "Glaciers",
@@ -153,5 +159,6 @@ exports.datasets = {
       "Category (glaciers) description line/pargraph 2",
       "Category (glaciers) description line/pargraph 3",
     ],
+    gradient: "glaciers",
   },
 }

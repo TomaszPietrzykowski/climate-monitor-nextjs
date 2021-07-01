@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Chart = ({ displayData, label }) => {
+const Chart = ({ displayData, label, grad }) => {
   const theme = useTheme()
   const classes = useStyles()
   const isMobile = useMediaQuery("(max-width:600px)")
@@ -33,9 +33,9 @@ const Chart = ({ displayData, label }) => {
   const chartData = (canvas) => {
     const ctx = canvas.getContext("2d")
     const gradient = ctx.createLinearGradient(0, 500, 0, 100)
-    gradient.addColorStop(0, theme.palette.gradient.grad01)
-    gradient.addColorStop(0.8, theme.palette.gradient.grad02)
-    gradient.addColorStop(1, theme.palette.gradient.grad03)
+    gradient.addColorStop(0, theme.palette.gradient[grad][0])
+    gradient.addColorStop(0.8, theme.palette.gradient[grad][1])
+    gradient.addColorStop(1, theme.palette.gradient[grad][2])
 
     return {
       labels: displayData.labels,
@@ -45,7 +45,7 @@ const Chart = ({ displayData, label }) => {
           fill: true,
           data: displayData.values,
           backgroundColor: gradient,
-          borderColor: theme.palette.gradient.grad03,
+          borderColor: theme.palette.gradient[grad][2],
           borderWidth: 2,
           pointBorderColor: "rgba(0,0,0,0)",
           pointBackgroundColor: "rgba(0,0,0,0)",

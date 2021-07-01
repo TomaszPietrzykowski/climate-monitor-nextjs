@@ -166,7 +166,10 @@ const DataDisplay = () => {
           </div>
         ) : (
           <div>
-            <Content activeData={activeData} />
+            <Content
+              activeData={activeData}
+              gradient={datasets[dataset].gradient}
+            />
             <CategoryDescription desc={datasets[dataset].desc} />
           </div>
         )}

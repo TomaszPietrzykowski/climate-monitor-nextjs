@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Content = ({ activeData }) => {
+const Content = ({ activeData, gradient }) => {
   const classes = useStyles()
   const [displayData, setDisplayData] = useState({})
 
@@ -80,7 +80,11 @@ const Content = ({ activeData }) => {
         <h3 style={{ marginLeft: "5rem" }}>show trend</h3>
       )}
       <br />
-      <Chart displayData={displayData} label={activeData.title} />
+      <Chart
+        displayData={displayData}
+        label={activeData.title}
+        grad={gradient}
+      />
       <br />
       <div className={classes.sliderLabel}>Data scope:</div>
       <RangeSlider
