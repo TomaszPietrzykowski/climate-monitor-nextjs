@@ -8,6 +8,7 @@ import Hidden from "@material-ui/core/Hidden"
 import { datasets } from "../../src/components/data/Datasets"
 
 import Content from "../../src/components/data/Content"
+import CategoryDescription from "../../src/components/data/CategoryDescription"
 import Loader from "../../src/ui/Loader"
 
 const drawerWidth = "360px"
@@ -164,7 +165,10 @@ const DataDisplay = () => {
             <Loader />
           </div>
         ) : (
-          <Content activeData={activeData} />
+          <div>
+            <Content activeData={activeData} />
+            <CategoryDescription desc={datasets[dataset].desc} />
+          </div>
         )}
       </div>
     </Fragment>

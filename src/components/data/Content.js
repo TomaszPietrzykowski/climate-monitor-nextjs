@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Content = ({ activeData }) => {
-  console.log(activeData)
   const classes = useStyles()
   const [displayData, setDisplayData] = useState({})
 

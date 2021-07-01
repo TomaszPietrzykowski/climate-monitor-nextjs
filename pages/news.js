@@ -144,8 +144,8 @@ const News = () => {
           <h2>loading</h2>
         ) : (
           <div className={classes.newsContainer}>
-            {articles.map((article) => (
-              <NewsTab article={article} />
+            {articles.map((article, i) => (
+              <NewsTab key={`${article.url}${i}`} article={article} />
             ))}
           </div>
         )}

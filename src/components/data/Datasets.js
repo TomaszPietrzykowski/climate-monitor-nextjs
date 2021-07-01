@@ -15,9 +15,9 @@ exports.datasets = {
       { title: "Daily CO2 Mauna Loa", endpoint: "daily_co2" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (co2) description line/pargraph 1",
+      "Category (co2) description line/pargraph 2",
+      "Category (co2) description line/pargraph 3",
     ],
   },
   ch4: {
@@ -28,9 +28,9 @@ exports.datasets = {
       { title: "Monthly CH4", endpoint: "monthly_ch4_gl" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (ch4) description line/pargraph 1",
+      "Category (ch4) description line/pargraph 2",
+      "Category (ch4) description line/pargraph 3",
     ],
   },
   sf6: {
@@ -41,9 +41,9 @@ exports.datasets = {
       { title: "Monthly SF6", endpoint: "monthly_sf6_gl" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (sf6) description line/pargraph 1",
+      "Category (sf6) description line/pargraph 2",
+      "Category (sf6) description line/pargraph 3",
     ],
   },
   n2o: {
@@ -54,9 +54,9 @@ exports.datasets = {
       { title: "Monthly N2O", endpoint: "monthly_n2o_gl" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (n2o) description line/pargraph 1",
+      "Category (n2o) description line/pargraph 2",
+      "Category (n2o) description line/pargraph 3",
     ],
   },
   temperatures: {
@@ -125,9 +125,9 @@ exports.datasets = {
       // },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (temperatures) description line/pargraph 1",
+      "Category (temperatures) description line/pargraph 2",
+      "Category (temperatures) description line/pargraph 3",
     ],
   },
   sealevels: {
@@ -137,9 +137,9 @@ exports.datasets = {
       { title: "Trend in sea levels", endpoint: "sea_level_trend" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (sealevels) description line/pargraph 1",
+      "Category (sealevels) description line/pargraph 2",
+      "Category (sealevels) description line/pargraph 3",
     ],
   },
   glaciers: {
@@ -149,9 +149,9 @@ exports.datasets = {
       { title: "Greenland ice mass", endpoint: "greenland_ice_mass" },
     ],
     desc: [
-      "Category (FACTOR) description line/pargraph 1",
-      "Category (FACTOR) description line/pargraph 2",
-      "Category (FACTOR) description line/pargraph 3",
+      "Category (glaciers) description line/pargraph 1",
+      "Category (glaciers) description line/pargraph 2",
+      "Category (glaciers) description line/pargraph 3",
     ],
   },
 }
