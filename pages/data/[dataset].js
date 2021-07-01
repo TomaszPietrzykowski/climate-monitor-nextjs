@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react"
 import Link from "next/link"
+// import fs from "fs/promises"
+import { useRouter } from "next/router"
 import Head from "next/head"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
@@ -61,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   listItemActive: {
-    // border: "1px solid transparent",
     borderRadius: 4,
     display: "flex",
     fontFamily: "Poppins",
@@ -87,15 +88,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const DataDisplay = ({ dataset }) => {
-  const activeDataset = datasets["co2"]
-  const [activeData, setActiveData] = useState(activeDataset.scopes[0])
+const DataDisplay = () => {
+  const router = useRouter()
+  const dataset = router.query.dataset
+  const [activeData, setActiveData] = useState(datasets[dataset].scopes[0])
   const [index, setIndex] = useState(0)
   const [loading, setLoading] = useState(false)
   const classes = useStyles()
 
   useEffect(() => {
-    getData(activeDataset.scopes[0].endpoint)
+    getData(datasets[dataset].scopes[0].endpoint)
     setIndex(0)
     // eslint-disable-next-line
   }, [dataset])
@@ -121,15 +123,15 @@ const DataDisplay = ({ dataset }) => {
   return (
     <Fragment>
       <Head>
-        <title key="title">{`${activeDataset.header} | Climate Monitor`}</title>
+        <title key="title">{`${datasets[dataset].header} | Climate Monitor`}</title>
         <meta
           name="description"
           key="description"
-          content={`${activeDataset.header}, ${activeDataset.title}, Climate Monitor - free public REST API with json data on climate change`}
+          content={`${datasets[dataset].header}, ${datasets[dataset].title}, Climate Monitor - free public REST API with json data on climate change`}
         />
       </Head>
       <div className={classes.titleBar}>
-        <div className={classes.sectionHeader}>{activeDataset.header}</div>
+        <div className={classes.sectionHeader}>{datasets[dataset].header}</div>
       </div>
       <div className={classes.container}>
         <Hidden mdDown>
@@ -138,21 +140,22 @@ const DataDisplay = ({ dataset }) => {
               <Link href="/data" className={classes.link}>
                 <div className={classes.listItem}>Back to all data</div>
               </Link>
-              {activeDataset.scopes.map((scope, i) => (
-                <div
-                  className={
-                    i === index ? classes.listItemActive : classes.listItem
-                  }
-                  key={scope.title}
-                  onClick={() => {
-                    getData(scope.endpoint)
-                    setIndex(i)
-                    scrollUp()
-                  }}
-                >
-                  {scope.title}
-                </div>
-              ))}
+              {datasets[dataset].scopes &&
+                datasets[dataset].scopes.map((scope, i) => (
+                  <div
+                    className={
+                      i === index ? classes.listItemActive : classes.listItem
+                    }
+                    key={scope.title}
+                    onClick={() => {
+                      getData(scope.endpoint)
+                      setIndex(i)
+                      scrollUp()
+                    }}
+                  >
+                    {scope.title}
+                  </div>
+                ))}
             </div>
           </div>
         </Hidden>
@@ -166,6 +169,32 @@ const DataDisplay = ({ dataset }) => {
       </div>
     </Fragment>
   )
+}
+
+export async function getStaticProps(context) {
+  console.log("(Re-)generating...")
+  const { params } = context
+  const dataset = params.dataset
+
+  return {
+    props: {
+      dataset,
+    },
+  }
+}
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { dataset: "co2" } },
+      { params: { dataset: "ch4" } },
+      { params: { dataset: "sf6" } },
+      { params: { dataset: "n2o" } },
+      { params: { dataset: "temperatures" } },
+      { params: { dataset: "sealevels" } },
+      { params: { dataset: "glaciers" } },
+    ],
+    fallback: false,
+  }
 }
 
 export default DataDisplay
