@@ -14,6 +14,11 @@ exports.datasets = {
       { title: "Weekly CO2 Mauna Loa", endpoint: "weekly_co2" },
       { title: "Daily CO2 Mauna Loa", endpoint: "daily_co2" },
     ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
+    ],
   },
   ch4: {
     header: "Methane CH4",
@@ -21,6 +26,11 @@ exports.datasets = {
       { title: "Annual CH4", endpoint: "annual_ch4_gl" },
       { title: "Annual CH4 growth rate", endpoint: "annual_ch4_gr_gl" },
       { title: "Monthly CH4", endpoint: "monthly_ch4_gl" },
+    ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
     ],
   },
   sf6: {
@@ -30,6 +40,11 @@ exports.datasets = {
       { title: "Annual SF6 growth rate", endpoint: "annual_sf6_gr_gl" },
       { title: "Monthly SF6", endpoint: "monthly_sf6_gl" },
     ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
+    ],
   },
   n2o: {
     header: "Dinitrogen oxide N2O",
@@ -37,6 +52,11 @@ exports.datasets = {
       { title: "Annual N2O", endpoint: "annual_n2o_gl" },
       { title: "Annual N2O growth rate", endpoint: "annual_n2o_gr_gl" },
       { title: "Monthly N2O", endpoint: "monthly_n2o_gl" },
+    ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
     ],
   },
   temperatures: {
@@ -91,18 +111,23 @@ exports.datasets = {
         title: "Monthly land and ocean anomaly",
         endpoint: "monthly_loc_temp_anomaly",
       },
-      {
-        title: "Daily land anomaly average",
-        endpoint: "daily_land_temp_anomaly_avg",
-      },
-      {
-        title: "Daily land anomaly maximum",
-        endpoint: "daily_land_temp_anomaly_max",
-      },
-      {
-        title: "Daily land anomaly minimum",
-        endpoint: "daily_land_temp_anomaly_min",
-      },
+      // {
+      //   title: "Daily land anomaly average",
+      //   endpoint: "daily_land_temp_anomaly_avg",
+      // },
+      // {
+      //   title: "Daily land anomaly maximum",
+      //   endpoint: "daily_land_temp_anomaly_max",
+      // },
+      // {
+      //   title: "Daily land anomaly minimum",
+      //   endpoint: "daily_land_temp_anomaly_min",
+      // },
+    ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
     ],
   },
   sealevels: {
@@ -111,6 +136,11 @@ exports.datasets = {
       { title: "Global ocean mass", endpoint: "global_ocean_mass" },
       { title: "Trend in sea levels", endpoint: "sea_level_trend" },
     ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
+    ],
   },
   glaciers: {
     header: "Glaciers",
@@ -118,5 +148,10 @@ exports.datasets = {
       { title: "Antarctica ice mass", endpoint: "antarctica_ice_mass" },
       { title: "Greenland ice mass", endpoint: "greenland_ice_mass" },
     ],
+    desc: [
+      "Category (FACTOR) description line/pargraph 1",
+      "Category (FACTOR) description line/pargraph 2",
+      "Category (FACTOR) description line/pargraph 3",
+    ],
   },
-};
+}

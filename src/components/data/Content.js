@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: ".8rem",
     },
   },
-  tempContainer: {
+  description: {
     padding: "4rem",
     [theme.breakpoints.down("md")]: {
       padding: "3rem",
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Content = ({ activeData }) => {
+  console.log(activeData)
   const classes = useStyles()
   const [displayData, setDisplayData] = useState({})
 
@@ -88,40 +89,10 @@ const Content = ({ activeData }) => {
         updateActiveValues={updateActiveValues}
         style={{ passive: "false" }}
       />
-      <br />
+      {/* <br />
       {activeData.unit}
-      <br />
-      <div className={classes.tempContainer}>
-        <h5>Dataset description: {activeData.description}</h5>
-        <br />
-        {activeData.labels &&
-          activeData.labels.map((label, i) => (
-            <div key={label}>
-              {label} - {activeData.values[i]}
-            </div>
-          ))}
-        <br />
-        <br />
-        <br />
-        <h5>Last updated: {activeData.lastUpdate}</h5>
-        <br />
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu sc elerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </p>
-      </div>
+      <br /> */}
+      <div className={classes.description}>{activeData.description}</div>
     </div>
   )
 }
