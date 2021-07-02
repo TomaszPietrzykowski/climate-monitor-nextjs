@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       height: "100%",
       background:
-        "linear-gradient(90deg, rgba(0, 27, 51, 1), 80%, rgba(0, 27, 51, 0.3))",
+        "linear-gradient(90deg, rgba(0, 27, 51, 1), 80%, rgba(0, 27, 51, 0.2))",
+      mixBlendMode: "multiply",
       zIndex: 1,
     },
   },

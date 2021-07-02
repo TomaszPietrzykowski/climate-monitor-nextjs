@@ -2,6 +2,7 @@ import React from "react"
 import { makeStyles } from "@material-ui/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
+import { useSpring, animated } from "react-spring"
 import { Spring } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
+    border: "1px solid blue",
     [theme.breakpoints.down("xs")]: {
       padding: ".5rem",
       "&:last-child": {
@@ -63,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   value: {
     display: "flex",
     alignItems: "flex-end",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     fontSize: "3rem",
     fontWeight: 400,
     marginTop: "1.3rem",
@@ -100,6 +102,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     paddingBottom: "0.65rem",
     marginLeft: "1rem",
+    opacity: 0,
+    animation: "$fadeIn 3s ease 2s forwards",
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
       marginLeft: "0.5rem",
@@ -109,6 +113,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "0.8rem",
       paddingBottom: "0.3rem",
     },
+  },
+  "@keyframes fadeIn": {
+    "0%": { opacity: 0 },
+    "100%": { opacity: 1 },
   },
   ppmSecondary: {
     fontSize: "1rem",
@@ -142,73 +150,42 @@ const useStyles = makeStyles((theme) => ({
 
 const LatestPrimaryCard = ({ latest }) => {
   const classes = useStyles()
-
+  const props = useSpring({
+    val: latest.values[0],
+    from: { val: 0 },
+    config: { mass: 5, tension: 400, friction: 150, clamp: true },
+  })
   return (
     <div className={classes.flexContainer}>
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
-          <div className={classes.label}>Current atmospheric CO2:</div>
+          <div className={classes.label}>Current earth CO2:</div>
           <div className={classes.value}>
-            <div>{latest.values[0]}</div>
-            <Spring
-              from={{ opacity: 0 }}
-              to={{ opacity: 1 }}
-              config={{
-                delay: 3000,
-                duration: 1200,
-              }}
-            >
-              {(props) => (
-                <div style={props} className={classes.ppm}>
-                  {" "}
-                  ppm
-                </div>
-              )}
-            </Spring>
+            <animated.div className="number">
+              {props.val.to((val) => val.toFixed(2))}
+            </animated.div>
+            <div className={classes.ppm}>&nbsp;ppm</div>
           </div>
-          <div className={classes.date}>value for: {latest.labels[0]}</div>
         </CardContent>
       </Card>
+      {/* -------------------------------------------------------------- TODO ANIMATIONS */}
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
           <div className={classes.labelSecondary}>Trend for the date:</div>
           <div className={classes.valueSecondary}>
-            <div>{latest.trend[0]}</div>
-            <Spring
-              from={{ opacity: 0 }}
-              to={{ opacity: 1 }}
-              config={{
-                delay: 3500,
-                duration: 1200,
-              }}
-            >
-              {(props) => (
-                <div style={props} className={classes.ppmSecondary}>
-                  {" "}
-                  ppm
-                </div>
-              )}
-            </Spring>
+            <div>
+              {latest.trend[0]}
+              <span className={classes.ppmSecondary}> ppm</span>
+            </div>
           </div>
           <div className={classes.labelSecondary}>Increase since 1800:</div>
           <div className={classes.valueSecondary}>
-            <div>{parseFloat(latest.values[0] - 292.9).toFixed(2)} </div>
-            <Spring
-              from={{ opacity: 0 }}
-              to={{ opacity: 1 }}
-              config={{
-                delay: 4800,
-                duration: 1000,
-              }}
-            >
-              {(props) => (
-                <div style={props} className={classes.ppmSecondary}>
-                  {" "}
-                  ppm
-                </div>
-              )}
-            </Spring>
+            <div>
+              {parseFloat(latest.values[0] - 292.9).toFixed(2)}
+              <span className={classes.ppmSecondary}> ppm</span>
+            </div>
           </div>
+          {/* ------------------------------------------------------- TODO END */}
         </CardContent>
       </Card>
     </div>

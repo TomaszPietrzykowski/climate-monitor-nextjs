@@ -95,8 +95,8 @@ const LatestReadings = ({ setValue }) => {
       const res = await fetch(
         "https://api.climatemonitor.info/api/v1/chartdata/latest_co2"
       )
-      const data = await res.json()
-      setLatest(data.data)
+      const { data } = await res.json()
+      setLatest(data)
       setLoading(false)
     } catch (err) {
       console.log(err)
@@ -122,6 +122,7 @@ const LatestReadings = ({ setValue }) => {
                   labelText={data.html}
                   index={i}
                 />
+                // add animation delay to multiply by index for increnental display
               ))}
             </div>
             <div className={classes.btnContainer}>
@@ -142,5 +143,17 @@ const LatestReadings = ({ setValue }) => {
     </div>
   )
 }
+
+// export async function getStaticProps(context) {
+//   const res = fetch(
+//     "https://api.climatemonitor.info/api/v1/chartdata/latest_co2"
+//   )
+//   const { data } = await res.json()
+//   return {
+//     props: {
+//       initial: data,
+//     },
+//   }
+// }
 
 export default LatestReadings

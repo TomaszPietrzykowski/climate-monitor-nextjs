@@ -22,7 +22,7 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title key="title">Climate Monitor | Home</title>
+        <title key="title">Home | Climate Monitor</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

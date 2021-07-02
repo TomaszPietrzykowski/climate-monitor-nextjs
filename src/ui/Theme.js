@@ -14,7 +14,8 @@ export default createMuiTheme({
       green: `${green}`,
       footer: `${whitish}`,
       darkBlue: `${darkBlue}`,
-      activeTab: `rgba(0, 41, 67, 1)`,
+      activeTab: `rgba(0, 54, 102, 1)`,
+      // activeTab: `rgba(0, 51, 77, 1)`,
     },
     gradient: {
       co2: [
