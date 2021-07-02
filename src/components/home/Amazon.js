@@ -11,13 +11,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     width: "100%",
-
+    fontWeight: 300,
+    fontFamily: "Poppins",
+    letterSpacing: 1,
     [theme.breakpoints.down("md")]: {
       backgroundPosition: "left",
     },
   },
   siteContainer: {
-    maxWidth: 1300,
+    maxWidth: 1400,
     margin: "auto",
   },
   flexContainer: {
@@ -58,38 +60,36 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    fontFamily: "Poppins, sans",
-    fontSize: "1rem",
-    fontWeight: 400,
+    // fontFamily: "Poppins, sans",
+    fontSize: "1.2rem",
     color: "white",
     textShadow: "0px 0px 15px rgba(0, 0, 0, 1)",
     marginTop: "1rem",
-    lineHeight: "1.5rem",
+    lineHeight: 1.5,
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.9rem",
     },
   },
   title: {
     fontFamily: "Poppins, sans",
-    fontSize: "2rem",
+    fontSize: "2.8rem",
     color: "white",
-    textShadow: "0px 0px 4px rgba(0, 0, 0, 1)",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.6rem",
     },
   },
   btn: {
     ...theme.typography.tab,
-    borderRadius: "50px",
     color: "white",
-    fontFamily: "Poppins, sans",
-    fontSize: "0.95rem",
-    border: "2px solid white",
-    textTransform: "none",
-    marginTop: "2rem",
-    marginLeft: "0rem",
+    borderRadius: "50px",
+    fontSize: "1.2rem",
+    letterSpacing: 2,
+    border: "3px solid white",
+    textTransform: "uppercase",
+    padding: "0.6rem 3rem",
+    marginTop: "3rem",
+    marginLeft: 0,
     marginRight: "0rem",
-    padding: "0.3rem 1.5rem",
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
       fontSize: "0.8rem",
@@ -134,11 +134,7 @@ const Amazon = ({ setValue }) => {
                     in our effort to stabilize climate.
                   </div>
                   <Link href="/news">
-                    <Button
-                      className={classes.btn}
-                      variant="outlined"
-                      onClick={() => setValue(2)}
-                    >
+                    <Button className={classes.btn} variant="outlined">
                       Newsfeed
                     </Button>
                   </Link>
@@ -166,11 +162,7 @@ const Amazon = ({ setValue }) => {
                     with most crucial climate factors.
                   </div>
                   <Link href="/public_api">
-                    <Button
-                      className={classes.btn}
-                      variant="outlined"
-                      onClick={() => setValue(5)}
-                    >
+                    <Button className={classes.btn} variant="outlined">
                       Documentation
                     </Button>
                   </Link>

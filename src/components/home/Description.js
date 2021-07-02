@@ -5,13 +5,13 @@ import { Spring, animated, config } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    fontWeight: 300,
+    fontFamily: "Poppins",
+    letterSpacing: 0.5,
     display: "flex",
-    maxWidth: 1300,
-    margin: "auto",
+    maxWidth: 1400,
     justifyContent: "space-between",
-    textAlign: "center",
-    marginTop: "2rem",
-    marginBottom: "5rem",
+    margin: "7rem auto",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       marginTop: 0,
@@ -21,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center",
-    fontFamily: "Poppins",
     padding: "2rem 0",
     margin: "3rem",
     color: theme.palette.text.secondary,
@@ -36,18 +34,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    fontSize: "1.6rem",
-    fontWeight: 600,
-    marginBottom: "3rem",
+    fontSize: "2rem",
+    marginBottom: "2rem",
     [theme.breakpoints.down("md")]: {
-      fontSize: "1.2rem",
+      fontSize: "1.4rem",
       marginBottom: "1rem",
     },
   },
   text: {
-    fontSize: "1rem",
+    fontSize: "1.1rem",
     [theme.breakpoints.down("md")]: {
-      fontSize: "0.8rem",
+      fontSize: "1rem",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "0.9rem",
