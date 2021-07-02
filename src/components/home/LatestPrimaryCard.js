@@ -3,42 +3,56 @@ import { makeStyles } from "@material-ui/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import { useSpring, animated } from "react-spring"
-import { Spring } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
+    fontFamily: "Poppins",
+    letterSpacing: 0.5,
+    fontWeight: 300,
     display: "flex",
     justifyContent: "space-around",
     alignItems: "flex-end",
+    paddingBottom: "4rem",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
     },
   },
   root: {
     minWidth: 275,
-    textAlign: "center",
+    background: "#fcfcfc",
     margin: "auto",
     marginTop: "4rem",
-    fontFamily: "Poppins",
+    padding: "4rem",
     color: theme.palette.text.secondary,
-    boxShadow: "none",
+    borderRadius: 20,
+    boxShadow:
+      "-10px -10px 20px rgba(255,255,255,.8), 10px 10px 20px rgba(0,0,0,.02  )",
     [theme.breakpoints.down("sm")]: {
       minWidth: "auto",
       marginTop: "2rem",
     },
   },
   cardContent: {
-    border: "1px solid blue",
-    [theme.breakpoints.down("xs")]: {
-      padding: ".5rem",
-      "&:last-child": {
-        paddingBottom: "1rem",
-      },
-    },
+    minWidth: 350,
   },
   label: {
-    fontSize: "1.3rem",
-    fontWeight: 500,
+    fontSize: "2rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.85rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.75rem",
+    },
+  },
+  label2: {
+    color: "#c3c3c3",
+    fontSize: "1.2rem",
+    fontWeight: 200,
+    opacity: 0,
+    animation: "$fadeIn 3s ease 2s forwards",
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -51,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
   labelSecondary: {
     fontSize: "1.2rem",
-    fontWeight: 500,
+    // fontWeight: 500,
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -66,11 +80,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
-    fontSize: "3rem",
-    fontWeight: 400,
+    fontSize: "4.2rem",
     marginTop: "1.3rem",
-    marginBottom: "1.3rem",
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       fontSize: "2.7rem",
     },
@@ -84,12 +96,11 @@ const useStyles = makeStyles((theme) => ({
   valueSecondary: {
     display: "flex",
     alignItems: "flex-end",
-    justifyContent: "center",
-    fontSize: "2rem",
-    fontWeight: 400,
+    justifyContent: "flex-start",
+    fontSize: "2.4rem",
     marginTop: "0.5rem",
     marginBottom: "1rem",
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.6rem",
     },
@@ -98,8 +109,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   ppm: {
-    fontSize: "1.3rem",
-    fontWeight: 400,
+    fontSize: "1.6rem",
     paddingBottom: "0.65rem",
     marginLeft: "1rem",
     opacity: 0,
@@ -135,7 +145,6 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     fontSize: "1.3rem",
-    fontWeight: 500,
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -145,6 +154,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.7rem",
     },
+  },
+  separator: {
+    margin: "2rem 0",
+    width: "100%",
+    height: 8,
+    background: "#fafafa",
+    borderRadius: "20px",
+    boxShadow:
+      "inset -3px -3px 3px rgba(255,255,255,.9), inset 3px 3px 3px rgba(0,0,0,.04)",
   },
 }))
 
@@ -159,7 +177,8 @@ const LatestPrimaryCard = ({ latest }) => {
     <div className={classes.flexContainer}>
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
-          <div className={classes.label}>Current earth CO2:</div>
+          <div className={classes.label}>Latest Earth CO2</div>
+          <div className={classes.label2}>Value for {latest.labels[0]}</div>
           <div className={classes.value}>
             <animated.div className="number">
               {props.val.to((val) => val.toFixed(2))}
@@ -178,6 +197,7 @@ const LatestPrimaryCard = ({ latest }) => {
               <span className={classes.ppmSecondary}> ppm</span>
             </div>
           </div>
+          <div className={classes.separator} />
           <div className={classes.labelSecondary}>Increase since 1800:</div>
           <div className={classes.valueSecondary}>
             <div>

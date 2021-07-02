@@ -7,14 +7,28 @@ import { Button } from "@material-ui/core"
 import Loader from "../../ui/Loader"
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    background: "#fcfcfc",
+    paddingTop: "4rem",
+  },
   siteContainer: {
-    maxWidth: 1300,
+    maxWidth: 1400,
     margin: "auto",
+  },
+  dashboard: {
+    background: "#fafafa",
+    fontFamily: "Poppins",
+    display: "block",
+    margin: "0 4rem 4rem",
+    padding: "2rem",
+    borderRadius: 20,
+    boxShadow:
+      "-10px -10px 20px rgba(255,255,255,1), 10px 10px 20px rgba(0,0,0,.02)",
   },
   container: {
     display: "flex",
     flexDirection: "column",
-    marginBottom: "4rem",
   },
   latestContainer: {
     display: "flex",
@@ -36,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "6rem",
+    margin: "10rem 0",
     [theme.breakpoints.down("md")]: {
       marginTop: "2rem",
     },
@@ -49,18 +63,17 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     ...theme.typography.tab,
+    color: theme.palette.primary.dark,
     borderRadius: "50px",
     fontFamily: "Poppins, sans",
-    fontSize: "0.95rem",
-    // width: "150px",
-    textTransform: "none",
+    fontSize: "1.2rem",
+    textTransform: "uppercase",
     border: "3px solid",
-    marginTop: "1.5rem",
-    marginLeft: "0rem",
-    marginRight: "0rem",
-    padding: "0.3rem 1.5rem",
+    padding: "0.6rem 3rem",
     "&:hover": {
-      border: "3px solid",
+      border: `3px solid ${theme.palette.primary.dark}`,
+      color: "white",
+      background: theme.palette.primary.dark,
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
@@ -107,53 +120,41 @@ const LatestReadings = ({ setValue }) => {
   const classes = useStyles()
 
   return (
-    <div className={classes.siteContainer}>
-      <div className={classes.container}>
-        {loading || !latest ? (
-          <Loader />
-        ) : (
-          <Fragment>
-            <LatestPrimaryCard latest={latest} />
-            <div className={classes.latestContainer}>
-              {cardData.map((data, i) => (
-                <LatestCard
-                  key={i}
-                  latest={latest}
-                  labelText={data.html}
-                  index={i}
-                />
-                // add animation delay to multiply by index for increnental display
-              ))}
-            </div>
-            <div className={classes.btnContainer}>
-              <Link href="/data">
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  className={classes.btn}
-                  onClick={() => setValue(1)}
-                >
-                  More&nbsp;Data
-                </Button>
-              </Link>
-            </div>
-          </Fragment>
-        )}
+    <main className={classes.root}>
+      <div className={classes.siteContainer}>
+        <div className={classes.container}>
+          {loading || !latest ? (
+            <Loader />
+          ) : (
+            <Fragment>
+              <LatestPrimaryCard latest={latest} />
+              <div className={classes.latestContainer}>
+                {cardData.map((data, i) => (
+                  <LatestCard
+                    key={i}
+                    latest={latest}
+                    labelText={data.html}
+                    index={i}
+                  />
+                ))}
+              </div>
+              <div className={classes.btnContainer}>
+                <Link href="/data">
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className={classes.btn}
+                  >
+                    More&nbsp;Data
+                  </Button>
+                </Link>
+              </div>
+            </Fragment>
+          )}
+        </div>
       </div>
-    </div>
+    </main>
   )
 }
-
-// export async function getStaticProps(context) {
-//   const res = fetch(
-//     "https://api.climatemonitor.info/api/v1/chartdata/latest_co2"
-//   )
-//   const { data } = await res.json()
-//   return {
-//     props: {
-//       initial: data,
-//     },
-//   }
-// }
 
 export default LatestReadings

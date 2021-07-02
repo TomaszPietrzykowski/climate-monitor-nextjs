@@ -11,8 +11,8 @@ const Index = ({ setValue }) => {
     <Fragment>
       <Hero />
       <LatestReadings />
-      <Description />
       <Amazon />
+      <Description />
       <GetInvolved />
     </Fragment>
   )

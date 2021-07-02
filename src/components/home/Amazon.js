@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     width: "100%",
-    minHeight: "500px",
+
     [theme.breakpoints.down("md")]: {
       backgroundPosition: "left",
     },
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "flex",
     justifyContent: "space-between",
-    minHeight: "500px",
+    minHeight: "600px",
     alignItems: "center",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",

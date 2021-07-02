@@ -1,27 +1,27 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-import Hidden from "@material-ui/core/Hidden"
-import { Spring } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: "32%",
-    textAlign: "center",
+    background: "#fcfcfc",
+    textAlign: "left",
     fontFamily: "Poppins",
+    minWidth: "28%",
+    fontWeight: 300,
     color: theme.palette.text.secondary,
-    boxShadow: "none",
+    borderRadius: 20,
+    boxShadow:
+      "-10px -10px 20px rgba(255,255,255,.8), 10px 10px 30px rgba(0,0,0,.03)",
     [theme.breakpoints.down("md")]: {
       fontSize: "0.8rem",
       minWidth: "auto",
     },
   },
   content: {
-    padding: "0.3rem",
+    padding: "4rem",
   },
   label: {
-    fontSize: "1.2rem",
+    fontSize: "1.6rem",
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
   value: {
     display: "flex",
     alignItems: "flex-end",
-    justifyContent: "center",
-    fontSize: "2rem",
+    justifyContent: "flex-start",
+    fontSize: "3rem",
+    color: theme.palette.primary.dark,
 
-    margin: "1rem 0rem",
+    margin: "2rem 0 0",
     [theme.breakpoints.down("md")]: {
       fontSize: "1.4rem",
       margin: "0.5rem 0rem",
@@ -54,12 +55,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "center",
-    fontWeight: 500,
   },
   ppm: {
-    fontSize: "1rem",
+    fontSize: "1.4rem",
     marginLeft: "0.2rem",
-    paddingBottom: "0.3rem",
+    paddingBottom: "0.6rem",
     [theme.breakpoints.down("md")]: {
       fontSize: "0.7rem",
       paddingBottom: "0.2rem",
@@ -67,9 +67,8 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     fontSize: "1rem",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.7rem",
-    },
+    color: "#c3c3c3",
+    fontWeight: 200,
   },
 }))
 
@@ -77,34 +76,18 @@ const LatestCard = ({ latest, labelText, index }) => {
   const classes = useStyles()
 
   return (
-    <Card className={classes.root}>
-      <CardContent className={classes.content}>
-        <div className={classes.label}>
-          <Hidden mdDown>
-            Corresponding reading <br />{" "}
-          </Hidden>
-          {labelText}:
-        </div>
+    <section className={classes.root}>
+      <div className={classes.content}>
+        <div className={classes.label}>{labelText}</div>
+        <div className={classes.date}>{latest.labels[index + 1]}</div>
         <div className={classes.value}>
-          <Spring
-            from={{ opacity: 0 }}
-            to={{ opacity: 1 }}
-            config={{ delay: 500 + index * 1000, duration: 1500 }}
-          >
-            {(props) => (
-              <div style={props} className={classes.smallFlex}>
-                <span>{latest.values[index + 1].toFixed(2)} </span>
-                <span className={classes.ppm}>ppm</span>
-              </div>
-            )}
-          </Spring>
+          <div className={classes.smallFlex}>
+            <span>{latest.values[index + 1].toFixed(2)} </span>
+            <span className={classes.ppm}>ppm</span>
+          </div>
         </div>
-        <div className={classes.date}>
-          <Hidden mdDown>value for: </Hidden>
-          {latest.labels[index + 1]}
-        </div>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   )
 }
 
