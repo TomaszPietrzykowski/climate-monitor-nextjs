@@ -97,7 +97,6 @@ const DataDisplay = ({ dataset }) => {
   useEffect(() => {
     getData(datasets[dataset].scopes[0].endpoint)
     setIndex(0)
-    // eslint-disable-next-line
   }, [dataset])
 
   const getData = async (endpoint) => {
@@ -110,7 +109,7 @@ const DataDisplay = ({ dataset }) => {
       setActiveData(data.data)
       setLoading(false)
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 

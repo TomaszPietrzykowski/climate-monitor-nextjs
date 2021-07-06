@@ -1,6 +1,7 @@
 import React from "react"
-import { makeStyles } from "@material-ui/styles"
 import Link from "next/link"
+import Image from "next/image"
+import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,13 +32,13 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     height: 278,
     maxWidth: 266,
-    margin: "1rem",
+    margin: "2rem 1rem",
     display: "flex",
     flexDirection: "column",
     cursor: "pointer",
     transition: "all 0.3s",
     "&:hover $tabImg": {
-      opacity: 1,
+      opacity: 0.75,
     },
     "&:hover $tabText": {
       color: theme.palette.primary.dark,
@@ -51,14 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tabImg: {
-    flex: 1,
-    width: "100%",
-    backgroundSize: "cover",
     borderRadius: "4px 4px 0 0",
-    opacity: 0.7,
-    [theme.breakpoints.down("md")]: {
-      opacity: 1,
-    },
   },
   tabContent: {
     flex: 1,
@@ -70,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1rem",
     fontWeight: 500,
     color: theme.palette.text.primary,
-    padding: "1.1rem 1rem .8rem 0rem",
+    padding: "1rem 1rem .5rem 0rem",
     textAlign: "left",
   },
   tabText: {
@@ -110,10 +104,13 @@ const DataTabs = () => {
       <div className={classes.container}>
         <Link href="/data/co2" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/co2tab.jpg"}
+              alt={"earth atmospheric carbon dioxide"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/co2tab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Carbon dioxide</div>
               <div className={classes.tabText}>
@@ -125,10 +122,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/ch4" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/ch4tab.jpg"}
+              alt={"earth atmospheric methane"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/ch4tab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Methane</div>
               <div className={classes.tabText}>
@@ -140,10 +140,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/sf6" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/sf6tab.jpg"}
+              alt={"earth atmospheric sulfur hexafluoride"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/sf6tab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Sulfur hexafluoride</div>
               <div className={classes.tabText}>
@@ -155,10 +158,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/n2o" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/n2otab.jpg"}
+              alt={"earth atmospheric dinitogen oxide"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/n2otab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Dinitrogen oxide</div>
               <div className={classes.tabText}>
@@ -170,10 +176,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/temperatures" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/temperaturestab.jpg"}
+              alt={"earth temperature anomalies"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/temperaturestab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Temperatures</div>
               <div className={classes.tabText}>
@@ -185,10 +194,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/sealevels" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/sealevelstab.jpg"}
+              alt={"sea levels"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/sealevelstab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Sea levels</div>
               <div className={classes.tabText}>
@@ -200,10 +212,13 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/glaciers" className={classes.link}>
           <div className={classes.tab}>
-            <div
+            <Image
+              src={"/glacierstab.jpg"}
+              alt={"glaciers"}
+              width={278}
+              height={160}
               className={classes.tabImg}
-              style={{ backgroundImage: `url("/glacierstab.jpg")` }}
-            ></div>
+            />
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Glaciers</div>
               <div className={classes.tabText}>

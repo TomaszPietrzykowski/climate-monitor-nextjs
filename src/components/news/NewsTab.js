@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
@@ -61,10 +62,16 @@ const NewsTab = ({ article }) => {
       rel="noopener noreferrer"
     >
       <div className={classes.tab}>
-        <div
+        <Image
+          src={`${article.image}`}
+          alt={article.title}
+          width={278}
+          height={266}
+        />
+        {/* <div
           className={classes.tabImg}
           style={{ backgroundImage: `url(${article.image})` }}
-        ></div>
+        ></div> */}
         <div className={classes.tabContent}>
           <div className={classes.tabTitle}>{article.title}</div>
         </div>
