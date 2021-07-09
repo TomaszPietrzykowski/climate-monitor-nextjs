@@ -1,31 +1,14 @@
 import React from "react"
 import Head from "next/head"
-
+// mui
 import { makeStyles } from "@material-ui/core/styles"
+// custom
+import SectionHeader from "../src/ui/SectionHeader"
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    maxWidth: 1300,
-    margin: "auto",
-    marginTop: "2rem",
-    marginBottom: "5rem",
-    padding: "2rem",
-  },
-  titleBar: {
-    width: "100%",
-    zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-  },
-  sectionHeader: {
-    fontFamily: "Poppins",
-    fontWeight: 400,
-    color: "white",
-    fontSize: "1.4rem",
-    marginLeft: 37,
-    padding: "1rem",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
-    },
+    ...theme.utils.container,
+    padding: "4rem",
   },
   code: {
     fontSize: "1.4rem",
@@ -47,9 +30,7 @@ const PublicAPI = () => {
       <Head>
         <title key="title">Public climate API | Climate Monitor</title>
       </Head>
-      <div className={classes.titleBar}>
-        <div className={classes.sectionHeader}>Public REST API</div>
-      </div>
+      <SectionHeader>Public REST API</SectionHeader>
       <div className={classes.container}>
         <h1>Public REST API</h1>
         <br />

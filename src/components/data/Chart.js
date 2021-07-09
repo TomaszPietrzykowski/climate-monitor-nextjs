@@ -5,10 +5,11 @@ import { Line } from "react-chartjs-2"
 
 const useStyles = makeStyles((theme) => ({
   chartContainer: {
+    display: "flex",
     position: "relative",
     height: "60vh",
-    width: "calc(90vw - 320px)",
-    margin: "1rem",
+    width: "65vw",
+    maxWidth: 1000,
     padding: "1rem 2rem",
     [theme.breakpoints.down("md")]: {
       height: "45vh",

@@ -1,5 +1,7 @@
 import React from "react"
 import Head from "next/head"
+// custom
+import SectionHeader from "../src/ui/SectionHeader"
 
 const About = () => {
   return (
@@ -12,6 +14,7 @@ const About = () => {
           content="About data sources and Climate Monitor - free public REST API with json data on climate change"
         />
       </Head>
+      <SectionHeader>About</SectionHeader>
       <div>About</div>
     </div>
   )

@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 // custom
 import { datasets } from "../../src/components/data/Datasets"
+import SectionHeader from "../../src/ui/SectionHeader"
 import Content from "../../src/components/data/Content"
 import CategoryDescription from "../../src/components/data/CategoryDescription"
 import Loader from "../../src/ui/Loader"
@@ -13,26 +14,10 @@ import Loader from "../../src/ui/Loader"
 const drawerWidth = "360px"
 
 const useStyles = makeStyles((theme) => ({
-  titleBar: {
-    width: "100%",
-    zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-  },
-  sectionHeader: {
-    fontFamily: "Poppins",
-    fontWeight: 400,
-    color: "white",
-    fontSize: "1.4rem",
-    marginLeft: 37,
-    padding: "1rem",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
-    },
-  },
   container: {
+    ...theme.utils.container,
     display: "flex",
     justifyContent: "flex-start",
-    maxWidth: 1600,
   },
   drawer: {
     minWidth: drawerWidth,
@@ -52,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: theme.palette.text.primary,
     fontSize: "1rem",
-    margin: ".5rem 0 .5rem 2rem",
+    margin: ".5rem 0 .5rem",
     padding: "0.8rem",
-    paddingLeft: 21,
+    paddingLeft: "2rem",
     cursor: "pointer",
     "&:hover": {
       color: theme.palette.primary.dark,
@@ -70,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
     border: `1px solid ${theme.palette.primary.dark}`,
     color: theme.palette.primary.dark,
     fontSize: "1rem",
-    margin: ".5rem 0 .5rem 2rem",
+    margin: ".5rem 0 .5rem",
     padding: "0.8rem",
-    paddingLeft: 21,
+    paddingLeft: "2rem",
     cursor: "pointer",
     "&:hover": {
       cursor: "default",
@@ -127,9 +112,7 @@ const DataDisplay = ({ dataset }) => {
           content={`${datasets[dataset].header}, ${datasets[dataset].title}, Climate Monitor - free public REST API with json data on climate change`}
         />
       </Head>
-      <div className={classes.titleBar}>
-        <div className={classes.sectionHeader}>{datasets[dataset].header}</div>
-      </div>
+      <SectionHeader>{datasets[dataset].header}</SectionHeader>
       <div className={classes.container}>
         <Hidden mdDown>
           <div className={classes.drawer}>

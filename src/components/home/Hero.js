@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 1400,
     margin: "5rem auto 3rem auto",
-    padding: "4rem",
+    padding: "2rem",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",

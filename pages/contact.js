@@ -9,6 +9,7 @@ import Snackbar from "@material-ui/core/Snackbar"
 import MuiAlert from "@material-ui/lab/Alert"
 // custom
 import Loader from "../src/ui/Loader"
+import SectionHeader from "../src/ui/SectionHeader"
 // import logo from "../public/logo.svg"
 
 // snackbars:
@@ -51,11 +52,10 @@ const CustomCheckbox = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.utils.container,
-
     ...theme.flex.row,
     justifyContent: "flex-start",
     ...theme.typography.pop,
-    padding: "4rem",
+    padding: "4rem 2rem",
     [theme.breakpoints.down("xs")]: {
       padding: "1rem 0 0",
     },
@@ -173,23 +173,6 @@ const useStyles = makeStyles((theme) => ({
     color: "red",
     padding: "2rem 2rem 2rem 0",
   },
-  titleBar: {
-    width: "100%",
-    zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-  },
-  sectionHeader: {
-    fontFamily: "Poppins",
-    fontWeight: 400,
-    color: "white",
-    fontSize: "1.4rem",
-    maxWidth: 1400,
-    margin: "auto",
-    padding: "1rem 4rem",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
-    },
-  },
 }))
 
 const Contact = () => {
@@ -265,9 +248,7 @@ const Contact = () => {
           Message sent, thank you!
         </Alert>
       </Snackbar>
-      <div className={classes.titleBar}>
-        <h1 className={classes.sectionHeader}>Contact</h1>
-      </div>
+      <SectionHeader>Contact</SectionHeader>
       <div className={classes.container}>
         <main className={classes.content}>
           <h2 className={classes.title}>Send email</h2>

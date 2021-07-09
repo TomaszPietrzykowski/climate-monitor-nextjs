@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react"
 import Head from "next/head"
-
+// mui
 import { makeStyles } from "@material-ui/core/styles"
 import Pagination from "@material-ui/lab/Pagination"
-
+// custom
+import SectionHeader from "../src/ui/SectionHeader"
 import NewsTab from "../src/components/news/NewsTab"
+import Loader from "../src/ui/Loader"
 
 const useStyles = makeStyles((theme) => ({
-  titleBar: {
-    width: "100%",
-    zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-  },
   poweredBy: {
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.text.secondary,
     fontSize: ".9rem",
-    margin: "4rem 0",
-    width: "100%",
+    margin: "2rem",
     display: "flex",
     justifyContent: "flex-end",
     "& > * + *": {
@@ -30,21 +26,8 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  sectionHeader: {
-    fontFamily: "Poppins",
-    fontWeight: 400,
-    color: "white",
-    fontSize: "1.4rem",
-    marginLeft: 37,
-    padding: "1rem",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
-    },
-  },
   container: {
-    maxWidth: 1300,
-    margin: "auto",
-    minHeight: "100vh",
+    ...theme.utils.container,
   },
   paginationContainer: {
     margin: "auto",
@@ -60,14 +43,13 @@ const useStyles = makeStyles((theme) => ({
   },
   newsContainer: {
     width: "100%",
-    maxWidth: 1300,
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
-    padding: "0 2rem",
+    justifyContent: "flex-start",
     [theme.breakpoints.down("md")]: {
       padding: "1rem",
       paddingTop: 0,
+      justifyContent: "center",
     },
   },
 }))
@@ -117,9 +99,7 @@ const News = () => {
           content="Latest climate news at Climate Monitor - free public REST API with json data on climate change."
         />
       </Head>
-      <div className={classes.titleBar}>
-        <div className={classes.sectionHeader}>Climate news</div>
-      </div>
+      <SectionHeader>Climate News</SectionHeader>
       <div className={classes.container}>
         <div className={classes.poweredBy}>
           <span>Powered by: </span>
@@ -133,15 +113,8 @@ const News = () => {
             NewsAPI
           </a>
         </div>
-        {!loading && pages > 1 && (
-          <div className={classes.paginationContainer}>
-            <div className={classes.paginationRoot}>
-              <Pagination count={pages} page={page} onChange={handleChange} />
-            </div>
-          </div>
-        )}
         {loading ? (
-          <h2>loading</h2>
+          <Loader />
         ) : (
           <div className={classes.newsContainer}>
             {articles.map((article, i) => (

@@ -5,32 +5,12 @@ import Head from "next/head"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 // custom
+import SectionHeader from "../../src/ui/SectionHeader"
 import DataTabs from "../../src/components/data/DataTabs"
 
 const drawerWidth = "360px"
 
 const useStyles = makeStyles((theme) => ({
-  titleBar: {
-    width: "100%",
-    zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
-  },
-  sectionHeader: {
-    fontFamily: "Poppins",
-    fontWeight: 400,
-    color: "white",
-    fontSize: "1.4rem",
-    padding: "1rem",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
-    },
-  },
-  sectionHeaderContainer: {
-    maxWidth: 1400,
-    margin: "auto",
-    padding: "0 4rem",
-  },
-
   container: {
     display: "flex",
     justifyContent: "flex-start",
@@ -56,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: theme.palette.text.primary,
     fontSize: "1rem",
-    margin: ".5rem 0 .5rem 2rem",
+    margin: ".5rem 0 .5rem",
     padding: "0.8rem",
-    paddingLeft: 21,
+    paddingLeft: "2rem",
     cursor: "pointer",
     "&:hover": {
       color: theme.palette.primary.dark,
@@ -96,11 +76,7 @@ const DataDashboard = () => {
       <Head>
         <title key="title">Climate data | Climate Monitor</title>
       </Head>
-      <div className={classes.titleBar}>
-        <div className={classes.sectionHeader}>
-          <div className={classes.sectionHeaderContainer}>All data</div>
-        </div>
-      </div>
+      <SectionHeader>All Data</SectionHeader>
       {/* <Toolbar /> */}
       <div className={classes.container}>
         <Hidden mdDown>
