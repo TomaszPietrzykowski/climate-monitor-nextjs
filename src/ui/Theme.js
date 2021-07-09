@@ -15,6 +15,7 @@ export default createMuiTheme({
       footer: `${whitish}`,
       darkBlue: `${darkBlue}`,
       activeTab: `rgba(0, 54, 102, 1)`,
+      background: "rgba(225, 225, 225, 1)",
       // activeTab: `rgba(0, 51, 77, 1)`,
     },
     gradient: {
@@ -58,7 +59,7 @@ export default createMuiTheme({
       main: `${blue}`,
     },
     secondary: {
-      main: `#ffffff`,
+      main: "rgba(0, 118, 178, 1)",
     },
   },
   typography: {
@@ -66,7 +67,38 @@ export default createMuiTheme({
       fontFamily: "Poppins, sans",
     },
   },
+  flex: {
+    col: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    colStart: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "flex-start",
+    },
+    row: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    rowStart: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "flex-start",
+      justifyContent: "flex-start",
+    },
+  },
   utils: {
+    container: {
+      margin: "auto",
+      width: "100%",
+      maxWidth: 1400,
+    },
     tab: {
       textTransform: "none",
       minWidth: 30,

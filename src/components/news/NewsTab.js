@@ -62,16 +62,10 @@ const NewsTab = ({ article }) => {
       rel="noopener noreferrer"
     >
       <div className={classes.tab}>
-        <Image
-          src={`${article.image}`}
-          alt={article.title}
-          width={278}
-          height={266}
-        />
-        {/* <div
+        <div
           className={classes.tabImg}
           style={{ backgroundImage: `url(${article.image})` }}
-        ></div> */}
+        ></div>
         <div className={classes.tabContent}>
           <div className={classes.tabTitle}>{article.title}</div>
         </div>
