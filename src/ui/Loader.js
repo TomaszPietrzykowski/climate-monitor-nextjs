@@ -10,25 +10,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: "50vh",
   },
   spinnerStyle: {
     height: "4rem",
     margin: "2rem",
-  },
-  label: {
-    ...theme.typography.tab,
-    color: theme.palette.primary.dark,
-    fontSize: "1.2rem",
-    fontWeight: 400,
-    letterSpacing: 1,
-    marginTop: "2rem",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "0.85rem",
-    },
   },
 }))
 
@@ -37,7 +22,6 @@ const Loader = () => {
 
   return (
     <div className={classes.containerStyle}>
-      <h1 className={classes.label}>fetching data...</h1>
       <img
         src="/loader.gif"
         alt="fetching data..."

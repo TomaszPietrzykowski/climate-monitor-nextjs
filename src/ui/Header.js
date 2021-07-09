@@ -191,7 +191,7 @@ const Header = ({ value, setValue }) => {
         value={value}
         onChange={handleChange}
         className={classes.tabContainer}
-        indicatorColor="none"
+        indicatorColor="transparent"
       >
         {routes.map((route, i) => (
           <Link key={`${route.link}${i}`} href={route.link} value={i}>

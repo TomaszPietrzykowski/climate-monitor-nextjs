@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     ...theme.utils.container,
+    minHeight: "85vh",
   },
   paginationContainer: {
     margin: "auto",
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
     [theme.breakpoints.down("md")]: {
       padding: "1rem",
       paddingTop: 0,

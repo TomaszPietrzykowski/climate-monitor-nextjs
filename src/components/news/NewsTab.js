@@ -1,14 +1,13 @@
 import React from "react"
-import Image from "next/image"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   tab: {
-    height: 278,
+    height: 280,
     width: 266,
-    margin: "2.5rem",
-    display: "flex",
-    flexDirection: "column",
+    margin: "2rem",
+    display: "grid",
+    gridTemplateRows: "60% 40%",
     cursor: "pointer",
     transition: "all 0.3s",
     "&:hover $tabImg": {
@@ -26,14 +25,29 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "3rem",
     },
   },
+  badge: {
+    fontFamily: "Poppins",
+    position: "absolute",
+    right: -6,
+    bottom: "-.7rem",
+    color: "white",
+    background: "rgb(150,0,0)",
+    padding: ".2rem .6rem .15rem",
+    borderRadius: 10,
+    textAlign: "center",
+    fontSize: ".7rem",
+    minWidth: "30%",
+  },
+  imageContainer: {
+    position: "relative",
+  },
   tabImg: {
-    flex: 2,
     width: "100%",
-    backgroundSize: "cover",
-    borderRadius: "4px 4px 0 0",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "6px 6px 0 0",
   },
   tabContent: {
-    flex: 1,
     width: "100%",
     fontFamily: "Poppins",
     overflow: "hidden",
@@ -62,10 +76,15 @@ const NewsTab = ({ article }) => {
       rel="noopener noreferrer"
     >
       <div className={classes.tab}>
-        <div
-          className={classes.tabImg}
-          style={{ backgroundImage: `url(${article.image})` }}
-        ></div>
+        <div className={classes.imageContainer}>
+          <img
+            className={classes.tabImg}
+            src={article.image}
+            alt={article.title}
+            loading="lazy"
+          />
+          <div className={classes.badge}>{article.source}</div>
+        </div>
         <div className={classes.tabContent}>
           <div className={classes.tabTitle}>{article.title}</div>
         </div>
