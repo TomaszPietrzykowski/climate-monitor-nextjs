@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
   titleBar: {
     width: "100%",
     zIndex: theme.zIndex.drawer + 1,
-    background: `linear-gradient(120deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
+    background: `linear-gradient(120deg, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
   },
   sectionHeader: {
     fontFamily: "Poppins",
