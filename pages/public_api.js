@@ -25,9 +25,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem 0 0",
   },
   pHead: {
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
     color: theme.palette.text.primary,
     lineHeight: 1.8,
+    letterSpacing: 0.8,
     padding: "3rem 0 0",
   },
   code: {
@@ -44,7 +45,14 @@ const useStyles = makeStyles((theme) => ({
   codeblock: {
     width: "max-content",
     padding: "2rem 5rem 2rem 2rem",
-    margin: "1rem 0 2rem",
+    margin: "1rem 0 0",
+    background: "#001a33",
+    borderRadius: 7,
+  },
+  codeLine: {
+    width: "max-content",
+    padding: "1rem 5rem 1rem 2rem",
+    margin: "1rem 0 0",
     background: "#001a33",
     borderRadius: 7,
   },
@@ -126,7 +134,7 @@ const PublicAPI = () => {
         <p className={classes.pHead}>How it works</p>
         <p className={classes.p}>
           Idea behind climate monitor is to deliver desent range of useful data
-          on climate change in a form of accessible, free JSON API, under one -
+          on climate change in a form of accessible, free, json API; under one -
           somewhat logically structured - set of endpoints.
         </p>
         <p className={classes.p}>
@@ -210,13 +218,14 @@ const PublicAPI = () => {
           Simply send a GET request to one of supported endpoints. Endpoints are
           structured like so:
         </p>
-        <div className={classes.codeblock}>
+        <div className={classes.codeLine}>
           <code className={classes.code}>
             <span className={classes.rootEnd}>{" <ROOT_ENDPOINT> "}</span>
             <span className={classes.factor}>/ :factor </span>
             <span className={classes.query}>/ :query</span> <br />
           </code>
         </div>
+        <br />
         <small>Examlpes:</small>
         <div className={classes.codeblock}>
           <code className={classes.code}>
@@ -256,15 +265,14 @@ const PublicAPI = () => {
         <p className={classes.p}>
           Root endpoint is bound to API version. Current latest endpoint:
         </p>
-        <div className={classes.codeblock}>
+        <div className={classes.codeLine}>
           <code className={classes.code}>
             https://climatemonitor.info/api/public/v1 <br />
           </code>
         </div>
         <p className={classes.p}>
           After significan updates new endpoints will be introduced. For sake of
-          stability of dependant applications all legacy endpoints will be
-          maintained.
+          dependant applications all legacy endpoints will be maintained.
         </p>
         <p className={classes.pHead}>Factor</p>
         <p className={classes.p}>
@@ -298,7 +306,7 @@ const PublicAPI = () => {
           </code>
         </div>
         <p className={classes.pHead}>Query</p>
-        <p className={classes.p}>GET FULL DATASET</p>
+        <p className={classes.pHead}>GET FULL DATASET</p>
         <p className={classes.p}>
           Depending on datasets availaible for chosen FACTOR{" "}
           <span style={{ color: "blue" }}> all available endpoints</span>
@@ -353,7 +361,66 @@ const PublicAPI = () => {
             <span className={classes.query}>/levels</span> <br />
           </code>
         </div>
-        <p className={classes.p}>Lorrenmiuhfdousayfou</p>
+        <p className={classes.pHead}>GET SINGLE VALUE</p>
+        <br />
+        <p className={classes.p}>Query structure:</p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            {"/for/<DATE>"}
+            <br />
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>Depending on availaible datasets:</p>
+        <br />
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            /for/YYYY-MM-DD
+            <br />
+          </code>
+        </div>
+        <p className={classes.p}>will return daily value.</p> <br />
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            /for/YYYY-MM
+            <br />
+          </code>
+        </div>
+        <p className={classes.p}>will return monthly average.</p> <br />
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            /for/YYYY
+            <br />
+          </code>
+        </div>
+        <p className={classes.p}>will return annual average.</p> <br />
+        <small>Examlpes:</small>
+        <div className={classes.codeblock}>
+          <code className={classes.code}>
+            <span className={classes.rootEnd}>
+              https://climatemonitor.info/api/public/v1
+            </span>
+            <span className={classes.factor}>/co2</span>
+            <span className={classes.query}>/for/2018-05-12</span> <br />
+            <span className={classes.rootEnd}>
+              https://climatemonitor.info/api/public/v1
+            </span>
+            <span className={classes.factor}>/co2</span>
+            <span className={classes.query}>/for/2012</span> <br />
+          </code>
+        </div>
+        <br />
+        <br />
+        <hr />
+        <p className={classes.pHead}>Response structure</p>
+        <p className={classes.p}>
+          Response from API is provided in JSend format with possible outcomes:
+          success, fail and error.
+        </p>
+        <p className={classes.pHead}>Success response</p>
+        <p className={classes.p}>
+          Requested data is always provided in <code> data </code> object
+        </p>
         <div className={classes.codeblock}>
           <code className={classes.code}>
             {"{"}
@@ -387,14 +454,347 @@ const PublicAPI = () => {
             :<span className={classes.string}>"ppm"</span>,<br />
           </code>
           <code className={classes.code}>
-            &nbsp;&nbsp;{"{"}
+            &nbsp;&nbsp;{"}"}
             <br />
           </code>
+          <code className={classes.code}>
+            {"}"}
+            <br />
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>Response containing full dataset:</p>
+        <div className={classes.codeblock}>
           <code className={classes.code}>
             {"{"}
             <br />
           </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;status</span>:
+            <span className={classes.string}>"success"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;data</span>:
+            <span>{" {"}</span>
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;title
+            </span>
+            :
+            <span className={classes.string}>
+              "Annual co2 Mauna Loa Observatory"
+            </span>
+            ,<br />
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;description
+            </span>
+            :
+            <span className={classes.string}>
+              "Annual mean atmospheric carbon dioxide, expressed..."
+            </span>
+            ,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;readings
+            </span>
+            :<span className={classes.number}>{" ["}</span>
+            <br />
+          </code>
+          {/* ---------------------------------------------------------------------
+           */}
+          <code className={classes.code}>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"{"}</span>
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label
+            </span>
+            :<span className={classes.string}>"2010-01-01"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value
+            </span>
+            :<span className={classes.number}> 389.43</span>, <br />
+          </code>
+          <code className={classes.code}>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"},"}
+            <br />
+          </code>
+          <br />
+          <code className={classes.code}>
+            &nbsp;&nbsp;&nbsp;&nbsp;{"// full dataset (...)"}
+            <br />
+          </code>
+          <br />
+          <code className={classes.code}>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"{"}</span>
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label
+            </span>
+            :<span className={classes.string}>"2021-07-23"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value
+            </span>
+            :<span className={classes.number}> 416.43</span>, <br />
+          </code>
+          <code className={classes.code}>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"},"}
+            <br />
+          </code>
+          <code className={classes.code}>
+            &nbsp;&nbsp;&nbsp;&nbsp;{"],"}
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;unit
+            </span>
+            :<span className={classes.string}> "ppm"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>
+              &nbsp;&nbsp;&nbsp;&nbsp;lastUpdate
+            </span>
+            :<span className={classes.string}> "2021-07-24T18:24:25.789Z"</span>
+            ,
+            <br />
+          </code>
+          <code className={classes.code}>
+            &nbsp;&nbsp;{"}"}
+            <br />
+          </code>
+          <code className={classes.code}>
+            {"}"}
+            <br />
+          </code>
         </div>
+        <br />
+        {/* -------------------------------------- */}
+        <p className={classes.pHead}>Fail response</p>
+        <p className={classes.p}>
+          Response status 4xx, client-side errors, e.g. invalid request:
+        </p>
+        <div className={classes.codeblock}>
+          <code className={classes.code}>
+            {"{"}
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;status</span>:
+            <span className={classes.string}>"fail"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;message</span>:
+            <span className={classes.string}>
+              "Requested date is outside of dataset scope: 2011-01-01 -
+              2021-04-26"
+            </span>
+            ,<br />
+          </code>
+          <code className={classes.code}>
+            {"}"}
+            <br />
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <p className={classes.pHead}>Error response</p>
+        <p className={classes.p}>Response status 5xx, server-side errors:</p>
+        <div className={classes.codeblock}>
+          <code className={classes.code}>
+            {"{"}
+            <br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;status</span>:
+            <span className={classes.string}>"error"</span>,<br />
+          </code>
+          <code className={classes.code}>
+            <span className={classes.property}>&nbsp;&nbsp;message</span>:
+            <span className={classes.string}>"Internal server error ;)"</span>,
+            <br />
+          </code>
+          <code className={classes.code}>
+            {"}"}
+            <br />
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <br />
+        <br />
+        <hr />
+        <p className={classes.pHead}>All availaible endpoints</p>
+        <p className={classes.pHead}>
+          Earth atmospheric CO<sub>2</sub>
+        </p>
+        <br />
+        <p className={classes.p}>
+          Latest available daily CO<sub>2</sub> reading from Mauna Loa
+          Observatory, Hawaii:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/latest
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth daily CO<sub>2</sub>:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/daily
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> weekly average from Mauna Loa Observatory,
+          Hawaii:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/weekly_ml
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> weekly global average:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/weekly_gl
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> monthly average from Mauna Loa Observatory,
+          Hawaii:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/monthly_ml
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> monthly global average:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/monthly_gl
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> annual global average:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/annual_gl
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> annual average from Mauna Loa Observatory,
+          Hawaii:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/annual_ml
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual global CO<sub>2</sub> increase:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/increase_gl
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual CO<sub>2</sub> increase, Mauna Loa Observatory, Hawaii:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/increase_ml
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> reading for the date (data scope: todo):
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/for/2016-04-10
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> monthly average (data scope: todo):
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/for/2016-04
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Earth CO<sub>2</sub> annaul average (data scope: todo):
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/co2/for/2016
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>
+          Earth atmospheric methane CH<sub>4</sub>
+        </p>
+        <br />
+        <p className={classes.p}>
+          Monthly global atmospheric CH<sub>4</sub>:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/ch4/monthly
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual global atmospheric CH<sub>4</sub>:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/ch4/annual
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual atmospheric CH<sub>4</sub> growth rate:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/ch4/growth
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
       </div>
     </>
   )

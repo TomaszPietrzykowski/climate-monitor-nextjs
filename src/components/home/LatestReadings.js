@@ -9,7 +9,7 @@ import Loader from "../../ui/Loader"
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    background: "#fcfcfc",
+    background: "linear-gradient(45deg, #fafafc, #fcfcfc)",
     paddingTop: "4rem",
   },
   siteContainer: {
