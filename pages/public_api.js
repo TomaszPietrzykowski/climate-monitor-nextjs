@@ -215,7 +215,7 @@ const PublicAPI = () => {
         </p>
         <p className={classes.pHead}>How to use API?</p>
         <p className={classes.p}>
-          Simply send a GET request to one of supported endpoints. Endpoints are
+          Send a GET request to one of supported endpoints. Endpoints are
           structured like so:
         </p>
         <div className={classes.codeLine}>
@@ -329,10 +329,6 @@ const PublicAPI = () => {
             <br />
             <span className={classes.secondaryCode}>{"<ROOT_ENDPOINT>"}</span>
             <span className={classes.secondaryCode}>/:factor</span> /monthly_gl
-            <br />
-            <span className={classes.secondaryCode}>{"<ROOT_ENDPOINT>"}</span>
-            <span className={classes.secondaryCode}>/:factor</span>{" "}
-            /for/2012-04-01
             <br />
           </code>
         </div>

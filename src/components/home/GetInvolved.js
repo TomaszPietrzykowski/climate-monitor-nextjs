@@ -7,13 +7,34 @@ import { Spring, animated, config } from "react-spring"
 import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    width: "100%",
+    border: "1px solid magenta",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+  },
+  imageContainer: {
+    border: "1px solid green",
+    // margin: "6rem auto",
+    // width: "50%",
+    // display: "flex",
+    // flexDirection: "column",
+    // justifyContent: "center",
+    // alignItems: "center",
+    padding: "3.5rem",
+    [theme.breakpoints.down("sm")]: {
+      margin: "4rem auto",
+      padding: "1rem",
+    },
+  },
   sloganContainer: {
-    margin: "6rem auto",
-    maxWidth: 1200,
+    border: "1px solid red",
+    // margin: "6rem auto",
+    maxWidth: 700,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "left",
     padding: "3.5rem",
     [theme.breakpoints.down("sm")]: {
       margin: "4rem auto",
@@ -23,20 +44,22 @@ const useStyles = makeStyles((theme) => ({
   sloganText: {
     fontFamily: "Poppins, sans",
     fontSize: "2rem",
-    textAlign: "center",
+    textAlign: "left",
     color: "rgba(0, 0, 0, 0.5)",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.6rem",
     },
   },
   about: {
+    border: "1px solid brown",
     maxWidth: "780px",
     fontFamily: "Poppins, sans",
     fontSize: "1rem",
-    textAlign: "center",
+    textAlign: "left",
     lineHeight: "2rem",
     color: "rgba(0, 0, 0, 0.5)",
     padding: "3rem",
+    paddingLeft: 0,
     marginTop: "1.5rem",
     [theme.breakpoints.down("md")]: {
       padding: "1rem",
@@ -56,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   btn: {
     ...theme.typography.tab,
@@ -96,43 +119,46 @@ const GetInvolved = ({ setValue }) => {
   })
 
   return (
-    <div className={classes.sloganContainer}>
-      <Spring
-        from={{ opacity: 0, marginTop: 30, marginBottom: -30 }}
-        to={{
-          opacity: inView ? 1 : 0,
-          marginTop: inView ? 0 : 30,
-          marginBottom: inView ? 0 : -30,
-        }}
-        config={config.gentle}
-      >
-        {(props) => (
-          <animated.div style={props} ref={ref} className={classes.flex}>
-            <div className={classes.sloganText}>Get involved</div>
-            <div className={classes.about}>
-              The<span className={classes.blue}> climate monitor </span>
-              project is a living initiative, aimed at providing you hard data
-              on climate change in a most useful and accessible way. No cristal
-              ball guesses on "tipping point" and other factors too complex for
-              responsible estimation. Data speaks volumes and we actually know a
-              lot by now.
-              <br />
-              <br /> Suggest functionality or request additional data. Share
-              ideas and opinions for even better experience.
-            </div>
-            <Link href="/contact">
-              <Button
-                variant="outlined"
-                color="primary"
-                className={classes.btn}
-                onClick={() => setValue(4)}
-              >
-                Contact
-              </Button>
-            </Link>
-          </animated.div>
-        )}
-      </Spring>
+    <div className={classes.container}>
+      <div className={classes.imageContainer}>l</div>
+      <div className={classes.sloganContainer}>
+        <Spring
+          from={{ opacity: 0, marginTop: 30, marginBottom: -30 }}
+          to={{
+            opacity: inView ? 1 : 0,
+            marginTop: inView ? 0 : 30,
+            marginBottom: inView ? 0 : -30,
+          }}
+          config={config.gentle}
+        >
+          {(props) => (
+            <animated.div style={props} ref={ref} className={classes.flex}>
+              <div className={classes.sloganText}>Get involved</div>
+              <div className={classes.about}>
+                The<span className={classes.blue}> climate monitor </span>
+                project is a living initiative, aimed at providing you hard data
+                on climate change in a most useful and accessible way. No
+                cristal ball guesses on "tipping point" and other factors too
+                complex for responsible estimation. Data speaks volumes and we
+                actually know a lot by now.
+                <br />
+                <br /> Suggest functionality or request additional data. Share
+                ideas and opinions for even better experience.
+              </div>
+              <Link href="/contact">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className={classes.btn}
+                  onClick={() => setValue(4)}
+                >
+                  Contact
+                </Button>
+              </Link>
+            </animated.div>
+          )}
+        </Spring>
+      </div>
     </div>
   )
 }
