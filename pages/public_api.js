@@ -791,6 +791,195 @@ const PublicAPI = () => {
         </div>
         <br />
         {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>
+          Earth atmospheric sulfur hexafluoride SF<sub>6</sub>
+        </p>
+        <br />
+        <p className={classes.p}>
+          Monthly global atmospheric SF<sub>6</sub>:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1//sf6/monthly
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual global atmospheric SF<sub>6</sub>:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/sf6/annual
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual atmospheric SF<sub>6</sub> growth rate:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/sf6/growth
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>
+          Earth atmospheric dinitrogen oxide N<sub>2</sub>0
+        </p>
+        <br />
+        <p className={classes.p}>
+          Monthly global atmospheric N<sub>2</sub>0:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/n2o/monthly
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual global atmospheric N<sub>2</sub>0:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/n2o/annual
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual atmospheric N<sub>2</sub>0 growth rate:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/n2o/growth
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>Global ocean levels</p>
+        <br />
+        <p className={classes.p}>Global ocean mass:</p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/ocean/mass
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>Ocean level variation:</p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/ocean/level
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>Arctica and Antarctica mass loss</p>
+        <br />
+        <p className={classes.p}>Antarctica ice mass:</p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/glaciers/antarctica
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>Greenland ice mass:</p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/glaciers/greenland
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
+        <br />
+        <hr />
+        <p className={classes.pHead}>Temperatures</p>
+        <br />
+        <p className={classes.p}>
+          Average annual land surface temperature anomaly:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/annual_anomaly_min
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/annual_anomaly_avg
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/annual_anomaly_max
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Annual land and ocean combined temperature anomaly:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/annual_anomaly_loc
+          </code>
+        </div>
+        <br />
+        <br />
+        <p className={classes.p}>
+          Average monthly land surface temperature anomaly:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/monthly_anomaly_min
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/monthly_anomaly_avg
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/monthly_anomaly_max
+          </code>
+        </div>
+        <br />
+        <p className={classes.p}>
+          Monthly land and ocean combined temperature anomaly:
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/monthly_anomaly_loc
+          </code>
+        </div>
+        <br />
+        <br />
+        <p className={classes.p}>
+          Average daily land surface temperature anomaly (last ten years):
+        </p>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/daily_min
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/daily_avg
+          </code>
+        </div>
+        <div className={classes.codeLine}>
+          <code className={classes.code}>
+            https://climatemonitor.info/api/public/v1/temp/daily_max
+          </code>
+        </div>
+        <br />
+        {/* -------------------------------------- */}
       </div>
     </>
   )
