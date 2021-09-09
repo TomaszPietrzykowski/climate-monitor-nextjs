@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     fontWeight: 300,
     letterSpacing: 1.5,
-    fontSize: "1.6rem",
+    fontSize: "1.8rem",
   },
   p: {
     color: theme.palette.text.secondary,
@@ -110,12 +110,6 @@ const PublicAPI = () => {
         <title key="title">Public climate API | Climate Monitor</title>
       </Head>
       <SectionHeader>Public REST API</SectionHeader>
-      <div className={classes.gridParent}>
-        <div className={classes.grid1}>
-          <div className={classes.grid3}>dsdssds</div>
-        </div>
-        <div className={classes.grid1}>dsdssds</div>
-      </div>
       <div className={classes.container}>
         <h2 className={classes.h2}>Latest and historical climate data</h2>
         <p className={classes.pHead}>
@@ -156,22 +150,20 @@ const PublicAPI = () => {
         </p>
         <p className={classes.pHead}>Data ownership and credits</p>
         <p className={classes.p}>
-          Climate Monitor does NOT have any rights to presented data. All
+          Climate Monitor does not have any rights to presented data. All
           credits for hard, scientific work should go to data sources listed
           below. To ensure proper representation of data and data restrictions
-          original data sets should also be referenced in case of any scientific
-          usage.
+          original publications should also be referenced in case of any
+          scientific usage.
         </p>
         <p className={classes.p}>
-          Climate Monitor's mission is to popularize climate awarness, in
-          particular facilitating access to reliable climate data by serving it
-          in a form of JSON API. All data used and served is publicly availaible
-          under conditions that Climate Monitor - to the best of my knowledge
-          and effort - fulfills.
+          Climate Monitor's mission is to increase climate awarness,
+          facilitating access to reliable climate data by serving it in a form
+          of JSON API. All data used and served is publicly availaible under
+          conditions that Climate Monitor - to the best of our knowledge and
+          effort - fulfills.
         </p>
-        <p className={classes.p}>
-          Climate Monitor uses primarily 3 main data sources:
-        </p>
+        <p className={classes.p}>Climate Monitor uses 3 main data sources:</p>
         <p className={classes.p}>
           NASA Jet Propulsion Laboratory California Insititute of Technology
           Physical Oceanography Distributed Active Archive Center (PO.DAAC)
