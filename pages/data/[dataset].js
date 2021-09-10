@@ -150,7 +150,10 @@ const DataDisplay = ({ dataset }) => {
               gradient={datasets[dataset].gradient}
             />
           )}
-          <CategoryDescription desc={datasets[dataset].desc} />
+          <CategoryDescription
+            desc={datasets[dataset].desc}
+            link={datasets[dataset].sourceLink}
+          />
         </div>
       </div>
     </Fragment>

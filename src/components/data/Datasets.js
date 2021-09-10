@@ -15,11 +15,14 @@ exports.datasets = {
       { title: "Daily CO2 Mauna Loa", endpoint: "daily_co2" },
     ],
     desc: [
-      "Category (co2) description line/pargraph 1",
-      "Category (co2) description line/pargraph 2",
-      "Category (co2) description line/pargraph 3",
+      "Carbon dioxide is a greenhouse gas: a gas that absorbs and radiates heat. Warmed by sunlight, Earth’s land and ocean surfaces continuously radiate thermal infrared energy (heat). Unlike oxygen or nitrogen (which make up most of our atmosphere), greenhouse gases absorb that heat and release it gradually over time, like bricks in a fireplace after the fire goes out. Without this natural greenhouse effect, Earth’s average annual temperature would be below freezing instead of close to 60°F. But increases in greenhouse gases have tipped the Earth's energy budget out of balance, trapping additional heat and raising Earth's average temperature.",
+      "Carbon dioxide is the most important of Earth’s long-lived greenhouse gases. It absorbs less heat per molecule than the greenhouse gases methane or nitrous oxide, but it’s more abundant and it stays in the atmosphere much longer. Increases in atmospheric carbon dioxide are responsible for about two-thirds of the total energy imbalance that is causing Earth's temperature to rise.",
+      "Another reason carbon dioxide is important in the Earth system is that it dissolves into the ocean like the fizz in a can of soda. It reacts with water molecules, producing carbonic acid and lowering the ocean's pH. Since the start of the Industrial Revolution, the pH of the ocean's surface waters has dropped from 8.21 to 8.10. This drop in pH is called ocean acidification.",
+      "A drop of 0.1 may not seem like a lot, but the pH scale is logarithmic; a 1-unit drop in pH means a tenfold increase in acidity. A change of 0.1 means a roughly 30% increase in acidity. Increasing acidity interferes with the ability of marine life to extract calcium from the water to build their shells and skeletons.",
     ],
     gradient: "co2",
+    sourceLink:
+      "https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide",
   },
   ch4: {
     header: "Methane CH4",
@@ -29,11 +32,13 @@ exports.datasets = {
       { title: "Monthly CH4", endpoint: "monthly_ch4_gl" },
     ],
     desc: [
-      "Category (ch4) description line/pargraph 1",
-      "Category (ch4) description line/pargraph 2",
-      "Category (ch4) description line/pargraph 3",
+      "Methane in the Earth's atmosphere is a strong greenhouse gas with a global warming potential (GWP) 84 times greater than CO2 in a 20-year time frame; methane is not as persistent a gas as CO2 (assuming no change in carbon sequestration rates) and tails off to about GWP of 28 for a 100-year time frame. This means that a methane emission is projected to have 28 times the impact on temperature of a carbon dioxide emission of the same mass over the following 100 years assuming no change in the rates of carbon sequestration. Methane has a large effect but for a relatively brief period, having an estimated mean half-life of 9.1 years in the atmosphere, whereas carbon dioxide is currently given an estimated mean lifetime of over 100 years.",
+      "The balance between sources and sinks of methane is not yet fully understood. The IPCC Working Group I stated in chapter 2 of the Fourth Assessment Report that there are large uncertainties in the current bottom-up estimates of components of the global source, and the balance between sources and sinks is not yet well known. The most important sink in the methane cycle is reaction with the hydroxyl radical, which is produced photochemically in the atmosphere. Production of this radical is not fully understood and has a large effect on atmospheric concentrations. This uncertainty is exemplified by observations that have shown between the year 2000 and 2006 increases in atmospheric concentration of methane ceased, for reasons still being investigated.",
+      "Any process that results in the production of methane and its release into the atmosphere can be considered a 'source'. The two main processes that are responsible for methane production occur as a result of microorganisms anaerobically converting organic compounds into methane. Slightly over half of the total emission is due to human activity. Since the Industrial Revolution humans have had a major impact on concentrations of atmospheric methane, increasing atmospheric concentrations roughly 250%. According to the 2021 IPCC report, 30 - 50 percent of the current rise in temperatures is caused by emissions of methane, and reducing methane is a fast way of climate change mitigation.",
     ],
     gradient: "ch4",
+    sourceLink:
+      "https://en.wikipedia.org/wiki/Atmospheric_methane#Emissions_accounting_of_methane",
   },
   sf6: {
     header: "Sulfur hexafluoride SF6",
