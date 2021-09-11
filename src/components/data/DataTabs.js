@@ -114,7 +114,7 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Carbon dioxide</div>
               <div className={classes.tabText}>
-                Atmospheric CO2 is the most known and the most human dependant
+                Carbon dioxide, due to it's abundance, the most important
                 greenhouse gas.
               </div>
             </div>
@@ -132,8 +132,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Methane</div>
               <div className={classes.tabText}>
-                Greenhouse gas 30 href 70 times more potent then carbon dioxide.
-                Assiciated e.g. with agriculture.
+                Methane is a greenhouse gas with a global warming potential 84
+                times greater than CO2.
               </div>
             </div>
           </div>
@@ -150,8 +150,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Sulfur hexafluoride</div>
               <div className={classes.tabText}>
-                Carbon dioxide is the most known and the most human dependant
-                greenhouse gas.
+                The most potent greenhouse gas, with a warming potential of
+                23,900 times that of CO2.
               </div>
             </div>
           </div>
@@ -168,8 +168,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Dinitrogen oxide</div>
               <div className={classes.tabText}>
-                Carbon dioxide is the most known and the most human dependant
-                greenhouse gas.
+                Nitrous oxide, potent greenhouse gas commonly known as laughing
+                gas.
               </div>
             </div>
           </div>
@@ -186,8 +186,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Temperatures</div>
               <div className={classes.tabText}>
-                Carbon dioxide is the most known and the most human dependant
-                greenhouse gas.
+                Global temperature rise, symptom of H3C, mostly driven by global
+                greenhouse effect.
               </div>
             </div>
           </div>
@@ -204,8 +204,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Sea levels</div>
               <div className={classes.tabText}>
-                Carbon dioxide is the most known and the most human dependant
-                greenhouse gas.
+                Global ocean level rise caused by thermal sea water expantion
+                and glaciers meltdown.
               </div>
             </div>
           </div>
@@ -222,8 +222,8 @@ const DataTabs = () => {
             <div className={classes.tabContent}>
               <div className={classes.tabTitle}>Glaciers</div>
               <div className={classes.tabText}>
-                Carbon dioxide is the most known and the most human dependant
-                greenhouse gas.
+                Polar glaciers mass loss caused by global warming. Data on
+                Greenland and Antarctica.
               </div>
             </div>
           </div>
