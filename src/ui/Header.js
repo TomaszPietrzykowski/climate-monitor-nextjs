@@ -278,7 +278,7 @@ const Header = ({ value, setValue }) => {
                 onClick={() => setValue(0)}
               >
                 <img
-                  src="/logotype1.svg"
+                  src="/logotype.svg"
                   alt="climate monitor logo"
                   className={classes.logo}
                 />

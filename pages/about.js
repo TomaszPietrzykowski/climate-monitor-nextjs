@@ -7,9 +7,33 @@ import { makeStyles } from "@material-ui/core/styles"
 import SectionHeader from "../src/ui/SectionHeader"
 
 const useStyles = makeStyles((theme) => ({
+  containerTop: {
+    width: "100%",
+    // border: "1px solid magenta",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+    fontFamily: "Poppins",
+    fontWeight: 300,
+  },
+  imageContainer: {},
+  contentContainer: {
+    // border: "1px solid blue",
+    marginLeft: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    maxWidth: 700,
+    padding: "2rem",
+  },
+  image: {
+    display: "block",
+    maxWidth: "100%",
+  },
   container: {
     ...theme.utils.container,
-    padding: "0 0 0 2rem",
+    marginTop: "8rem",
+    padding: "4rem 0 0 2rem",
     fontFamily: "Poppins",
     fontWeight: 300,
   },
@@ -39,31 +63,32 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "contain",
   },
   h2: {
-    color: theme.palette.secondary.main,
-    fontWeight: 300,
+    color: theme.palette.secondary.dark,
+    fontWeight: 400,
     letterSpacing: 1.5,
-    fontSize: "1.8rem",
-    margin: "4rem 0 1rem",
+    fontSize: "2rem",
   },
   pHead: {
-    fontSize: "1.4rem",
+    fontSize: "1.6rem",
     color: theme.palette.text.primary,
-    lineHeight: 1.8,
-    letterSpacing: 0.8,
-    marginBottom: "3rem",
+    lineHeight: 1.5,
+    letterSpacing: 0.5,
+    marginBottom: "1rem",
+    maxWidth: "800px",
+    // fontWeight: 400,
   },
   p: {
     color: theme.palette.text.secondary,
-    lineHeight: 1.8,
+    lineHeight: 1.5,
     letterSpacing: 0.3,
     padding: "1rem 2rem 0 0",
     maxWidth: "800px",
-    marginBottom: "2rem",
   },
   link: {
     color: theme.palette.secondary.dark,
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     textDecoration: "underline",
+    fontWeight: 500,
   },
   img: {
     height: "100%",
@@ -85,9 +110,9 @@ const About = () => {
         />
       </Head>
       <SectionHeader>About</SectionHeader>
-      <div className={classes.container}>
-        <div className={classes.gridEven}>
-          <div className={classes.gridItemSM}>
+      <div className={classes.containerTop}>
+        <div className={classes.contentContainer}>
+          <div className={classes.content}>
             <h2 className={classes.h2}>Climate Monitor</h2>
             <p className={classes.p}>
               Our mission is to increase climate awarness by facilitating access
@@ -101,8 +126,21 @@ const About = () => {
               frontend-focused web projects reliable source of pre-processed
               data.
             </p>
-            <br />
-            <br />
+          </div>
+        </div>
+        <div className={classes.imageContainer}>
+          <img src="/satellite.jpeg" className={classes.image} />
+        </div>
+      </div>
+      <div className={classes.containerTop}>
+        <div className={classes.imageContainer}>
+          <img src="/noaa-vessel.jpeg" className={classes.image} />
+        </div>
+        <div
+          className={classes.contentContainer}
+          style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
+        >
+          <div className={classes.content}>
             <h2 className={classes.h2}>Data sources and credits</h2>
             <p className={classes.p}>
               Climate Monitor would not be possible without access to reliable
@@ -113,23 +151,16 @@ const About = () => {
               scientific purpose.
             </p>
           </div>
-          <div className={classes.gridItemShow}>
-            <img
-              src={"/sky.jpeg"}
-              alt={"climate show off"}
-              width={460}
-              height={600}
-              className={classes.img}
-            />
-          </div>
         </div>
+      </div>
+      <div className={classes.container}>
         <div className={classes.grid}>
-          <div className={classes.gridItemSM}>
+          <div className={classes.gridItemSM} style={{ padding: "2rem" }}>
             <Image
               src={"/NOAA_logo.png"}
               alt={"NOAA logo"}
-              width={280}
-              height={280}
+              width={230}
+              height={230}
               className={classes.logoImg}
             />
           </div>
@@ -137,12 +168,6 @@ const About = () => {
             <p className={classes.pHead}>
               The Global Monitoring Laboratory of the National Oceanic and
               Atmospheric Administration
-            </p>
-            <p className={classes.p}>
-              Mission: to acquire, evaluate, and make available accurate,
-              long-term records of atmospheric gases, aerosol particles, clouds,
-              and surface radiation in a manner that allows the causes and
-              consequences of change to be understood.
             </p>
             <p className={classes.p}>
               The Global Monitoring Laboratory of the National Oceanic and
@@ -168,15 +193,20 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className={classes.gridEven}>
+        <div className={classes.grid}>
+          <div className={classes.gridItemSM}>
+            <Image
+              src={"/NASA_logo.png"}
+              alt={"NASA logo"}
+              width={300}
+              height={300}
+              className={classes.logoImg}
+            />
+          </div>
           <div className={classes.gridItemL}>
             <p className={classes.pHead}>
               NASA Jet Propulsion Laboratory California Insititute of Technology
               Physical Oceanography Distributed Active Archive Center (PO.DAAC)
-            </p>
-            <p className={classes.p}>
-              The mission of the PO.DAAC is to preserve NASA’s ocean and climate
-              data and make these universally accessible and meaningful.
             </p>
             <p className={classes.p}>
               Since the launch of NASA's first ocean-observing satellite,
@@ -202,35 +232,19 @@ const About = () => {
               </a>
             </p>
           </div>
-          <div className={classes.gridItemSM}>
-            <Image
-              src={"/NASA_logo.png"}
-              alt={"NASA logo"}
-              width={320}
-              height={320}
-              className={classes.logoImg}
-            />
-          </div>
         </div>
         <div className={classes.grid}>
           <div className={classes.gridItemSM}>
             <Image
               src={"/berkeley-earth.png"}
               alt={"Berkeley Earth logo"}
-              width={320}
-              height={320}
+              width={300}
+              height={300}
               className={classes.logoImg}
             />
           </div>
           <div className={classes.gridItemL}>
             <p className={classes.pHead}>Berkeley Earth</p>
-            <p className={classes.p}>
-              MISSION AND PURPOSE: "Global warming is the defining environmental
-              challenge of our time. The need for quality, unbiased scientific
-              information about global warming could not be more urgent. Yet
-              there are few sources of historic global temperature records, the
-              foundation underlying all global warming analysis.""
-            </p>
             <p className={classes.p}>
               Berkeley Earth supplies comprehensive open-source world air
               pollution data and highly user-accessible global temperature data
@@ -248,6 +262,36 @@ const About = () => {
                 className={classes.link}
               >
                 Visit Berkeley Earth website.
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={classes.containerTop}>
+        <div className={classes.imageContainer}>
+          <img src="/flood.jpeg" className={classes.image} />
+        </div>
+        <div
+          className={classes.contentContainer}
+          style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
+        >
+          <div className={classes.content}>
+            <h2 className={classes.h2}>Climate News</h2>
+            <p className={classes.p}>
+              Climate Monitor's newsfeed is powered by NewsAPI - provider of
+              worldwide news and breaking headlines.
+            </p>
+            <p className={classes.p}>
+              Articles are not older then 30 days and content is refreshed
+              multiple time per day.
+            </p>
+            <p className={classes.p}>
+              <a
+                href="https://newsapi.org/"
+                target="_blank"
+                className={classes.link}
+              >
+                Visit NewsAPI website.
               </a>
             </p>
           </div>

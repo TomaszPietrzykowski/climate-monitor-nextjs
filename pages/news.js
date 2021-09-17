@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: theme.palette.text.secondary,
     fontSize: ".9rem",
-    margin: "2rem",
+    margin: "2rem 2rem 0",
     display: "flex",
     justifyContent: "flex-end",
     "& > * + *": {
