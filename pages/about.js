@@ -90,17 +90,16 @@ const About = () => {
           <div className={classes.gridItemSM}>
             <h2 className={classes.h2}>Climate Monitor</h2>
             <p className={classes.p}>
-              Our mission is to increase climate awarness and facilitate access
-              to reliable climate data by serving it in a form of comprehensive
-              API.
+              Our mission is to increase climate awarness by facilitating access
+              to reliable climate data.
             </p>
             <p className={classes.p}>
               Simple in concept, Climate Monitor is a convenience API, built
-              around scheduler reading data from ftp servers. Data is processed
-              and stored in custom database for quick and reliable access. Then
-              served as json by efficient asynchronous server. Project is aimed
-              at providing front-end-focused web projects reliable source of
-              pre-processed data.
+              around scheduler reading data from multiple origins. Data is
+              processed and stored in custom database for quick and reliable
+              access, then served as json. Project is aimed at providing
+              frontend-focused web projects reliable source of pre-processed
+              data.
             </p>
             <br />
             <br />

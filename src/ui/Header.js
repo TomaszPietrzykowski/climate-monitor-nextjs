@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbarMargin: {
-    ...theme.mixins.toolbar,
+    height: 70,
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
     },
@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    height: "2.2rem",
-    margin: "0.8rem 0rem",
+    height: "3rem",
+    margin: "0.7rem 0rem",
     [theme.breakpoints.down("sm")]: {
       margin: "0rem",
       height: "2rem",
@@ -278,7 +278,7 @@ const Header = ({ value, setValue }) => {
                 onClick={() => setValue(0)}
               >
                 <img
-                  src="/logotype.svg"
+                  src="/logotype1.svg"
                   alt="climate monitor logo"
                   className={classes.logo}
                 />
