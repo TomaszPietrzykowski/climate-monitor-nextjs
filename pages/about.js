@@ -38,28 +38,23 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 300,
   },
   grid: {
-    // border: "1px solid magenta",
     marginBottom: "10rem",
     display: "grid",
     gridTemplateColumns: "33% 67%",
   },
   gridEven: {
-    // border: "1px solid magenta",
     marginBottom: "10rem",
     display: "grid",
     gridTemplateColumns: "67% 33%",
   },
   gridItemSM: {
-    // border: "1px solid blue",
     ...theme.flex.colStart,
+    alignItems: "flex-end",
   },
   gridItemL: {
-    // border: "1px solid green",
     padding: "2rem",
   },
   logoImg: {
-    // width: "100%",
-    // minWidth: 280,
     objectFit: "contain",
   },
   h2: {
@@ -159,8 +154,8 @@ const About = () => {
             <Image
               src={"/NOAA_logo.png"}
               alt={"NOAA logo"}
-              width={230}
-              height={230}
+              width={180}
+              height={180}
               className={classes.logoImg}
             />
           </div>
@@ -198,8 +193,8 @@ const About = () => {
             <Image
               src={"/NASA_logo.png"}
               alt={"NASA logo"}
-              width={300}
-              height={300}
+              width={220}
+              height={220}
               className={classes.logoImg}
             />
           </div>
@@ -238,12 +233,13 @@ const About = () => {
             <Image
               src={"/berkeley-earth.png"}
               alt={"Berkeley Earth logo"}
-              width={300}
-              height={300}
+              width={240}
+              height={240}
               className={classes.logoImg}
             />
           </div>
           <div className={classes.gridItemL}>
+            <br />
             <p className={classes.pHead}>Berkeley Earth</p>
             <p className={classes.p}>
               Berkeley Earth supplies comprehensive open-source world air
@@ -276,7 +272,7 @@ const About = () => {
           style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
         >
           <div className={classes.content}>
-            <h2 className={classes.h2}>Climate News</h2>
+            <h2 className={classes.h2}>About News</h2>
             <p className={classes.p}>
               Climate Monitor's newsfeed is powered by NewsAPI - provider of
               worldwide news and breaking headlines.

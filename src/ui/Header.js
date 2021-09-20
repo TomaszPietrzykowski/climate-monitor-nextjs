@@ -77,15 +77,15 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     ...theme.utils.tab,
     ...theme.typography.pop,
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     "&:hover": {
-      color: theme.palette.text.primary,
+      color: theme.palette.common.starCommandBlue,
     },
   },
   tabActive: {
     ...theme.utils.tab,
     ...theme.typography.pop,
-    color: theme.palette.common.activeTab,
+    color: theme.palette.common.prussianBlue,
   },
   button: {
     ...theme.typography.tab,

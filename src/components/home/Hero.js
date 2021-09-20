@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     fontWeight: 100,
     letterSpacing: 10,
-    color: theme.palette.primary.main,
+    color: "rgba(20, 238, 255, 1)",
     zIndex: 2,
     [theme.breakpoints.down("md")]: {
       fontSize: "2rem",

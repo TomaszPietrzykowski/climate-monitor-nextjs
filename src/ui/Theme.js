@@ -17,7 +17,8 @@ export default createMuiTheme({
       darkBlue: `${darkBlue}`,
       activeTab: `rgba(0, 54, 102, 1)`,
       background: "rgba(225, 225, 225, 1)",
-      // activeTab: `rgba(0, 51, 77, 1)`,
+      starCommandBlue: `#0076B2`,
+      prussianBlue: `#003666`,
     },
     gradient: {
       co2: [
@@ -57,10 +58,10 @@ export default createMuiTheme({
       ],
     },
     primary: {
-      main: `${blue}`,
+      main: `#003666`,
     },
     secondary: {
-      main: "rgba(0, 118, 178, 1)",
+      main: "#0076B2",
     },
   },
   typography: {
