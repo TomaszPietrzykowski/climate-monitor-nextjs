@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   root: {
+    height: "100%",
     minWidth: 275,
     background: "#fcfcfc",
     margin: "auto",
@@ -81,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     justifyContent: "flex-start",
     fontSize: "4.2rem",
-    marginTop: "1.3rem",
+    // marginTop: "1rem",
     color: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       fontSize: "2.7rem",
@@ -97,9 +98,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
-    fontSize: "2.4rem",
-    marginTop: "0.5rem",
-    marginBottom: "1rem",
+    fontSize: "2.5rem",
+    // marginTop: "0.5rem",
+    // marginBottom: "1rem",
     color: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.6rem",
@@ -179,6 +180,7 @@ const LatestPrimaryCard = ({ latest }) => {
         <CardContent className={classes.cardContent}>
           <div className={classes.label}>Latest Earth CO2</div>
           <div className={classes.label2}>Value for {latest.labels[0]}</div>
+          <div className={classes.separator} />
           <div className={classes.value}>
             <animated.div className="number">
               {props.val.to((val) => val.toFixed(2))}

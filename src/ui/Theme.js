@@ -19,6 +19,7 @@ export default createMuiTheme({
       background: "rgba(225, 225, 225, 1)",
       starCommandBlue: `#0076B2`,
       prussianBlue: `#003666`,
+      lightestBlue: `#d7f9f1`,
     },
     gradient: {
       co2: [

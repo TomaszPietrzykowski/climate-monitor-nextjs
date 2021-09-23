@@ -9,7 +9,7 @@ import SectionHeader from "../src/ui/SectionHeader"
 const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.utils.container,
-    padding: "4rem 2rem",
+    padding: "2rem",
     fontFamily: "Poppins",
     fontWeight: 300,
   },
@@ -111,7 +111,7 @@ const PublicAPI = () => {
       </Head>
       <SectionHeader>Public REST API</SectionHeader>
       <div className={classes.container}>
-        <h2 className={classes.h2}>Latest and historical climate data</h2>
+        {/* <h2 className={classes.h2}>Latest and historical climate data</h2> */}
         <p className={classes.pHead}>
           What type of data is supplied by climate monitor API?
         </p>

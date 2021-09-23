@@ -98,9 +98,9 @@ const DataTabs = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.header}>
+      {/* <div className={classes.header}>
         Categories contain multiple sets of data
-      </div>
+      </div> */}
       <div className={classes.container}>
         <Link href="/data/co2" className={classes.link}>
           <div className={classes.tab}>

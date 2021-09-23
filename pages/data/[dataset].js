@@ -112,7 +112,7 @@ const DataDisplay = ({ dataset }) => {
           content={`${datasets[dataset].header}, ${datasets[dataset].title}, Climate Monitor - free public REST API with json data on climate change`}
         />
       </Head>
-      <SectionHeader>{datasets[dataset].header}</SectionHeader>
+      {/* <SectionHeader>{datasets[dataset].header}</SectionHeader> */}
       <div className={classes.container}>
         <Hidden mdDown>
           <div className={classes.drawer}>

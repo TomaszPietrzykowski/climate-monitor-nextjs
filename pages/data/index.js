@@ -76,7 +76,7 @@ const DataDashboard = () => {
       <Head>
         <title key="title">Climate data | Climate Monitor</title>
       </Head>
-      <SectionHeader>All Data</SectionHeader>
+      {/* <SectionHeader>All Data</SectionHeader> */}
       {/* <Toolbar /> */}
       <div className={classes.container}>
         <Hidden mdDown>

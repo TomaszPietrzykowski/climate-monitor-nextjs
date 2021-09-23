@@ -251,7 +251,7 @@ const Contact = () => {
       <SectionHeader>Contact</SectionHeader>
       <div className={classes.container}>
         <main className={classes.content}>
-          <h2 className={classes.title}>Send email</h2>
+          {/* <h2 className={classes.title}>Send email</h2> */}
           {error && <div className={classes.error}>{error}</div>}
           {loading ? (
             <Loader />

@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     ...theme.utils.container,
-    marginTop: "8rem",
+    marginTop: "12rem",
+    marginBottom: "14rem",
     padding: "4rem 0 0 2rem",
     fontFamily: "Poppins",
     fontWeight: 300,
@@ -263,7 +264,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className={classes.containerTop}>
+      <div className={classes.containerTop} style={{ marginBottom: "12rem" }}>
         <div className={classes.imageContainer}>
           <img src="/flood.jpeg" className={classes.image} />
         </div>
