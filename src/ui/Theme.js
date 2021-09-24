@@ -10,9 +10,9 @@ export default createMuiTheme({
   palette: {
     common: {
       blue: `${blue}`,
-      lightBlue: `rgba(204, 238, 255, 1)`,
+      lightBlue: `#9bf3f0`,
       orange: `${orange}`,
-      green: `${green}`,
+      green: `#98ce00`,
       footer: `${whitish}`,
       darkBlue: `${darkBlue}`,
       activeTab: `rgba(0, 54, 102, 1)`,
@@ -105,7 +105,7 @@ export default createMuiTheme({
     tab: {
       textTransform: "none",
       minWidth: 30,
-      fontWeight: 600,
+      fontWeight: 400,
       fontSize: "1rem",
       marginLeft: "25px",
     },

@@ -18,12 +18,13 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     zIndex: 1500,
     position: "relative",
+    transition: "color .2s ease",
     [theme.breakpoints.down("md")]: {
       minHeight: "4rem",
     },
   },
   footerImg: {
-    opacity: 1,
+    opacity: 0.4,
     height: "13rem",
     verticalAlign: "bottom",
     [theme.breakpoints.down("md")]: {
@@ -40,20 +41,21 @@ const useStyles = makeStyles((theme) => ({
   gridItem: {
     margin: "1.5rem",
     zIndex: 1,
+    "&>*>*": {
+      fontFamily: "Poppins, sans",
+      color: "white",
+      marginLeft: "25px",
+      paddingTop: ".35rem",
+      fontSize: "0.9rem",
+      fontWeight: 200,
+      textDecoration: "none",
+      letterSpacing: 0.6,
+      "&:hover": {
+        color: theme.palette.common.green,
+      },
+    },
     [theme.breakpoints.down("md")]: {
       margin: "1rem",
-    },
-  },
-  link: {
-    fontFamily: "Poppins, sans",
-    marginLeft: "25px",
-    fontSize: "0.9rem",
-    fontWeight: 400,
-    color: "white",
-    textDecoration: "none",
-    letterSpacing: 0.6,
-    "&:hover": {
-      opacity: 0.6,
     },
   },
   social: {
@@ -64,8 +66,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "1rem",
     fontSize: "2rem",
     color: "white",
+    transition: "color .2s ease",
     "&:hover": {
-      opacity: 0.6,
+      color: theme.palette.common.green,
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.6rem",
@@ -195,15 +198,15 @@ const Footer = ({ setValue }) => {
                 >
                   About
                 </Grid>
-                {/* <Link href="/public_api">
-                  <Grid
-                    item
-                    className={classes.link}
-                    onClick={() => setValue(5)}
-                  >
-                    Public API
-                  </Grid>
-                </Link> */}
+                <Grid
+                  item
+                  className={classes.link}
+                  component={Link}
+                  href="/public_api"
+                  onClick={() => setValue(5)}
+                >
+                  Public API
+                </Grid>
               </Grid>
             </Grid>
             <Grid item className={classes.gridItem}>

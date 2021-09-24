@@ -1,5 +1,5 @@
-import React from "react";
-import { makeStyles } from "@material-ui/styles";
+import React from "react"
+import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -10,21 +10,22 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1500,
   },
   tag: {
-    padding: "0.1rem 2rem",
+    padding: "0.2rem 2rem",
     fontFamily: "Poppins",
     textDecoration: "none",
     fontSize: "0.6rem",
     letterSpacing: 0.5,
-    color: "white",
+    color: theme.palette.secondary.light,
     cursor: "pointer",
+    transition: "color .2s ease",
     "&:hover": {
-      color: theme.palette.primary.main,
+      color: "white",
     },
   },
-}));
+}))
 
 const DevTag = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.container}>
       <a
@@ -33,10 +34,10 @@ const DevTag = () => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        {"<Developer />"}
+        climatemonitor &copy; {new Date().getFullYear()}
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default DevTag;
+export default DevTag
