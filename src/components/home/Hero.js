@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     maxWidth: 1400,
-    margin: "5rem auto 3rem auto",
+    margin: "5rem auto",
     padding: "2rem",
     flexDirection: "column",
     justifyContent: "center",
@@ -56,9 +56,10 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     fontFamily: "Poppins, sans",
     fontSize: "2rem",
-    fontWeight: 100,
-    letterSpacing: 10,
-    color: "rgba(20, 238, 255, 1)",
+    fontWeight: 200,
+    letterSpacing: 8,
+    // color: "rgba(20, 238, 255, 1)",
+    color: theme.palette.common.green,
     zIndex: 2,
     [theme.breakpoints.down("md")]: {
       fontSize: "2rem",
@@ -72,17 +73,22 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     ...theme.typography.tab,
-    fontWeight: 400,
+    fontWeight: 500,
     borderRadius: "50px",
     color: "white",
     fontFamily: "Poppins, sans",
     fontSize: "1.3rem",
     letterSpacing: 3,
-    border: "3px solid white",
+    border: `3px solid white`,
     textTransform: "uppercase",
     padding: "0.5rem 3rem 0.5rem 2rem",
-    marginTop: "3rem",
+    marginTop: "2rem",
     marginLeft: 0,
+    transition: "all .2s ease",
+    "&:hover": {
+      color: theme.palette.common.green,
+      borderColor: theme.palette.common.green,
+    },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
       fontSize: "0.8rem",

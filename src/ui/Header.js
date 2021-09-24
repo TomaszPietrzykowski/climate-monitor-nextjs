@@ -78,14 +78,15 @@ const useStyles = makeStyles((theme) => ({
     ...theme.utils.tab,
     ...theme.typography.pop,
     color: theme.palette.text.primary,
+    transition: "all .2s ease",
     "&:hover": {
-      color: theme.palette.common.starCommandBlue,
+      color: theme.palette.text.secondary,
     },
   },
   tabActive: {
     ...theme.utils.tab,
     ...theme.typography.pop,
-    color: theme.palette.common.prussianBlue,
+    color: theme.palette.secondary.main,
   },
   button: {
     ...theme.typography.tab,
@@ -174,6 +175,8 @@ const Header = ({ value, setValue }) => {
     const found = routes.find(({ link }) => link === path)
     if (found) {
       setValue(found.activeIndex)
+    } else if (path.includes("/data")) {
+      setValue(1)
     }
   }
 
@@ -191,7 +194,11 @@ const Header = ({ value, setValue }) => {
         value={value}
         onChange={handleChange}
         className={classes.tabContainer}
-        indicatorColor="transparent"
+        TabIndicatorProps={{
+          style: {
+            display: "none",
+          },
+        }}
       >
         {routes.map((route, i) => (
           <Link key={`${route.link}${i}`} href={route.link} value={i}>
