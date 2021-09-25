@@ -218,7 +218,7 @@ const PublicAPI = () => {
           </code>
         </div>
         <br />
-        <small>Examlpes:</small>
+        <small>Examples:</small>
         <div className={classes.codeblock}>
           <code className={classes.code}>
             <span className={classes.rootEnd}>
@@ -324,7 +324,7 @@ const PublicAPI = () => {
             <br />
           </code>
         </div>
-        <small>Examlpes:</small>
+        <small>Examples:</small>
         <div className={classes.codeblock}>
           <code className={classes.code}>
             <span className={classes.rootEnd}>
@@ -382,7 +382,7 @@ const PublicAPI = () => {
           </code>
         </div>
         <p className={classes.p}>will return annual average.</p> <br />
-        <small>Examlpes:</small>
+        <small>Examples:</small>
         <div className={classes.codeblock}>
           <code className={classes.code}>
             <span className={classes.rootEnd}>
