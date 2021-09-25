@@ -5,7 +5,6 @@ import Head from "next/head"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 // custom
-import SectionHeader from "../../src/ui/SectionHeader"
 import DataTabs from "../../src/components/data/DataTabs"
 
 const drawerWidth = "360px"
@@ -16,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-start",
     maxWidth: 1400,
     margin: "auto",
+    marginTop: "4rem",
   },
   drawer: {
     minWidth: drawerWidth,

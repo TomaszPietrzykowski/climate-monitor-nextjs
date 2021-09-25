@@ -3,8 +3,6 @@ import Head from "next/head"
 import Link from "next/link"
 // mui
 import { makeStyles } from "@material-ui/core/styles"
-// custom
-import SectionHeader from "../src/ui/SectionHeader"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,10 +15,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
-    fontSize: "3.5rem",
+    fontSize: "4rem",
     maxWidth: 1400,
     margin: "auto",
-    marginTop: "3rem",
+    marginTop: "6rem",
+    marginBottom: "2rem",
     padding: "1rem 2rem",
     // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {

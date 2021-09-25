@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins, sans",
     fontSize: "2rem",
     fontWeight: 200,
-    letterSpacing: 8,
+    letterSpacing: 4,
     color: "rgba(20, 238, 255, 1)",
     zIndex: 2,
     [theme.breakpoints.down("md")]: {

@@ -3,8 +3,6 @@ import Head from "next/head"
 import Image from "next/image"
 // mui
 import { makeStyles } from "@material-ui/core/styles"
-// custom
-import SectionHeader from "../src/ui/SectionHeader"
 
 const useStyles = makeStyles((theme) => ({
   containerTop: {
@@ -25,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
-    fontSize: "3rem",
+    fontSize: "4rem",
     maxWidth: 1400,
     margin: "auto",
-    marginTop: "4rem",
+    marginTop: "6rem",
+    marginBottom: "2rem",
     padding: "1rem 2rem",
     // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
@@ -62,16 +61,16 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     ...theme.utils.container,
-    marginTop: "12rem",
+    marginTop: "3rem",
     marginBottom: "14rem",
     padding: "4rem 0 0 2rem",
     fontFamily: "Poppins",
     fontWeight: 300,
   },
   grid: {
-    marginBottom: "10rem",
+    marginBottom: "6rem",
     display: "grid",
-    gridTemplateColumns: "33% 67%",
+    gridTemplateColumns: "25% 75%",
   },
   gridEven: {
     marginBottom: "10rem",
@@ -89,13 +88,14 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "contain",
   },
   h2: {
-    color: theme.palette.secondary.dark,
+    color: theme.palette.secondary.main,
     fontWeight: 400,
     letterSpacing: 1.5,
-    fontSize: "2rem",
+    fontSize: "2.5rem",
+    marginBottom: "2rem",
   },
   pHead: {
-    fontSize: "1.6rem",
+    fontSize: "1.4rem",
     color: theme.palette.text.primary,
     lineHeight: 1.5,
     letterSpacing: 0.5,
@@ -169,7 +169,7 @@ const About = () => {
           style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
         >
           <div className={classes.content}>
-            <h2 className={classes.h2}>Data sources and credits</h2>
+            <h2 className={classes.h2}>Credits</h2>
             <p className={classes.p}>
               Climate Monitor would not be possible without access to reliable
               data. Effect of hard scientific work, countless hours of
@@ -182,6 +182,12 @@ const About = () => {
         </div>
       </div>
       <div className={classes.container}>
+        <div className={classes.grid} style={{ marginBottom: 0 }}>
+          <div className={classes.gridItemSM}></div>
+          <div className={classes.gridItemL}>
+            <p className={classes.h2}>Data sources</p>
+          </div>
+        </div>
         <div className={classes.grid}>
           <div className={classes.gridItemSM} style={{ padding: "2rem" }}>
             <Image
@@ -305,7 +311,7 @@ const About = () => {
           style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
         >
           <div className={classes.content}>
-            <h2 className={classes.h2}>About News</h2>
+            <h2 className={classes.h2}>News source</h2>
             <p className={classes.p}>
               Climate Monitor's newsfeed is powered by NewsAPI - provider of
               worldwide news and breaking headlines.

@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
       letterSpacing: 0.6,
       "&:hover": {
-        color: theme.palette.common.green,
+        color: theme.palette.common.neonBlue,
       },
     },
     [theme.breakpoints.down("md")]: {
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     transition: "color .2s ease",
     "&:hover": {
-      color: theme.palette.common.green,
+      color: theme.palette.common.neonBlue,
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.6rem",

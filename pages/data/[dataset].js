@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 // custom
 import { datasets } from "../../src/components/data/Datasets"
-import SectionHeader from "../../src/ui/SectionHeader"
 import Content from "../../src/components/data/Content"
 import CategoryDescription from "../../src/components/data/CategoryDescription"
 import Loader from "../../src/ui/Loader"
@@ -18,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.utils.container,
     display: "flex",
     justifyContent: "flex-start",
+    marginTop: "4rem",
   },
   drawer: {
     minWidth: drawerWidth,

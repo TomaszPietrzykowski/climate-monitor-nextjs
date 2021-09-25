@@ -9,8 +9,6 @@ import Snackbar from "@material-ui/core/Snackbar"
 import MuiAlert from "@material-ui/lab/Alert"
 // custom
 import Loader from "../src/ui/Loader"
-import SectionHeader from "../src/ui/SectionHeader"
-// import logo from "../public/logo.svg"
 
 // snackbars:
 function Alert(props) {
@@ -22,17 +20,17 @@ const CssTextField = withStyles((theme) => ({
     ...theme.typography.mont,
     opacity: 0.8,
     "& label.Mui-focused": {
-      color: theme.palette.secondary.light,
+      color: theme.palette.secondary.main,
     },
     "& .MuiInput-focused fieldset": {
-      color: theme.palette.secondary.light,
+      color: theme.palette.secondary.main,
     },
     "& .MuiOutlinedInput-root": {
       "&:hover fieldset": {
-        borderColor: theme.palette.secondary.light,
+        borderColor: theme.palette.secondary.main,
       },
       "&.Mui-focused fieldset": {
-        borderColor: theme.palette.secondary.light,
+        borderColor: theme.palette.secondary.main,
       },
     },
   },
@@ -43,7 +41,6 @@ const CustomCheckbox = withStyles((theme) => ({
     color: theme.palette.text.secondary,
     "&$checked": {
       color: theme.palette.common.success,
-      opacity: 0.7,
     },
   },
   checked: {},
@@ -64,18 +61,17 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     zIndex: theme.zIndex.drawer + 1,
     background: `white`,
-    // background: `linear-gradient(120deg, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
   },
   sectionHeader: {
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
-    fontSize: "3.5rem",
+    fontSize: "4rem",
     maxWidth: 1400,
     margin: "auto",
-    marginTop: "3rem",
+    marginTop: "6rem",
+    marginBottom: "2rem",
     padding: "1rem 2rem",
-    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
@@ -131,9 +127,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   submitBtn: {
-    // ...theme.buttons.primary,
     paddingTop: ".7rem",
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.main,
     transition: "all .3s ease",
     "&:hover": {
       backgroundColor: theme.palette.secondary.main,

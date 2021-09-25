@@ -4,7 +4,6 @@ import Head from "next/head"
 import { makeStyles } from "@material-ui/core/styles"
 import Pagination from "@material-ui/lab/Pagination"
 // custom
-import SectionHeader from "../src/ui/SectionHeader"
 import NewsTab from "../src/components/news/NewsTab"
 import Loader from "../src/ui/Loader"
 
@@ -13,10 +12,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
-    fontSize: "3rem",
+    fontSize: "4rem",
     maxWidth: 1400,
     margin: "auto",
-    marginTop: "4rem",
+    marginTop: "6rem",
+    marginBottom: "2rem",
     padding: "1rem 2rem",
     // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     "&::before": {
       content: "'Climate News'",
       position: "absolute",
-      bottom: -50,
+      bottom: -45,
       left: -50,
       fontSize: "10rem",
       opacity: 0.04,

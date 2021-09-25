@@ -21,6 +21,7 @@ export default createMuiTheme({
       starCommandBlue: `#0076B2`,
       prussianBlue: `#003666`,
       lightestBlue: `#d7f9f1`,
+      neonBlue: "rgba(20, 238, 255, 1)",
     },
     gradient: {
       co2: [
