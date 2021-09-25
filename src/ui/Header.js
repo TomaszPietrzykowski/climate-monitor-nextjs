@@ -86,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
   tabActive: {
     ...theme.utils.tab,
     ...theme.typography.pop,
+    opacity: 1,
     color: theme.palette.secondary.main,
   },
   button: {

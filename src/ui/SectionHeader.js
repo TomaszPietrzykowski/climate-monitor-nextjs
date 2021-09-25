@@ -21,21 +21,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
-    // position: "relative",
-    // "&::before": {
-    //   content: "''",
-    //   position: "absolute",
-    //   top: "1rem",
-    //   left: "2rem",
-    //   height: "4px",
-    //   width: "60px",
-    //   background: theme.palette.common.lightestBlue,
-    // },
+    position: "relative",
+    "&::before": {
+      content: "'Content'",
+      position: "absolute",
+      bottom: -50,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.05,
+      color: theme.palette.secondary.light,
+    },
   },
 }))
 
 const SectionHeader = (props) => {
   const classes = useStyles()
+
   return (
     <div className={classes.titleBar}>
       <h1 className={classes.sectionHeader}>{props.children}</h1>

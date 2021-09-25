@@ -15,7 +15,37 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 300,
   },
-  imageContainer: {},
+  titleBar: {
+    width: "100%",
+    zIndex: theme.zIndex.drawer + 1,
+    background: `white`,
+    // background: `linear-gradient(120deg, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+  },
+  sectionHeader: {
+    fontFamily: "Poppins",
+    fontWeight: 400,
+    color: theme.palette.secondary.main,
+    fontSize: "3rem",
+    maxWidth: 1400,
+    margin: "auto",
+    marginTop: "4rem",
+    padding: "1rem 2rem",
+    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 20,
+    },
+    position: "relative",
+    "&::before": {
+      content: "'About'",
+      position: "absolute",
+      bottom: -45,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.04,
+      whiteSpace: "nowrap",
+      color: theme.palette.secondary.light,
+    },
+  },
   contentContainer: {
     // border: "1px solid blue",
     marginLeft: "auto",
@@ -105,7 +135,9 @@ const About = () => {
           content="About data sources and Climate Monitor - free public REST API with json data on climate change"
         />
       </Head>
-      <SectionHeader>About</SectionHeader>
+      <div className={classes.titleBar}>
+        <h1 className={classes.sectionHeader}>About</h1>
+      </div>
       <div className={classes.containerTop}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>

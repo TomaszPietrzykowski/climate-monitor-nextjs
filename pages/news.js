@@ -9,6 +9,31 @@ import NewsTab from "../src/components/news/NewsTab"
 import Loader from "../src/ui/Loader"
 
 const useStyles = makeStyles((theme) => ({
+  sectionHeader: {
+    fontFamily: "Poppins",
+    fontWeight: 400,
+    color: theme.palette.secondary.main,
+    fontSize: "3rem",
+    maxWidth: 1400,
+    margin: "auto",
+    marginTop: "4rem",
+    padding: "1rem 2rem",
+    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 20,
+    },
+    position: "relative",
+    "&::before": {
+      content: "'Climate News'",
+      position: "absolute",
+      bottom: -50,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.04,
+      whiteSpace: "nowrap",
+      color: theme.palette.secondary.light,
+    },
+  },
   poweredBy: {
     fontFamily: "Poppins",
     fontWeight: 400,
@@ -100,7 +125,9 @@ const News = () => {
           content="Latest climate news at Climate Monitor - free public REST API with json data on climate change."
         />
       </Head>
-      <SectionHeader>Climate News</SectionHeader>
+      <div className={classes.titleBar}>
+        <h1 className={classes.sectionHeader}>Climate News</h1>
+      </div>
       <div className={classes.container}>
         <div className={classes.poweredBy}>
           <span>Powered by: </span>

@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "2rem",
     cursor: "pointer",
     "&:hover": {
-      color: theme.palette.primary.dark,
-      border: `1px solid ${theme.palette.primary.dark}`,
+      color: theme.palette.secondary.main,
+      border: `1px solid ${theme.palette.secondary.main}`,
       borderRadius: 4,
     },
   },

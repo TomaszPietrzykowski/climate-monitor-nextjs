@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
     "&:hover $tabText": {
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.main,
     },
     "&:hover $tabTitle": {
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.main,
       textDecoration: "underline",
     },
     [theme.breakpoints.down("xs")]: {

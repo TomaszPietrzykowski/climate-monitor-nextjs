@@ -60,6 +60,37 @@ const useStyles = makeStyles((theme) => ({
       padding: "1rem 0 0",
     },
   },
+  titleBar: {
+    width: "100%",
+    zIndex: theme.zIndex.drawer + 1,
+    background: `white`,
+    // background: `linear-gradient(120deg, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
+  },
+  sectionHeader: {
+    fontFamily: "Poppins",
+    fontWeight: 400,
+    color: theme.palette.secondary.main,
+    fontSize: "3.5rem",
+    maxWidth: 1400,
+    margin: "auto",
+    marginTop: "3rem",
+    padding: "1rem 2rem",
+    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 20,
+    },
+    position: "relative",
+    "&::before": {
+      content: "'Contact'",
+      position: "absolute",
+      bottom: -45,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.04,
+      whiteSpace: "nowrap",
+      color: theme.palette.secondary.light,
+    },
+  },
   content: {
     position: "relative",
     [theme.breakpoints.down("sm")]: {
@@ -248,7 +279,9 @@ const Contact = () => {
           Message sent, thank you!
         </Alert>
       </Snackbar>
-      <SectionHeader>Contact</SectionHeader>
+      <div className={classes.titleBar}>
+        <h1 className={classes.sectionHeader}>Contact</h1>
+      </div>
       <div className={classes.container}>
         <main className={classes.content}>
           {/* <h2 className={classes.title}>Send email</h2> */}

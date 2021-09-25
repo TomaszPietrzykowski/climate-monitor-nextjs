@@ -13,6 +13,31 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 300,
   },
+  sectionHeader: {
+    fontFamily: "Poppins",
+    fontWeight: 400,
+    color: theme.palette.secondary.main,
+    fontSize: "3.5rem",
+    maxWidth: 1400,
+    margin: "auto",
+    marginTop: "3rem",
+    padding: "1rem 2rem",
+    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 20,
+    },
+    position: "relative",
+    "&::before": {
+      content: "'PublicAPI'",
+      position: "absolute",
+      bottom: -45,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.04,
+      whiteSpace: "nowrap",
+      color: theme.palette.secondary.light,
+    },
+  },
   h2: {
     color: theme.palette.secondary.main,
     fontWeight: 300,
@@ -109,7 +134,9 @@ const PublicAPI = () => {
       <Head>
         <title key="title">Public climate API | Climate Monitor</title>
       </Head>
-      <SectionHeader>Public REST API</SectionHeader>
+      <div className={classes.titleBar}>
+        <h1 className={classes.sectionHeader}>Public API</h1>
+      </div>
       <div className={classes.container}>
         {/* <h2 className={classes.h2}>Latest and historical climate data</h2> */}
         <p className={classes.pHead}>

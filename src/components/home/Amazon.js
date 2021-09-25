@@ -14,6 +14,19 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 300,
     fontFamily: "Poppins",
     letterSpacing: 1,
+    position: "relative",
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      background: theme.palette.common.darkGreen,
+      opacity: 0.65,
+      mixBlendMode: "multiply",
+      zIndex: 1,
+    },
     [theme.breakpoints.down("md")]: {
       backgroundPosition: "left",
     },
@@ -38,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "3rem",
     textAlign: "left",
     alignItems: "flex-start",
+    zIndex: 2,
     [theme.breakpoints.down("md")]: {
       marginLeft: 0,
       marginTop: "6rem",
@@ -51,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "3rem",
     textAlign: "right",
     alignItems: "flex-end",
+    zIndex: 2,
     [theme.breakpoints.down("md")]: {
       marginRight: 0,
       marginTop: "6rem",
@@ -60,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    // fontFamily: "Poppins, sans",
     fontSize: "1.2rem",
+    fontWeight: 200,
     color: "white",
     textShadow: "0px 0px 15px rgba(0, 0, 0, 1)",
     marginTop: "1rem",
@@ -90,6 +105,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "3rem",
     marginLeft: 0,
     marginRight: "0rem",
+    transition: "all .3s ease",
+    "&:hover": {
+      color: theme.palette.primary.dark,
+      background: "white",
+      transition: "all .2s ease",
+    },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
       fontSize: "0.8rem",

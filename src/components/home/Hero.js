@@ -58,8 +58,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     fontWeight: 200,
     letterSpacing: 8,
-    // color: "rgba(20, 238, 255, 1)",
-    color: theme.palette.common.green,
+    color: "rgba(20, 238, 255, 1)",
     zIndex: 2,
     [theme.breakpoints.down("md")]: {
       fontSize: "2rem",
@@ -86,8 +85,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     transition: "all .2s ease",
     "&:hover": {
-      color: theme.palette.common.green,
-      borderColor: theme.palette.common.green,
+      color: "rgba(20, 238, 255, 1)",
+      borderColor: "rgba(20, 238, 255, 1)",
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
