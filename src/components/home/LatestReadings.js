@@ -9,15 +9,44 @@ import Loader from "../../ui/Loader"
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    background: "linear-gradient(45deg, #fafafc, #fcfcfc)",
     paddingTop: "4rem",
   },
   siteContainer: {
     maxWidth: 1400,
     margin: "auto",
   },
+  titleBar: {
+    width: "100%",
+    zIndex: theme.zIndex.drawer + 1,
+    background: `white`,
+  },
+  sectionHeader: {
+    fontFamily: "Poppins",
+    fontWeight: 400,
+    color: theme.palette.secondary.main,
+    fontSize: "3.3rem",
+    maxWidth: 1400,
+    margin: "auto",
+    marginTop: "4rem",
+    marginBottom: "2rem",
+    padding: "1rem 2rem",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 20,
+    },
+    position: "relative",
+    "&::before": {
+      content: "'Dashboard'",
+      position: "absolute",
+      bottom: -45,
+      left: -50,
+      fontSize: "10rem",
+      opacity: 0.04,
+      whiteSpace: "nowrap",
+      color: theme.palette.secondary.light,
+    },
+  },
   dashboard: {
-    background: "#fafafa",
+    background: "#ffffff",
     fontFamily: "Poppins",
     display: "block",
     margin: "0 4rem 4rem",
@@ -63,17 +92,18 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     ...theme.typography.tab,
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
     borderRadius: "50px",
     fontFamily: "Poppins, sans",
     fontSize: "1.2rem",
     textTransform: "uppercase",
     border: "3px solid",
     padding: "0.6rem 3rem",
+    transition: "all .2s ease",
     "&:hover": {
-      border: `3px solid ${theme.palette.primary.dark}`,
+      border: `3px solid ${theme.palette.primary.main}`,
       color: "white",
-      background: theme.palette.primary.dark,
+      background: theme.palette.primary.main,
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
@@ -96,10 +126,13 @@ const cardData = [
 
 const LatestReadings = ({ setValue }) => {
   const [loading, setLoading] = useState(false)
+  const [loadingCH4, setLoadingCH4] = useState(false)
   const [latest, setLatest] = useState(null)
+  const [latestCH4, setLatestCH4] = useState(null)
 
   useEffect(() => {
     getLatestCO2()
+    getLatestCH4()
   }, [])
 
   const getLatestCO2 = async () => {
@@ -116,6 +149,20 @@ const LatestReadings = ({ setValue }) => {
       setLoading(false)
     }
   }
+  const getLatestCH4 = async () => {
+    try {
+      setLoadingCH4(true)
+      const res = await fetch(
+        "https://api.climatemonitor.info/api/v1/chartdata/monthly_ch4_gl"
+      )
+      const { data } = await res.json()
+      setLatestCH4(data)
+      setLoadingCH4(false)
+    } catch (err) {
+      console.log(err)
+      setLoadingCH4(false)
+    }
+  }
 
   const classes = useStyles()
 
@@ -123,11 +170,14 @@ const LatestReadings = ({ setValue }) => {
     <main className={classes.root}>
       <div className={classes.siteContainer}>
         <div className={classes.container}>
-          {loading || !latest ? (
+          {loading || loadingCH4 || !latest || !latestCH4 ? (
             <Loader />
           ) : (
             <Fragment>
-              <LatestPrimaryCard latest={latest} />
+              {/* <div className={classes.titleBar}>
+                <h1 className={classes.sectionHeader}>Dashboard</h1>
+              </div> */}
+              <LatestPrimaryCard latest={latest} methane={latestCH4} />
               <div className={classes.latestContainer}>
                 {cardData.map((data, i) => (
                   <LatestCard

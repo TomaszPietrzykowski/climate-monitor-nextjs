@@ -7,7 +7,8 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles((theme) => ({
   containerTop: {
     width: "100%",
-    // border: "1px solid magenta",
+    maxWidth: 1920,
+    margin: "auto",
     display: "grid",
     gridTemplateColumns: "50% 50%",
     fontFamily: "Poppins",
@@ -89,19 +90,18 @@ const useStyles = makeStyles((theme) => ({
   },
   h2: {
     color: theme.palette.secondary.main,
-    fontWeight: 400,
+    fontWeight: 300,
     letterSpacing: 1.5,
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     marginBottom: "2rem",
   },
   pHead: {
-    fontSize: "1.4rem",
+    fontSize: "1.3rem",
     color: theme.palette.text.primary,
     lineHeight: 1.5,
     letterSpacing: 0.5,
     marginBottom: "1rem",
     maxWidth: "800px",
-    // fontWeight: 400,
   },
   p: {
     color: theme.palette.text.secondary,

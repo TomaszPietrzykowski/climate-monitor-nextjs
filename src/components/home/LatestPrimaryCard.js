@@ -2,42 +2,38 @@ import React from "react"
 import { makeStyles } from "@material-ui/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
+import ChartIcon from "@material-ui/icons/BarChartRounded"
+import LineIcon from "@material-ui/icons/Timeline"
+import IndIcon from "@material-ui/icons/TrendingUp"
 import { useSpring, animated } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
     fontFamily: "Poppins",
     letterSpacing: 0.5,
     fontWeight: 300,
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "flex-end",
-    paddingBottom: "4rem",
+    // paddingBottom: "4rem",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
     },
   },
   root: {
-    height: "100%",
-    minWidth: 275,
-    background: "#fcfcfc",
-    margin: "auto",
-    marginTop: "4rem",
-    padding: "4rem",
+    margin: "2rem",
+    // marginTop: "2rem",
+    padding: "0 2rem 3rem",
     color: theme.palette.text.secondary,
-    borderRadius: 20,
-    boxShadow:
-      "-10px -10px 20px rgba(255,255,255,.8), 10px 10px 20px rgba(0,0,0,.02  )",
-    [theme.breakpoints.down("sm")]: {
-      minWidth: "auto",
-      marginTop: "2rem",
-    },
+    boxShadow: "none",
+    borderRadius: 0,
   },
   cardContent: {
-    minWidth: 350,
+    // minWidth: 350,
   },
   label: {
-    fontSize: "2rem",
+    fontSize: "1.6rem",
+    opacity: 0,
+    animation: "$fadeIn ease 2s forwards",
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -51,9 +47,10 @@ const useStyles = makeStyles((theme) => ({
   label2: {
     color: "#c3c3c3",
     fontSize: "1.2rem",
-    fontWeight: 200,
+    fontWeight: 100,
     opacity: 0,
-    animation: "$fadeIn 3s ease 2s forwards",
+    marginBottom: "1rem",
+    animation: "$fadeIn 1s ease 1s forwards",
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -81,9 +78,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
-    fontSize: "4.2rem",
-    // marginTop: "1rem",
-    color: theme.palette.primary.dark,
+    fontSize: "4.5rem",
+    color: theme.palette.primary.main,
+    opacity: 0,
+    animation: "$fadeIn ease 2s forwards",
     [theme.breakpoints.down("md")]: {
       fontSize: "2.7rem",
     },
@@ -101,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2.5rem",
     // marginTop: "0.5rem",
     // marginBottom: "1rem",
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.main,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.6rem",
     },
@@ -157,56 +155,133 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   separator: {
-    margin: "2rem 0",
-    width: "100%",
-    height: 8,
-    background: "#fafafa",
-    borderRadius: "20px",
-    boxShadow:
-      "inset -3px -3px 3px rgba(255,255,255,.9), inset 3px 3px 3px rgba(0,0,0,.04)",
+    height: "3rem",
+  },
+  chartIcon: {
+    fontSize: "5rem",
+    margin: "0 0 0 -1rem",
+    color: theme.palette.secondary.light,
+    opacity: 0.2,
+  },
+  lineIcon: {
+    fontSize: "2.5rem",
+    color: theme.palette.secondary.light,
+    opacity: 0.2,
+  },
+  indIcon: {
+    fontSize: "2.5rem",
+    color: theme.palette.secondary.light,
+    opacity: 0.2,
   },
 }))
 
-const LatestPrimaryCard = ({ latest }) => {
+const LatestPrimaryCard = ({ latest, methane }) => {
   const classes = useStyles()
   const props = useSpring({
     val: latest.values[0],
-    from: { val: 0 },
-    config: { mass: 5, tension: 400, friction: 150, clamp: true },
+    from: { val: 300 },
+    config: { duration: 2000 },
+    // config: { mass: 5, tension: 400, friction: 150, clamp: true },
+  })
+  const props0 = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { duration: 1500 },
+  })
+  const props1 = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 1000,
+    config: { duration: 2500 },
+  })
+  const props2 = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 1500,
+    config: { duration: 2500 },
+  })
+  const props3 = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 2000,
+    config: { duration: 2500 },
+  })
+  const props4 = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 2500,
+    config: { duration: 2500 },
   })
   return (
     <div className={classes.flexContainer}>
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
+          <ChartIcon className={classes.chartIcon} />
           <div className={classes.label}>Latest Earth CO2</div>
           <div className={classes.label2}>Value for {latest.labels[0]}</div>
-          <div className={classes.separator} />
           <div className={classes.value}>
-            <animated.div className="number">
+            <animated.div className="number" style={props0}>
               {props.val.to((val) => val.toFixed(2))}
             </animated.div>
-            <div className={classes.ppm}>&nbsp;ppm</div>
+            <div className={classes.ppm}>ppm</div>
           </div>
         </CardContent>
       </Card>
       {/* -------------------------------------------------------------- TODO ANIMATIONS */}
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
-          <div className={classes.labelSecondary}>Trend for the date:</div>
-          <div className={classes.valueSecondary}>
-            <div>
-              {latest.trend[0]}
-              <span className={classes.ppmSecondary}> ppm</span>
+          <animated.div style={props1}>
+            <LineIcon className={classes.lineIcon} />
+            <div className={classes.labelSecondary}>Trend for the date:</div>
+            <div className={classes.valueSecondary}>
+              <div>
+                {latest.trend[0]}
+                <span className={classes.ppmSecondary}>ppm</span>
+              </div>
             </div>
-          </div>
+          </animated.div>
           <div className={classes.separator} />
-          <div className={classes.labelSecondary}>Increase since 1800:</div>
-          <div className={classes.valueSecondary}>
-            <div>
-              {parseFloat(latest.values[0] - 292.9).toFixed(2)}
-              <span className={classes.ppmSecondary}> ppm</span>
+          <animated.div style={props2}>
+            <IndIcon className={classes.indIcon} />
+            <div className={classes.labelSecondary}>Increase since 1800:</div>
+            <div className={classes.valueSecondary}>
+              <div>
+                {parseFloat(latest.values[0] - 292.9).toFixed(2)}
+                <span className={classes.ppmSecondary}>ppm</span>
+              </div>
             </div>
-          </div>
+          </animated.div>
+          {/* ------------------------------------------------------- TODO END */}
+        </CardContent>
+      </Card>
+      <Card className={classes.root}>
+        <CardContent className={classes.cardContent}>
+          <animated.div style={props3}>
+            <div className={classes.labelSecondary}>Latest methane:</div>
+            <div
+              className={classes.valueSecondary}
+              // style={{ color: "#006600" }}
+            >
+              <div>
+                {methane.values[methane.values.length - 1].toFixed(2)}
+                <span className={classes.ppmSecondary}>ppb</span>
+              </div>
+            </div>
+          </animated.div>
+
+          <div className={classes.separator} />
+          <animated.div style={props4}>
+            <div className={classes.labelSecondary}>Methane trend:</div>
+            <div
+              className={classes.valueSecondary}
+              // style={{ color: "#006600" }}
+            >
+              <div>
+                {methane.trend[methane.trend.length - 1].toFixed(2)}
+                <span className={classes.ppmSecondary}>ppb</span>
+              </div>
+            </div>
+          </animated.div>
           {/* ------------------------------------------------------- TODO END */}
         </CardContent>
       </Card>

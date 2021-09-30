@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     maxWidth: 1400,
     justifyContent: "space-between",
-    margin: "7rem auto",
+    margin: "10rem auto 14rem",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       marginTop: 0,

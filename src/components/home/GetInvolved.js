@@ -7,40 +7,6 @@ import { Spring, animated, config } from "react-spring"
 import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    width: "100%",
-    border: "1px solid magenta",
-    display: "grid",
-    gridTemplateColumns: "50% 50%",
-  },
-  imageContainer: {
-    border: "1px solid green",
-    // margin: "6rem auto",
-    // width: "50%",
-    // display: "flex",
-    // flexDirection: "column",
-    // justifyContent: "center",
-    // alignItems: "center",
-    padding: "3.5rem",
-    [theme.breakpoints.down("sm")]: {
-      margin: "4rem auto",
-      padding: "1rem",
-    },
-  },
-  sloganContainer: {
-    border: "1px solid red",
-    // margin: "6rem auto",
-    maxWidth: 700,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "left",
-    padding: "3.5rem",
-    [theme.breakpoints.down("sm")]: {
-      margin: "4rem auto",
-      padding: "1rem",
-    },
-  },
   sloganText: {
     fontFamily: "Poppins, sans",
     fontSize: "2rem",
@@ -51,26 +17,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   about: {
-    border: "1px solid brown",
-    maxWidth: "780px",
     fontFamily: "Poppins, sans",
     fontSize: "1rem",
     textAlign: "left",
     lineHeight: "2rem",
     color: "rgba(0, 0, 0, 0.5)",
-    padding: "3rem",
-    paddingLeft: 0,
-    marginTop: "1.5rem",
-    [theme.breakpoints.down("md")]: {
-      padding: "1rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      lineHeight: "1.5rem",
-      marginTop: "1rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: ".9rem",
-    },
+    marginBlock: "1.5rem",
   },
   blue: {
     color: theme.palette.primary.main,
@@ -82,32 +34,54 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
   },
   btn: {
-    ...theme.typography.tab,
-    textAlign: "center",
+    color: theme.palette.primary.main,
     borderRadius: "50px",
     fontFamily: "Poppins, sans",
-    fontSize: "0.95rem",
-    textTransform: "none",
+    fontSize: "1.2rem",
+    textTransform: "uppercase",
     border: "3px solid",
-    marginTop: "1.5rem",
-    marginLeft: "0rem",
-    marginRight: "0rem",
-    padding: "0.3rem 2rem",
+    padding: "0.4rem 2.7rem",
+    marginTop: "2rem",
+    transition: "all .2s ease",
     "&:hover": {
-      border: "3px solid",
+      border: `3px solid ${theme.palette.primary.main}`,
+      color: "white",
+      background: theme.palette.primary.main,
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.2rem 1rem",
+      fontSize: "0.8rem",
+      fontWeight: 500,
+      marginTop: "1rem",
       border: "2px solid",
       "&:hover": {
         border: "2px solid",
       },
     },
-
-    [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1.5rem",
-      fontSize: "0.8rem",
-      fontWeight: 500,
-    },
+  },
+  // new styles
+  containerTop: {
+    width: "100%",
+    maxWidth: 1920,
+    margin: "auto",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+    fontFamily: "Poppins",
+    fontWeight: 300,
+  },
+  contentContainer: {
+    marginLeft: 0,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    maxWidth: 700,
+    padding: "2rem",
+    paddingLeft: "6rem",
+  },
+  image: {
+    display: "block",
+    maxWidth: "100%",
   },
 }))
 
@@ -119,9 +93,11 @@ const GetInvolved = ({ setValue }) => {
   })
 
   return (
-    <div className={classes.container}>
-      <div className={classes.imageContainer}>l</div>
-      <div className={classes.sloganContainer}>
+    <div className={classes.containerTop} style={{ marginBottom: "12rem" }}>
+      <div className={classes.imageContainer}>
+        <img src="/flood.jpeg" className={classes.image} />
+      </div>
+      <div className={classes.contentContainer}>
         <Spring
           from={{ opacity: 0, marginTop: 30, marginBottom: -30 }}
           to={{
@@ -142,15 +118,17 @@ const GetInvolved = ({ setValue }) => {
                 complex for responsible estimation. Data speaks volumes and we
                 actually know a lot by now.
                 <br />
-                <br /> Suggest functionality or request additional data. Share
-                ideas and opinions for even better experience.
+                <br />
+                If you find this app useful share your experience, suggest
+                functionality or request additional data. Contribute to the code
+                base if you feel like, or just say "Hi".
               </div>
               <Link href="/contact">
                 <Button
                   variant="outlined"
                   color="primary"
                   className={classes.btn}
-                  onClick={() => setValue(4)}
+                  // onClick={() => setValue(4)}
                 >
                   Contact
                 </Button>

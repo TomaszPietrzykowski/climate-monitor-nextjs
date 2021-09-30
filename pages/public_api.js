@@ -41,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.main,
     fontWeight: 300,
     letterSpacing: 1.5,
-    fontSize: "1.8rem",
+    fontSize: "2rem",
+    marginBottom: "2rem",
   },
   p: {
     color: theme.palette.text.secondary,
@@ -121,8 +122,9 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid blue",
   },
   link: {
-    color: "blue%",
+    color: theme.palette.primary.main,
     fontWeight: 500,
+    textDecoration: "underline",
   },
 }))
 
@@ -138,9 +140,7 @@ const PublicAPI = () => {
       </div>
       <div className={classes.container}>
         {/* <h2 className={classes.h2}>Latest and historical climate data</h2> */}
-        <p className={classes.pHead}>
-          What type of data is supplied by climate monitor API?
-        </p>
+        <p className={classes.h2}>Climate data</p>
         <p className={classes.p}>
           There are seven main factors in focus. Four atmospheric greenhouse
           gases: carbon dioxide (co2), methane (ch4), sulfur hexafluoride (sf6),
@@ -151,87 +151,19 @@ const PublicAPI = () => {
           available for global values and values calculated for Mauna Loa
           Observatory Hawaii separately.
         </p>
-        <p className={classes.pHead}>How it works</p>
         <p className={classes.p}>
-          Idea behind climate monitor is to deliver desent range of useful data
-          on climate change in a form of accessible, free, json API; under one -
-          somewhat logically structured - set of endpoints.
-        </p>
-        <p className={classes.p}>
-          Data is read from multiple ftp servers or obtained within a NASA's
-          EarthData program, then saved into custom database. Fast asynchronous
-          server delivers responses instantly, free of ftp restrictions. Data
-          update schedule runs in relation to data scope and source data update
-          schedule. That ensures both: that values are accurate and that no
+          Data is read from ftp servers or obtained within a NASA's EarthData
+          program, parsed and saved into database for unlimited access. Update
+          schedule runs in relation to data scope and source data update
+          schedule. That ensures both: that values are up to date and that no
           excessive traffic is generated at the source.
         </p>
-        <p className={classes.pHead}>Licence</p>
         <p className={classes.p}>
-          Public API at climatemonitor.info is free to use without any
-          registration. I do my best to keep it up and running, if you encounter
-          any problems don't get mad, get involved:{" "}
-          <Link href="/contact" className={classes.link}>
-            <a>contact me.</a>
+          <Link href="/about">
+            <a className={classes.link}>More on data</a>
           </Link>
         </p>
-        <p className={classes.pHead}>Data ownership and credits</p>
-        <p className={classes.p}>
-          Climate Monitor does not have any rights to presented data. All
-          credits for hard, scientific work should go to data sources listed
-          below. To ensure proper representation of data and data restrictions
-          original publications should also be referenced in case of any
-          scientific usage.
-        </p>
-        <p className={classes.p}>
-          Climate Monitor's mission is to increase climate awarness,
-          facilitating access to reliable climate data by serving it in a form
-          of JSON API. All data used and served is publicly availaible under
-          conditions that Climate Monitor - to the best of our knowledge and
-          effort - fulfills.
-        </p>
-        <p className={classes.p}>Climate Monitor uses 3 main data sources:</p>
-        <p className={classes.p}>
-          NASA Jet Propulsion Laboratory California Insititute of Technology
-          Physical Oceanography Distributed Active Archive Center (PO.DAAC)
-        </p>
-        <p className={classes.p}>
-          <a
-            href="https://podaac.jpl.nasa.gov/AboutPodaac"
-            target="_blank"
-            className={classes.link}
-          >
-            Visit PO.DAAC website.
-          </a>
-        </p>
-        <p className={classes.p}>
-          The Global Monitoring Laboratory (GML) of the National Oceanic and
-          Atmospheric Administration (NOAA)
-        </p>
-        <p className={classes.p}>
-          <a
-            href="https://gml.noaa.gov/about/aboutgmd.html"
-            target="_blank"
-            className={classes.link}
-          >
-            Visit NOAA GML website.
-          </a>
-        </p>
-        <p className={classes.p}>Berkeley Earth</p>
-        <p className={classes.p}>
-          <a
-            href="http://berkeleyearth.org/"
-            target="_blank"
-            className={classes.link}
-          >
-            Visit Berkeley Earth website.
-          </a>
-        </p>
-        <p className={classes.p}>
-          <Link href="/about" className={classes.link}>
-            <a>More on data</a>
-          </Link>
-        </p>
-        <p className={classes.pHead}>How to use API?</p>
+        <p className={classes.h2}>Request structure</p>
         <p className={classes.p}>
           Send a GET request to one of supported endpoints. Endpoints are
           structured like so:
@@ -426,7 +358,7 @@ const PublicAPI = () => {
         <br />
         <br />
         <hr />
-        <p className={classes.pHead}>Response structure</p>
+        <p className={classes.h2}>Response structure</p>
         <p className={classes.p}>
           Response from API is provided in JSend format with possible outcomes:
           success, fail and error.
@@ -648,7 +580,7 @@ const PublicAPI = () => {
         <br />
         <br />
         <hr />
-        <p className={classes.pHead}>All availaible endpoints</p>
+        <p className={classes.h2}>All availaible endpoints</p>
         <p className={classes.pHead}>
           Earth atmospheric CO<sub>2</sub>
         </p>

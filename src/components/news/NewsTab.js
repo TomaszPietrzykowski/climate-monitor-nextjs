@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => ({
     "&:hover $tabImg": {
       opacity: 1,
     },
-    "&:hover $tabText": {
-      color: theme.palette.secondary.main,
-    },
     "&:hover $tabTitle": {
       color: theme.palette.secondary.main,
       textDecoration: "underline",
