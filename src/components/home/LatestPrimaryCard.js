@@ -5,6 +5,8 @@ import CardContent from "@material-ui/core/CardContent"
 import ChartIcon from "@material-ui/icons/BarChartRounded"
 import LineIcon from "@material-ui/icons/Timeline"
 import IndIcon from "@material-ui/icons/TrendingUp"
+import MethIcon from "@material-ui/icons/CloudQueue"
+import InsiteIcon from "@material-ui/icons/Transform"
 import { useSpring, animated } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     margin: "2rem",
-    // marginTop: "2rem",
-    padding: "0 2rem 3rem",
+    padding: "0 2rem 2rem 1rem",
     color: theme.palette.text.secondary,
     boxShadow: "none",
     borderRadius: 0,
@@ -46,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
   },
   label2: {
     color: "#c3c3c3",
-    fontSize: "1.2rem",
-    fontWeight: 100,
+    fontSize: "1rem",
+    fontWeight: 200,
     opacity: 0,
     marginBottom: "1rem",
     animation: "$fadeIn 1s ease 1s forwards",
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   labelSecondary: {
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     // fontWeight: 500,
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
@@ -99,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2.5rem",
     // marginTop: "0.5rem",
     // marginBottom: "1rem",
-    color: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.6rem",
     },
@@ -166,11 +167,16 @@ const useStyles = makeStyles((theme) => ({
   lineIcon: {
     fontSize: "2.5rem",
     color: theme.palette.secondary.light,
-    opacity: 0.2,
+    opacity: 0.3,
   },
   indIcon: {
     fontSize: "2.5rem",
     color: theme.palette.secondary.light,
+    opacity: 0.3,
+  },
+  methIcon: {
+    fontSize: "2.5rem",
+    color: theme.palette.common.green,
     opacity: 0.2,
   },
 }))
@@ -217,8 +223,12 @@ const LatestPrimaryCard = ({ latest, methane }) => {
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
           <ChartIcon className={classes.chartIcon} />
-          <div className={classes.label}>Latest Earth CO2</div>
-          <div className={classes.label2}>Value for {latest.labels[0]}</div>
+          <div className={classes.label}>
+            Latest Earth CO<sub>2</sub>
+          </div>
+          <div className={classes.label2}>
+            Value for {latest.labels[0].replaceAll("-", "/")}
+          </div>
           <div className={classes.value}>
             <animated.div className="number" style={props0}>
               {props.val.to((val) => val.toFixed(2))}
@@ -232,7 +242,9 @@ const LatestPrimaryCard = ({ latest, methane }) => {
         <CardContent className={classes.cardContent}>
           <animated.div style={props1}>
             <LineIcon className={classes.lineIcon} />
-            <div className={classes.labelSecondary}>Trend for the date:</div>
+            <div className={classes.labelSecondary}>
+              CO<sub>2</sub> trend for date:
+            </div>
             <div className={classes.valueSecondary}>
               <div>
                 {latest.trend[0]}
@@ -243,7 +255,9 @@ const LatestPrimaryCard = ({ latest, methane }) => {
           <div className={classes.separator} />
           <animated.div style={props2}>
             <IndIcon className={classes.indIcon} />
-            <div className={classes.labelSecondary}>Increase since 1800:</div>
+            <div className={classes.labelSecondary}>
+              CO<sub>2</sub> incr. since 1800:
+            </div>
             <div className={classes.valueSecondary}>
               <div>
                 {parseFloat(latest.values[0] - 292.9).toFixed(2)}
@@ -257,10 +271,11 @@ const LatestPrimaryCard = ({ latest, methane }) => {
       <Card className={classes.root}>
         <CardContent className={classes.cardContent}>
           <animated.div style={props3}>
+            <MethIcon className={classes.methIcon} />
             <div className={classes.labelSecondary}>Latest methane:</div>
             <div
               className={classes.valueSecondary}
-              // style={{ color: "#006600" }}
+              style={{ color: "#98ce00" }}
             >
               <div>
                 {methane.values[methane.values.length - 1].toFixed(2)}
@@ -271,10 +286,11 @@ const LatestPrimaryCard = ({ latest, methane }) => {
 
           <div className={classes.separator} />
           <animated.div style={props4}>
+            <InsiteIcon className={classes.methIcon} />
             <div className={classes.labelSecondary}>Methane trend:</div>
             <div
               className={classes.valueSecondary}
-              // style={{ color: "#006600" }}
+              style={{ color: "#98ce00" }}
             >
               <div>
                 {methane.trend[methane.trend.length - 1].toFixed(2)}

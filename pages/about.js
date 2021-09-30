@@ -311,7 +311,7 @@ const About = () => {
           style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
         >
           <div className={classes.content}>
-            <h2 className={classes.h2}>News source</h2>
+            <h2 className={classes.h2}>Climate headlines</h2>
             <p className={classes.p}>
               Climate Monitor's newsfeed is powered by NewsAPI - provider of
               worldwide news and breaking headlines.

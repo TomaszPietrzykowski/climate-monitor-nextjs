@@ -1,24 +1,21 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import CalIcon from "@material-ui/icons/CalendarTodayRounded"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: theme.palette.common.shade,
     textAlign: "left",
     fontFamily: "Poppins",
     minWidth: "28%",
     fontWeight: 300,
     color: theme.palette.text.secondary,
-    borderRadius: 20,
-    boxShadow:
-      "-10px -10px 20px rgba(255,255,255,.8), 10px 10px 30px rgba(0,0,0,.03)",
     [theme.breakpoints.down("md")]: {
       fontSize: "0.8rem",
       minWidth: "auto",
     },
   },
   content: {
-    padding: "4rem",
+    padding: "1rem 4rem",
   },
   label: {
     fontSize: "1.6rem",
@@ -36,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
-    fontSize: "3rem",
-    color: theme.palette.primary.dark,
+    fontSize: "2.5rem",
+    color: theme.palette.secondary.main,
 
-    margin: "2rem 0 0",
+    margin: ".5rem 0 0",
     [theme.breakpoints.down("md")]: {
       fontSize: "1.4rem",
       margin: "0.5rem 0rem",
@@ -69,6 +66,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1rem",
     color: "#c3c3c3",
     fontWeight: 200,
+    letterSpacing: 1,
+  },
+  calIcon: {
+    color: theme.palette.secondary.light,
+    opacity: 0.3,
+    fontSize: "1.8rem",
+    marginLeft: -3,
   },
 }))
 
@@ -78,8 +82,11 @@ const LatestCard = ({ latest, labelText, index }) => {
   return (
     <section className={classes.root}>
       <div className={classes.content}>
+        <CalIcon className={classes.calIcon} />
         <div className={classes.label}>{labelText}</div>
-        <div className={classes.date}>{latest.labels[index + 1]}</div>
+        <div className={classes.date}>
+          CO<sub>2</sub> for {latest.labels[index + 1].replaceAll("-", "/")}
+        </div>
         <div className={classes.value}>
           <div className={classes.smallFlex}>
             <span>{latest.values[index + 1].toFixed(2)} </span>

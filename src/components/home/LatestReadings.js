@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
-    fontSize: "3.3rem",
+    fontSize: "2.8rem",
     maxWidth: 1400,
     margin: "auto",
     marginTop: "4rem",
     marginBottom: "2rem",
-    padding: "1rem 2rem",
+    padding: "1rem 2rem 1rem 3.5rem",
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
@@ -37,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
     "&::before": {
       content: "'Dashboard'",
       position: "absolute",
-      bottom: -45,
-      left: -50,
-      fontSize: "10rem",
+      bottom: -35,
+      left: 5,
+      fontSize: "8rem",
       opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   latestContainer: {
-    display: "flex",
-    justifyContent: "space-around",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
     marginTop: "4rem",
     [theme.breakpoints.down("md")]: {
       marginTop: "2rem",
@@ -74,12 +74,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btnContainer: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "10rem 0",
+    ...theme.flex.rowStart,
+    margin: "6rem 3rem 10rem",
     [theme.breakpoints.down("md")]: {
       marginTop: "2rem",
     },
@@ -91,7 +87,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    ...theme.typography.tab,
     color: theme.palette.primary.main,
     borderRadius: "50px",
     fontFamily: "Poppins, sans",
@@ -174,9 +169,9 @@ const LatestReadings = ({ setValue }) => {
             <Loader />
           ) : (
             <Fragment>
-              {/* <div className={classes.titleBar}>
+              <div className={classes.titleBar}>
                 <h1 className={classes.sectionHeader}>Dashboard</h1>
-              </div> */}
+              </div>
               <LatestPrimaryCard latest={latest} methane={latestCH4} />
               <div className={classes.latestContainer}>
                 {cardData.map((data, i) => (

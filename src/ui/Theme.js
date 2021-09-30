@@ -13,7 +13,7 @@ export default createMuiTheme({
       lightBlue: `#9bf3f0`,
       orange: `${orange}`,
       green: `#98ce00`,
-      darkGreen: `#005200`,
+      darkGreen: `#006000`,
       footer: `${whitish}`,
       darkBlue: `${darkBlue}`,
       activeTab: `rgba(0, 54, 102, 1)`,
