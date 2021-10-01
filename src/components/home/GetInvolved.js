@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     lineHeight: "2rem",
     color: "rgba(0, 0, 0, 0.5)",
-    marginBlock: "1.5rem",
+    marginTop: "1.5rem",
   },
   blue: {
     color: theme.palette.secondary.main,
@@ -139,20 +139,20 @@ const GetInvolved = ({ setValue }) => {
           </Spring>
         </div>
       </div>
-      <div className={classes.containerTop} style={{ marginBottom: "12rem" }}>
+      <div className={classes.containerTop} style={{ marginBottom: "18rem" }}>
         <div
           className={classes.contentContainer}
           style={{ marginLeft: "auto" }}
         >
           <h2 className={classes.sloganText}>Data sources</h2>
           <div className={classes.about}>
-            <p className={classes.p}>
-              Climate monitor relies on three data sources: The Global
-              Monitoring Laboratory of the National Oceanic and Atmospheric
-              Administration , NASA Jet Propulsion Laboratory California
-              Insititute of Technology Physical Oceanography Distributed Active
-              Archive Center and Berkeley Earth.
-            </p>
+            Climate monitor relies on three data sources: The Global Monitoring
+            Laboratory of the National Oceanic and Atmospheric Administration
+            for greenhouse gases levels, NASA Jet Propulsion Laboratory
+            California Insititute of Technology Physical Oceanography
+            Distributed Active Archive Center for data on ocean levels and
+            glaciers ice mass and Berkeley Earth for global temperature
+            measurements.
           </div>
           <Link href="/about">
             <Button variant="outlined" color="primary" className={classes.btn}>
@@ -161,7 +161,7 @@ const GetInvolved = ({ setValue }) => {
           </Link>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/satellite.jpeg" className={classes.image} />
+          <img src="/baloon.jpeg" className={classes.image} />
         </div>
       </div>
     </>

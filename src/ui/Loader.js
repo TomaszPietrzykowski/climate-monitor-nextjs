@@ -5,14 +5,14 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles((theme) => ({
   containerStyle: {
     width: "100%",
-    height: "30vh",
+    height: "40vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   },
   spinnerStyle: {
-    height: "4rem",
+    height: "7rem",
     margin: "2rem",
   },
 }))

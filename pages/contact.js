@@ -7,6 +7,7 @@ import { makeStyles, withStyles } from "@material-ui/styles"
 import Checkbox from "@material-ui/core/Checkbox"
 import Snackbar from "@material-ui/core/Snackbar"
 import MuiAlert from "@material-ui/lab/Alert"
+import SendIcon from "@material-ui/icons/Send"
 // custom
 import Loader from "../src/ui/Loader"
 
@@ -40,7 +41,7 @@ const CustomCheckbox = withStyles((theme) => ({
   root: {
     color: theme.palette.text.secondary,
     "&$checked": {
-      color: theme.palette.common.success,
+      color: theme.palette.common.green,
     },
   },
   checked: {},
@@ -127,15 +128,29 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   submitBtn: {
-    paddingTop: ".7rem",
-    backgroundColor: theme.palette.secondary.main,
-    transition: "all .3s ease",
+    color: theme.palette.secondary.main,
+    borderRadius: "50px",
+    fontFamily: "Poppins, sans",
+    fontSize: "1.2rem",
+    textTransform: "uppercase",
+    border: "3px solid",
+    padding: "0.4rem 3.5rem 0.4rem 2.8rem",
+    width: "min-content",
+    transition: "all .2s ease",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.main,
+      border: `3px solid ${theme.palette.secondary.main}`,
+      color: "white",
+      background: theme.palette.secondary.main,
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: ".9rem",
-      padding: ".6rem 1.6",
+      padding: "0.2rem 1rem",
+      fontSize: "0.8rem",
+      fontWeight: 500,
+      marginTop: "1rem",
+      border: "2px solid",
+      "&:hover": {
+        border: "2px solid",
+      },
     },
   },
   textarea: {
@@ -153,6 +168,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.flex.row,
     justifyContent: "flex-start",
     width: "100%",
+    maxWidth: 560,
     paddingRight: "1rem",
     border: `1px solid ${theme.palette.common.background}`,
     borderRadius: 4,
@@ -164,6 +180,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.flex.row,
     justifyContent: "flex-start",
     width: "100%",
+    maxWidth: 560,
     paddingRight: "1rem",
     border: `1px solid red`,
     borderRadius: 4,
@@ -188,9 +205,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   info: {
-    color: theme.palette.text.primary,
-    // ...theme.utils.paragraph,
-    margin: "4rem 0",
+    color: theme.palette.secondary.main,
+    textDecoration: "underline",
+    letterSpacing: 0.5,
     [theme.breakpoints.down("xs")]: {
       fontSize: ".9rem",
     },
@@ -198,6 +215,33 @@ const useStyles = makeStyles((theme) => ({
   error: {
     color: "red",
     padding: "2rem 2rem 2rem 0",
+  },
+  // new styles
+  containerTop: {
+    width: "100%",
+    maxWidth: 1920,
+    margin: "6rem auto 8rem",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+    fontFamily: "Poppins",
+    fontWeight: 300,
+  },
+  contentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    maxWidth: 700,
+    padding: "0 2rem",
+  },
+  image: {
+    display: "block",
+    maxWidth: "100%",
+  },
+  sendIcon: {
+    fontSize: "1.8rem",
+    marginRight: ".6rem",
+    marginTop: "-0.15rem",
   },
 }))
 
@@ -277,84 +321,95 @@ const Contact = () => {
       <div className={classes.titleBar}>
         <h1 className={classes.sectionHeader}>Contact</h1>
       </div>
-      <div className={classes.container}>
-        <main className={classes.content}>
-          {/* <h2 className={classes.title}>Send email</h2> */}
-          {error && <div className={classes.error}>{error}</div>}
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              <form onSubmit={(e) => submitHandler(e)} className={classes.form}>
-                <CssTextField
-                  id="name"
-                  required
-                  label="Your name"
-                  variant="outlined"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <CssTextField
-                  id="email"
-                  type="email"
-                  label="Your email"
-                  required
-                  variant="outlined"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <CssTextField
-                  id="message"
-                  type="text"
-                  label="Message"
-                  className={classes.textarea}
-                  required
-                  multiline
-                  rows={16}
-                  variant="outlined"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-                <div
-                  className={
-                    consentError
-                      ? classes.checkboxContainerError
-                      : classes.checkboxContainer
-                  }
+      <div className={classes.containerTop}>
+        <div
+          className={classes.contentContainer}
+          style={{ marginLeft: "auto" }}
+        >
+          <main className={classes.content}>
+            {/* <h2 className={classes.title}>Send email</h2> */}
+            {error && <div className={classes.error}>{error}</div>}
+            {loading ? (
+              <Loader />
+            ) : (
+              <>
+                <form
+                  onSubmit={(e) => submitHandler(e)}
+                  className={classes.form}
                 >
-                  <CustomCheckbox
-                    checked={legalConsent}
-                    onChange={(e) => {
-                      setLegalConsent(e.target.checked)
-                      setConsentError(false)
-                    }}
+                  <CssTextField
+                    id="name"
+                    required
+                    label="Your name"
+                    variant="outlined"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
-                  <span
+                  <CssTextField
+                    id="email"
+                    type="email"
+                    label="Your email"
+                    required
+                    variant="outlined"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <CssTextField
+                    id="message"
+                    type="text"
+                    label="Message"
+                    className={classes.textarea}
+                    required
+                    multiline
+                    rows={16}
+                    variant="outlined"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                  <div
                     className={
                       consentError
-                        ? classes.checkboxLabelError
-                        : classes.checkboxLabel
+                        ? classes.checkboxContainerError
+                        : classes.checkboxContainer
                     }
                   >
-                    I grant all permissions required by law in order to send
-                    this email
-                  </span>
+                    <CustomCheckbox
+                      checked={legalConsent}
+                      onChange={(e) => {
+                        setLegalConsent(e.target.checked)
+                        setConsentError(false)
+                      }}
+                    />
+                    <span
+                      className={
+                        consentError
+                          ? classes.checkboxLabelError
+                          : classes.checkboxLabel
+                      }
+                    >
+                      I grant all permissions required by law in order to send
+                      this email
+                    </span>
+                  </div>
+                  <Button type="submit" className={classes.submitBtn}>
+                    <SendIcon className={classes.sendIcon} />
+                    Send
+                  </Button>
+                </form>
+                <div className={classes.info}>
+                  <div className={classes.link}>
+                    <a href="mailto:contact@climatemonitor.info">
+                      contact@climatemonitor.info
+                    </a>
+                  </div>
                 </div>
-                <Button type="submit" className={classes.submitBtn}>
-                  Send
-                </Button>
-              </form>
-              <div className={classes.info}>
-                <div className={classes.link}>
-                  Email:{" "}
-                  <a href="mailto:contact@climatemonitor.info">
-                    contact@climatemonitor.info
-                  </a>
-                </div>
-              </div>
-            </>
-          )}
-        </main>
+              </>
+            )}
+          </main>
+        </div>
+        <div className={classes.imageContainer}>
+          <img src="/cannoes.jpeg" className={classes.image} />
+        </div>
       </div>
     </Fragment>
   )
