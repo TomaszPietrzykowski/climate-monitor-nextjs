@@ -3,6 +3,9 @@ import Head from "next/head"
 import Link from "next/link"
 // mui
 import { makeStyles } from "@material-ui/core/styles"
+import useScrollTrigger from "@material-ui/core/useScrollTrigger"
+// custom
+import FloatButton from "../src/components/public_api/FloatButtonAPI"
 
 const useStyles = makeStyles((theme) => ({
   // new styles
@@ -30,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   // new styles end --------------
   container: {
     ...theme.utils.container,
-    padding: "2rem",
+    padding: "0 2rem",
     fontFamily: "Poppins",
     fontWeight: 300,
   },
@@ -83,26 +86,26 @@ const useStyles = makeStyles((theme) => ({
   code: {
     fontSize: "1rem",
     lineHeight: 1.8,
-    letterSpacing: 1,
-    color: theme.palette.common.lightBlue,
+    letterSpacing: 1.3,
+    color: theme.palette.common.lightestBlue,
   },
   secondaryCode: {
     fontSize: "1rem",
     lineHeight: 1.5,
-    color: theme.palette.secondary.main,
+    color: theme.palette.secondary.light,
   },
   codeblock: {
     width: "max-content",
     padding: "2rem 5rem 2rem 2rem",
     margin: "1rem 0 0",
-    background: "#001a33",
+    background: theme.palette.primary.dark,
     borderRadius: 7,
   },
   codeLine: {
     width: "max-content",
     padding: "1rem 5rem 1rem 2rem",
     margin: "1rem 0",
-    background: "#001a33",
+    background: theme.palette.primary.dark,
     borderRadius: 7,
   },
 
@@ -110,40 +113,27 @@ const useStyles = makeStyles((theme) => ({
   // code format colorizer
   //
   rootEnd: {
-    color: " #e6ffee",
+    color: theme.palette.common.lightestBlue,
   },
   factor: {
-    color: "#ffc6b3",
+    color: theme.palette.common.orange,
   },
   query: {
-    color: "#b3ecff",
+    color: theme.palette.common.neonBlue,
   },
   property: {
-    color: "#80d4ff",
+    color: theme.palette.common.lightBlue,
   },
   string: {
-    color: "#ffe0b3",
+    color: theme.palette.common.orange,
   },
   number: {
-    color: "#ccffe6",
+    color: theme.palette.common.green,
   },
   gridParent: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr",
     border: "1px solid green",
-  },
-  grid1: {
-    border: "1px solid orange",
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-  grid2: {
-    border: "1px solid purple",
-  },
-  grid3: {
-    width: "100%",
-    maxWidth: 934,
-    border: "1px solid blue",
   },
   link: {
     color: theme.palette.primary.main,
@@ -151,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "underline",
   },
   section: {
-    marginTop: "8rem",
+    marginTop: "6rem",
   },
   ref: {
     color: theme.palette.secondary.main,
@@ -160,22 +150,24 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "underline",
   },
   refBig: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.text.secondary,
     fontWeight: 300,
     cursor: "pointer",
-    padding: ".4rem 1rem",
+    padding: ".4rem 0",
     width: "max-content",
     "&:hover": {
+      color: theme.palette.secondary.main,
       textDecoration: "underline",
     },
   },
   refSmall: {
-    color: theme.palette.secondary.main,
-    fontWeight: 200,
+    color: theme.palette.text.secondary,
+    fontWeight: 300,
     cursor: "pointer",
     padding: ".4rem 2rem",
     width: "max-content",
     "&:hover": {
+      color: theme.palette.secondary.main,
       textDecoration: "underline",
     },
   },
@@ -192,6 +184,13 @@ const PublicAPI = () => {
   const tempRef = useRef(null)
   const glaciersRef = useRef(null)
   const seaRef = useRef(null)
+
+  // float button trigger on scroll
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 1200,
+  })
+
   return (
     <>
       <Head>
@@ -237,6 +236,7 @@ const PublicAPI = () => {
         <section className={classes.section}>
           <p className={classes.h2}>Documentation</p>
           <br />
+          <br />
           <p
             className={classes.refBig}
             onClick={() =>
@@ -259,7 +259,7 @@ const PublicAPI = () => {
               endpointsRef.current.scrollIntoView({ behavior: "smooth" })
             }
           >
-            All endpoints
+            Endpoints:
           </p>
           <p
             className={classes.refSmall}
@@ -609,7 +609,7 @@ const PublicAPI = () => {
               <span className={classes.property}>
                 &nbsp;&nbsp;&nbsp;&nbsp;readings
               </span>
-              :<span className={classes.number}>{" ["}</span>
+              :<span className={classes.code}>{" ["}</span>
               <br />
             </code>
 
@@ -1080,6 +1080,7 @@ const PublicAPI = () => {
           </div>
         </section>
       </div>
+      {trigger && <FloatButton />}
     </>
   )
 }
