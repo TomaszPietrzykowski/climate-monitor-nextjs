@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbarMargin: {
-    height: 86,
+    height: 80,
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
     },
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: "3rem",
-    margin: "1.2rem 0rem",
+    margin: "1rem 0rem",
     [theme.breakpoints.down("sm")]: {
       margin: "0rem",
       height: "2rem",

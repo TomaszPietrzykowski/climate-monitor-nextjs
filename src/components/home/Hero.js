@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     maxWidth: 1400,
-    margin: "5rem auto",
+    margin: "8rem auto",
     padding: "2rem",
     flexDirection: "column",
     justifyContent: "center",
@@ -71,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    ...theme.typography.tab,
     fontWeight: 500,
     borderRadius: "50px",
     color: "white",

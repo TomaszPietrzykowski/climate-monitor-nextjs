@@ -38,8 +38,9 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "flex",
     justifyContent: "space-between",
-    minHeight: "600px",
+    minHeight: "60vh",
     alignItems: "center",
+    padding: "12rem 0",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       padding: "1rem",

@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -35,
       left: 5,
       fontSize: "8rem",
-      opacity: 0.04,
+      opacity: 0.03,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
     },
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   latestContainer: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
-    marginTop: "4rem",
+    marginTop: "2rem",
     [theme.breakpoints.down("md")]: {
       marginTop: "2rem",
     },
@@ -165,13 +165,16 @@ const LatestReadings = ({ setValue }) => {
     <main className={classes.root}>
       <div className={classes.siteContainer}>
         <div className={classes.container}>
+          <div className={classes.titleBar}>
+            <h1 className={classes.sectionHeader}>Dashboard</h1>
+          </div>
           {loading || loadingCH4 || !latest || !latestCH4 ? (
-            <Loader />
+            <Fragment>
+              <Loader />
+              <div style={{ marginBottom: "50vh" }} />
+            </Fragment>
           ) : (
             <Fragment>
-              <div className={classes.titleBar}>
-                <h1 className={classes.sectionHeader}>Dashboard</h1>
-              </div>
               <LatestPrimaryCard latest={latest} methane={latestCH4} />
               <div className={classes.latestContainer}>
                 {cardData.map((data, i) => (
