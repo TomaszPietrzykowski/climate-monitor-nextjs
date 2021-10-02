@@ -8,10 +8,8 @@ const useStyles = makeStyles((theme) => ({
   },
   para: {
     color: theme.palette.text.secondary,
-    lineHeight: 1.8,
-    letterSpacing: 0.3,
+    ...theme.utils.p,
     padding: "1rem 2rem 0 0",
-    maxWidth: "800px",
     marginBottom: "2rem",
   },
 }))

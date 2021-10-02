@@ -26,9 +26,25 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     padding: "2rem 6rem 2rem 2rem",
   },
+  // imageContainer: {
+  //   position: "relative",
+  //   "&::before": {
+  //     content: "''",
+  //     position: "absolute",
+  //     top: 30,
+  //     left: -30,
+  //     height: "100%",
+  //     width: "100%",
+  //     background: theme.palette.common.orange,
+  //     zIndex: -1,
+  //     opacity: 0.3,
+  //     borderRadius: "4px 0 0 4px",
+  //   },
+  // },
   image: {
     display: "block",
     maxWidth: "100%",
+    // borderRadius: "4px 0 0 4px",
   },
   // new styles end --------------
   container: {
@@ -72,9 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
   p: {
     color: theme.palette.text.secondary,
-    lineHeight: 1.8,
-    maxWidth: 800,
-    padding: "2rem 0 0",
+    ...theme.utils.p,
   },
   pHead: {
     fontSize: "1.6rem",
@@ -295,14 +309,7 @@ const PublicAPI = () => {
           >
             nitrous oxide N<sub>2</sub>O
           </p>
-          <p
-            className={classes.refSmall}
-            onClick={() =>
-              tempRef.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            temperatures
-          </p>
+
           <p
             className={classes.refSmall}
             onClick={() =>
@@ -318,6 +325,14 @@ const PublicAPI = () => {
             }
           >
             glaciers
+          </p>
+          <p
+            className={classes.refSmall}
+            onClick={() =>
+              tempRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            temperatures
           </p>
         </section>
         <section className={classes.section} ref={requestRef}>

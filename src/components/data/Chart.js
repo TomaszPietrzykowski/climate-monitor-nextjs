@@ -35,8 +35,9 @@ const Chart = ({ displayData, label, grad }) => {
     const ctx = canvas.getContext("2d")
     const gradient = ctx.createLinearGradient(0, 500, 0, 100)
     gradient.addColorStop(0, theme.palette.gradient[grad][0])
-    gradient.addColorStop(0.8, theme.palette.gradient[grad][1])
-    gradient.addColorStop(1, theme.palette.gradient[grad][2])
+    gradient.addColorStop(0.3, theme.palette.gradient[grad][1])
+    gradient.addColorStop(0.6, theme.palette.gradient[grad][2])
+    gradient.addColorStop(1, theme.palette.gradient[grad][3])
 
     return {
       labels: displayData.labels,
@@ -46,8 +47,8 @@ const Chart = ({ displayData, label, grad }) => {
           fill: true,
           data: displayData.values,
           backgroundColor: gradient,
-          borderColor: theme.palette.gradient[grad][2],
-          borderWidth: 2,
+          borderColor: theme.palette.gradient[grad][4],
+          borderWidth: 1,
           pointBorderColor: "rgba(0,0,0,0)",
           pointBackgroundColor: "rgba(0,0,0,0)",
           lineTension: 0,

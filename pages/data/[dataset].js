@@ -161,7 +161,6 @@ const DataDisplay = ({ dataset }) => {
 }
 
 export async function getStaticProps(context) {
-  console.log("(Re-)generating...")
   const { params } = context
   const dataset = params.dataset
 

@@ -17,13 +17,18 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: "100%",
     maxWidth: 1600,
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
     padding: "2rem 0",
+    [theme.breakpoints.down("lg")]: {
+      gridTemplateColumns: "1fr 1fr",
+    },
     [theme.breakpoints.down("md")]: {
       padding: "1rem",
       paddingTop: 0,
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
     },
   },
   link: {
@@ -32,33 +37,40 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     height: 278,
     maxWidth: 266,
-    margin: "2rem 1rem",
+    margin: "2rem auto",
     display: "flex",
     flexDirection: "column",
     cursor: "pointer",
     transition: "all 0.3s",
-    "&:hover $tabImg": {
-      opacity: 0.75,
-    },
     "&:hover $tabText": {
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.main,
     },
     "&:hover $tabTitle": {
-      color: theme.palette.primary.dark,
+      color: theme.palette.secondary.main,
     },
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
+      height: "auto",
       marginTop: "3rem",
+      maxWidth: "100%",
     },
   },
   tabImg: {
     borderRadius: "4px 4px 0 0",
+    [theme.breakpoints.down("xs")]: {
+      objectFit: "cover",
+      height: 400,
+    },
   },
   tabContent: {
     flex: 1,
     width: "100%",
     fontFamily: "Poppins",
     overflow: "hidden",
+    [theme.breakpoints.down("xs")]: {
+      objectFit: "cover",
+      height: 400,
+    },
   },
   tabTitle: {
     fontSize: "1rem",
@@ -98,9 +110,6 @@ const DataTabs = () => {
 
   return (
     <div className={classes.root}>
-      {/* <div className={classes.header}>
-        Categories contain multiple sets of data
-      </div> */}
       <div className={classes.container}>
         <Link href="/data/co2" className={classes.link}>
           <div className={classes.tab}>

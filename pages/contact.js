@@ -234,7 +234,23 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     padding: "0 2rem",
   },
+  // imageContainer: {
+  //   position: "relative",
+  //   "&::before": {
+  //     content: "''",
+  //     position: "absolute",
+  //     top: 30,
+  //     left: -30,
+  //     height: "98%",
+  //     width: "100%",
+  //     background: theme.palette.secondary.light,
+  //     zIndex: -1,
+  //     opacity: 0.2,
+  //     borderRadius: "4px 0 0 4px",
+  //   },
+  // },
   image: {
+    // borderRadius: "4px 0 0 4px",
     display: "block",
     maxWidth: "100%",
   },

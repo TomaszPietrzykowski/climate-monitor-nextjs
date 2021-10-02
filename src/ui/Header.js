@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: "0 2rem",
     },
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+    },
   },
   toolbarMargin: {
     height: 80,

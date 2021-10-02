@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    padding: "2rem 0",
     margin: "3rem",
     color: theme.palette.text.secondary,
     height: "100%",
@@ -34,21 +33,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
+    color: theme.palette.secondary.main,
     fontSize: "2rem",
-    marginBottom: "2rem",
+    marginBottom: "1.5rem",
     [theme.breakpoints.down("md")]: {
       fontSize: "1.4rem",
       marginBottom: "1rem",
     },
   },
   text: {
-    fontSize: "1.1rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.9rem",
-    },
+    ...theme.utils.p,
+    paddingTop: 0,
   },
 }))
 

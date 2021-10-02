@@ -12,18 +12,16 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     fontWeight: 300,
     textAlign: "left",
-    color: "rgba(0, 0, 0, 0.5)",
+    color: theme.palette.secondary.main,
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.6rem",
     },
   },
   about: {
-    fontFamily: "Poppins, sans",
-    fontSize: "1rem",
-    textAlign: "left",
-    lineHeight: "2rem",
-    color: "rgba(0, 0, 0, 0.5)",
+    ...theme.utils.p,
+    color: theme.palette.text.secondary,
     marginTop: "1.5rem",
+    paddingTop: 0,
   },
   blue: {
     color: theme.palette.secondary.main,

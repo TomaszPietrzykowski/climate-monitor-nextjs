@@ -26,9 +26,11 @@ export default createMuiTheme({
     },
     gradient: {
       co2: [
-        "rgba(0, 0, 0, 0)",
+        "rgba(0, 191, 255, 0)",
+        "rgba(0, 191, 255, 0)",
         "rgba(0, 191, 255, 0.1)",
-        "rgba(0, 191, 255, 0.4)",
+        "rgba(0, 191, 255, 0.2)",
+        "rgba(0, 191, 255, 1)",
       ],
       ch4: [
         "rgba(0, 0, 0, 0)",
@@ -104,6 +106,13 @@ export default createMuiTheme({
       margin: "auto",
       width: "100%",
       maxWidth: 1400,
+    },
+    p: {
+      lineHeight: 1.7,
+      maxWidth: 800,
+      letterSpacing: 0.4,
+      padding: "2rem 0 0",
+      fontWeight: 300,
     },
     tab: {
       textTransform: "none",
