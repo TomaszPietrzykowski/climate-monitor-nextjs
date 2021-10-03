@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     cursor: "pointer",
     transition: "all 0.3s",
+
+    "&:hover $tabImg": {
+      filter: "contrast(115%)",
+    },
     "&:hover $tabText": {
       color: theme.palette.secondary.main,
     },

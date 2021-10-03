@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 300,
     letterSpacing: 1.5,
     fontSize: "2rem",
-    // marginBottom: "2rem",
+    paddingTop: "6rem",
   },
   p: {
     color: theme.palette.text.secondary,
@@ -167,7 +167,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     fontWeight: 300,
     cursor: "pointer",
-    padding: ".4rem 0",
+    padding: "0.4rem 0",
     width: "max-content",
     "&:hover": {
       color: theme.palette.secondary.main,
@@ -185,10 +185,19 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
+  refSmallSub: {
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
+  scrollPadding: {
+    height: "2rem",
+  },
 }))
 
 const PublicAPI = () => {
   const classes = useStyles()
+  const menuRef = useRef(null)
   const endpointsRef = useRef(null)
   const requestRef = useRef(null)
   const responseRef = useRef(null)
@@ -204,6 +213,9 @@ const PublicAPI = () => {
     disableHysteresis: true,
     threshold: 1200,
   })
+
+  const scrollToDocs = () =>
+    menuRef.current.scrollIntoView({ behavior: "smooth" })
 
   return (
     <>
@@ -246,7 +258,7 @@ const PublicAPI = () => {
           <img src="/desert.jpeg" className={classes.image} />
         </div>
       </div>
-      <div className={classes.container}>
+      <div className={classes.container} ref={menuRef}>
         <section className={classes.section}>
           <p className={classes.h2}>Documentation</p>
           <br />
@@ -885,8 +897,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/co2/for/2016
             </code>
           </div>
-
-          <p className={classes.pHead} ref={ch4Ref}>
+          <div className={classes.scrollPadding} ref={ch4Ref} />
+          <p className={classes.pHead}>
             Earth atmospheric methane CH<sub>4</sub>
           </p>
 
@@ -916,8 +928,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/ch4/growth
             </code>
           </div>
-
-          <p className={classes.pHead} ref={sf6Ref}>
+          <div className={classes.scrollPadding} ref={sf6Ref} />
+          <p className={classes.pHead}>
             Earth atmospheric sulfur hexafluoride SF<sub>6</sub>
           </p>
 
@@ -947,8 +959,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/sf6/growth
             </code>
           </div>
-
-          <p className={classes.pHead} ref={n2oRef}>
+          <div className={classes.scrollPadding} ref={n2oRef} />
+          <p className={classes.pHead}>
             Earth atmospheric dinitrogen oxide N<sub>2</sub>0
           </p>
 
@@ -978,10 +990,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/n2o/growth
             </code>
           </div>
-
-          <p className={classes.pHead} ref={seaRef}>
-            Global ocean levels
-          </p>
+          <div className={classes.scrollPadding} ref={seaRef} />
+          <p className={classes.pHead}>Global ocean levels</p>
 
           <p className={classes.p}>Global ocean mass:</p>
           <div className={classes.codeLine}>
@@ -996,10 +1006,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/ocean/level
             </code>
           </div>
-
-          <p className={classes.pHead} ref={glaciersRef}>
-            Arctica and Antarctica mass loss
-          </p>
+          <div className={classes.scrollPadding} ref={glaciersRef} />
+          <p className={classes.pHead}>Arctica and Antarctica mass loss</p>
 
           <p className={classes.p}>Antarctica ice mass:</p>
           <div className={classes.codeLine}>
@@ -1014,10 +1022,8 @@ const PublicAPI = () => {
               https://climatemonitor.info/api/public/v1/glaciers/greenland
             </code>
           </div>
-
-          <p className={classes.pHead} ref={tempRef}>
-            Temperatures
-          </p>
+          <div className={classes.scrollPadding} ref={tempRef} />
+          <p className={classes.pHead}>Temperatures</p>
 
           <p className={classes.p}>
             Average annual land surface temperature anomaly:
@@ -1095,7 +1101,7 @@ const PublicAPI = () => {
           </div>
         </section>
       </div>
-      {trigger && <FloatButton />}
+      {trigger && <FloatButton cb={scrollToDocs} />}
     </>
   )
 }

@@ -20,16 +20,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const FloatButtonAPI = () => {
+const FloatButtonAPI = ({ cb }) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <Fab
-        color="secondary"
-        aria-label="add"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      >
+      <Fab color="secondary" aria-label="add" onClick={cb}>
         <ImportantDevicesIcon style={{ color: "white" }} />
       </Fab>
     </div>
