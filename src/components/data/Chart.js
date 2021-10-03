@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     width: "65vw",
     maxWidth: 1000,
     padding: "1rem 2rem",
+    // work on media landscape, fine tune chart to all devices TO DO
     [theme.breakpoints.down("md")]: {
       height: "45vh",
       width: "95vw",

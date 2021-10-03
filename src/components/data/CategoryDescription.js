@@ -2,14 +2,15 @@ import React from "react"
 import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "4rem",
+    padding: "0 4rem 8rem",
     fontFamily: "Poppins",
     fontWeight: 300,
   },
   para: {
     color: theme.palette.text.secondary,
     ...theme.utils.p,
-    padding: "1rem 2rem 0 0",
+    maxWidth: "auto",
+    padding: "0 4rem 0 0",
     marginBottom: "2rem",
   },
 }))

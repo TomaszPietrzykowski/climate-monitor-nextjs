@@ -4,6 +4,7 @@ import Head from "next/head"
 //mui
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
+import BackIcon from "@material-ui/icons/ArrowBackIos"
 // custom
 import { datasets } from "../../src/components/data/Datasets"
 import Content from "../../src/components/data/Content"
@@ -71,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
   },
+  backIcon: {
+    paddingInline: "0.2rem",
+    marginRight: "1rem",
+  },
 }))
 
 const DataDisplay = ({ dataset }) => {
@@ -118,7 +123,10 @@ const DataDisplay = ({ dataset }) => {
           <div className={classes.drawer}>
             <div className={classes.list}>
               <Link href="/data" className={classes.link}>
-                <div className={classes.listItem}>Back to all data</div>
+                <div className={classes.listItem}>
+                  <BackIcon className={classes.backIcon} />
+                  all data
+                </div>
               </Link>
               {datasets[dataset].scopes &&
                 datasets[dataset].scopes.map((scope, i) => (

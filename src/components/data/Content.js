@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "5rem",
     fontFamily: "Poppins",
     paddingBottom: "1rem",
-    fontWeight: 400,
+    fontWeight: 300,
     color: theme.palette.text.primary,
     fontSize: "1.6rem",
     [theme.breakpoints.down("md")]: {
@@ -46,7 +46,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   description: {
-    padding: "4rem",
+    ...theme.typography.pop,
+    ...theme.utils.p,
+    color: theme.palette.text.primary,
+    fontSize: "1.2rem",
+    padding: "2rem 4rem 4rem",
     [theme.breakpoints.down("md")]: {
       padding: "3rem",
     },
@@ -92,9 +96,6 @@ const Content = ({ activeData, gradient }) => {
         updateActiveValues={updateActiveValues}
         style={{ passive: "false" }}
       />
-      {/* <br />
-      {activeData.unit}
-      <br /> */}
       <div className={classes.description}>{activeData.description}</div>
     </div>
   )

@@ -133,8 +133,8 @@ exports.datasets = {
   sealevels: {
     header: "Sea levels",
     scopes: [
-      { title: "Global ocean mass", endpoint: "global_ocean_mass" },
       { title: "Trend in sea levels", endpoint: "sea_level_trend" },
+      { title: "Global ocean mass", endpoint: "global_ocean_mass" },
     ],
     desc: [
       "Tide gauge measurements show that the current global sea level rise began at the start of the 20th century. Between 1900 and 2017, the globally averaged sea level rose by 16–21 cm (6.3–8.3 in), or 1.4–1.8 mm (0.055–0.071 in) per year. More precise data gathered from satellite radar measurements reveal an accelerating rise of 7.5 cm (3.0 in) from 1993 to 2017, for an average rate of 31 mm (1.22 in) per decade. This acceleration is due mostly to climate change, which is driving thermal expansion of seawater and the melting of land-based ice sheets and glaciers. Between 1993 and 2018, thermal expansion of the oceans contributed 42% to sea level rise; the melting of temperate glaciers 21%, Greenland 15%, and Antarctica 8%. Climate scientists expect the rate to further accelerate during the 21st century, with the latest measurements saying the sea levels are currently rising by 3.6 mm per year",

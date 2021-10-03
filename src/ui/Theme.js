@@ -1,73 +1,76 @@
 import { createMuiTheme } from "@material-ui/core/styles"
 
-const blue = "rgba(0, 170, 255, 1)"
-const darkBlue = "rgba(0, 118, 178, 1)"
-const orange = "#ffba60"
-const whitish = "rgba(215, 215, 220, 1)"
-const green = "rgba(71, 199, 27, 1)"
-
 export default createMuiTheme({
   palette: {
     common: {
-      blue: `${blue}`,
+      // blue: `rgba(0, 170, 255, 1)`,
+      darkBlue: `rgba(0, 118, 178, 1)`,
       lightBlue: `#9bf3f0`,
-      orange: `${orange}`,
-      green: `#98ce00`,
-      darkGreen: `#006000`,
-      footer: `${whitish}`,
-      darkBlue: `${darkBlue}`,
-      activeTab: `rgba(0, 54, 102, 1)`,
-      background: "rgba(225, 225, 225, 1)",
-      starCommandBlue: `#0076B2`,
-      prussianBlue: `#003666`,
       lightestBlue: `#d7f9f1`,
       neonBlue: "rgba(20, 238, 255, 1)",
+      green: `#98ce00`,
+      orange: `#ffba60`,
+      footer: `rgba(215, 215, 220, 1)`,
+      activeTab: `rgba(0, 54, 102, 1)`,
+      background: "rgba(225, 225, 225, 1)",
       shade: "#fcfcfc",
     },
     gradient: {
       co2: [
         "rgba(0, 191, 255, 0)",
         "rgba(0, 191, 255, 0)",
+        "rgba(0, 191, 255, 0.05)",
         "rgba(0, 191, 255, 0.1)",
-        "rgba(0, 191, 255, 0.2)",
         "rgba(0, 191, 255, 1)",
       ],
       ch4: [
         "rgba(0, 0, 0, 0)",
-        "rgba(100, 225, 100, 0.1)",
-        "rgba(100, 225, 100, 0.6)",
+        "rgba(110, 220, 0, 0)",
+        "rgba(110, 220, 0, 0.05)",
+        "rgba(110, 220, 0, 0.08)",
+        "rgba(110, 220, 0, 1)",
       ],
       n2o: [
         "rgba(0, 0, 0, 0)",
-        "rgba(200, 131, 20, 0.1)",
-        "rgba(200, 131, 20, 0.4)",
+        "rgba(0, 240, 180, 0)",
+        "rgba(0, 240, 180, 0.04)",
+        "rgba(0, 240, 180, 0.1)",
+        "rgba(0, 240, 180, 1)",
       ],
       sf6: [
         "rgba(0, 0, 0, 0)",
-        "rgba(150, 141, 255, 0.2)",
-        "rgba(150, 141, 255, 0.6)",
+        "rgba(158, 0, 119, 0)",
+        "rgba(158, 0, 119, 0.04)",
+        "rgba(158, 0, 119, 0.06)",
+        "rgba(158, 0, 119, 1)",
       ],
       temperatures: [
         "rgba(0, 255, 0, 0)",
-        "rgba(0, 191, 255, 0.1)",
-        "rgba(0, 191, 255, 0.4)",
+        "rgba(255, 145, 0, 0)",
+        "rgba(255, 145, 0, 0.1)",
+        "rgba(255, 145, 0, 0.2)",
+        "rgba(255, 145, 0, 1)",
       ],
       sealevels: [
-        "rgba(0, 0, 0, 0)",
-        "rgba(0, 0, 255, 0.1)",
-        "rgba(0, 0, 255, 0.4)",
+        "rgba(0, 255, 0, 0)",
+        "rgba(0, 255, 0, 0)",
+        "rgba(0, 210, 200, 0.08)",
+        "rgba(0, 191, 255, 0.08)",
+        "rgba(0, 191, 255, 1)",
       ],
       glaciers: [
         "rgba(0, 255, 0, 0)",
-        "rgba(0, 191, 255, 0.1)",
-        "rgba(0, 191, 255, 0.4)",
+        "rgba(0, 255, 0, 0)",
+        "rgba(0, 134, 158, 0.1)",
+        "rgba(0, 134, 158, 0.15)",
+        "rgba(0, 134, 158, 1)",
       ],
     },
     primary: {
-      main: `#003666`,
+      main: `#003666`, // prussian blue
     },
     secondary: {
-      main: "#0076B2",
+      main: "#0076B2", // star command blue
     },
   },
   typography: {
