@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     ...theme.utils.tab,
-    ...theme.typography.pop,
+    fontWeight: 500,
     color: theme.palette.text.primary,
     transition: "all .2s ease",
     "&:hover": {
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabActive: {
     ...theme.utils.tab,
-    ...theme.typography.pop,
+    fontWeight: 500,
     opacity: 1,
     color: theme.palette.secondary.main,
   },

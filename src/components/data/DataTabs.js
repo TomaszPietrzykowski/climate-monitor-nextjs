@@ -69,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
   tabContent: {
     flex: 1,
     width: "100%",
-    fontFamily: "Poppins",
     overflow: "hidden",
     [theme.breakpoints.down("xs")]: {
       objectFit: "cover",
@@ -89,23 +88,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     padding: "0rem 1rem .6rem 0rem",
     textAlign: "left",
-  },
-  header: {
-    width: "100%",
-    textAlign: "center",
-    paddingLeft: "2rem",
-    paddingRight: "2rem",
-    marginTop: "4rem",
-    fontFamily: "Poppins",
-    fontSize: "1.4rem",
-    color: theme.palette.text.primary,
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.2rem",
-      marginTop: "3rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1rem",
-    },
   },
 }))
 

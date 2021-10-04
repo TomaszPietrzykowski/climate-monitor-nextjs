@@ -9,7 +9,6 @@ import Loader from "../src/ui/Loader"
 
 const useStyles = makeStyles((theme) => ({
   sectionHeader: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
     fontSize: "4rem",
@@ -18,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "6rem",
     marginBottom: "2rem",
     padding: "1rem 2rem",
-    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
@@ -35,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   poweredBy: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.text.secondary,
     fontSize: ".9rem",

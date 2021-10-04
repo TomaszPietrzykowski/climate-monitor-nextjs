@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   badge: {
-    fontFamily: "Poppins",
+    fontWeight: 400,
     position: "absolute",
     right: -6,
     bottom: "-.7rem",
@@ -46,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
   tabContent: {
     width: "100%",
-    fontFamily: "Poppins",
     overflow: "hidden",
   },
   tabTitle: {

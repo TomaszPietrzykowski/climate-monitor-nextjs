@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   },
   tag: {
     padding: "0.2rem 2rem",
-    fontFamily: "Poppins",
     textDecoration: "none",
     fontSize: "0.6rem",
     letterSpacing: 0.5,

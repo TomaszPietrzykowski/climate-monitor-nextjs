@@ -15,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "6rem auto 0rem",
     display: "grid",
     gridTemplateColumns: "50% 50%",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   contentContainer: {
     display: "flex",
@@ -26,35 +24,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     padding: "2rem 6rem 2rem 2rem",
   },
-  // imageContainer: {
-  //   position: "relative",
-  //   "&::before": {
-  //     content: "''",
-  //     position: "absolute",
-  //     top: 30,
-  //     left: -30,
-  //     height: "100%",
-  //     width: "100%",
-  //     background: theme.palette.common.orange,
-  //     zIndex: -1,
-  //     opacity: 0.3,
-  //     borderRadius: "4px 0 0 4px",
-  //   },
-  // },
   image: {
     display: "block",
     maxWidth: "100%",
-    // borderRadius: "4px 0 0 4px",
   },
   // new styles end --------------
   container: {
     ...theme.utils.container,
     padding: "0 2rem",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   sectionHeader: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
     fontSize: "4rem",
@@ -63,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "6rem",
     marginBottom: "2rem",
     padding: "1rem 2rem",
-    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
@@ -165,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
   },
   refBig: {
     color: theme.palette.text.secondary,
-    fontWeight: 300,
+    fontSize: "1.1rem",
     cursor: "pointer",
     padding: "0.4rem 0",
     width: "max-content",
@@ -176,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
   },
   refSmall: {
     color: theme.palette.text.secondary,
-    fontWeight: 300,
+    fontSize: "1.1rem",
     cursor: "pointer",
     padding: ".4rem 2rem",
     width: "max-content",
@@ -230,7 +208,9 @@ const PublicAPI = () => {
           className={classes.contentContainer}
           style={{ marginLeft: "auto" }}
         >
-          <p className={classes.h2}>Climate data</p>
+          <p className={classes.h2} style={{ paddingTop: 0 }}>
+            Climate data
+          </p>
           <p className={classes.p}>
             There are seven main factors in focus. Four atmospheric greenhouse
             gases: carbon dioxide (co2), methane (ch4), sulfur hexafluoride
@@ -244,9 +224,9 @@ const PublicAPI = () => {
           <p className={classes.p}>
             Data is read from ftp servers or obtained within a NASA's EarthData
             program, parsed and saved into database for unlimited access. Update
-            schedule runs in relation to data scope and source data update
-            schedule. That ensures both: that values are up to date and that no
-            excessive traffic is generated at the source.
+            schedule runs in relation to data scope and source data
+            publications. That ensures both: that values are up to date and that
+            no excessive traffic is generated at the source.
           </p>
           <p className={classes.p}>
             <Link href="/about">

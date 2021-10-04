@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
   sloganText: {
-    fontFamily: "Poppins, sans",
     fontSize: "2rem",
     fontWeight: 300,
     textAlign: "left",
@@ -66,8 +65,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "grid",
     gridTemplateColumns: "50% 50%",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   contentContainer: {
     display: "flex",
@@ -83,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const GetInvolved = ({ setValue }) => {
+const GetInvolved = () => {
   const classes = useStyles()
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -127,7 +124,6 @@ const GetInvolved = ({ setValue }) => {
                     variant="outlined"
                     color="primary"
                     className={classes.btn}
-                    // onClick={() => setValue(4)}
                   >
                     Contact
                   </Button>

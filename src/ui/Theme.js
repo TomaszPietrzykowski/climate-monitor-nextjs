@@ -73,11 +73,11 @@ export default createMuiTheme({
       main: "#0076B2", // star command blue
     },
   },
-  typography: {
-    pop: {
-      fontFamily: "Poppins, sans",
-    },
-  },
+  // typography: {
+  //   pop: {
+  //     fontFamily: "Poppins, sans",
+  //   },
+  // },
   flex: {
     col: {
       display: "flex",
@@ -117,7 +117,18 @@ export default createMuiTheme({
       padding: "2rem 0 0",
       fontWeight: 300,
     },
+    btn: {
+      borderRadius: "50px",
+      color: "white",
+      fontFamily: "Poppins, sans",
+      fontWeight: 500,
+      letterSpacing: 3,
+      border: "3px solid",
+      textTransform: "uppercase",
+      fontSize: "1.3rem",
+    },
     tab: {
+      fontFamily: "Poppins, sans",
       textTransform: "none",
       minWidth: 30,
       fontWeight: 400,

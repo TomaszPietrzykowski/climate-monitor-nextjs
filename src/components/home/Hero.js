@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 2,
   },
   title: {
-    fontFamily: "Poppins, sans",
     fontSize: "4rem",
     fontWeight: 500,
     lineHeight: 1.2,
@@ -54,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   subtitle: {
-    fontFamily: "Poppins, sans",
     fontSize: "2rem",
     fontWeight: 200,
     letterSpacing: 4,
@@ -71,14 +69,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    fontWeight: 500,
-    borderRadius: "50px",
-    color: "white",
-    fontFamily: "Poppins, sans",
-    fontSize: "1.3rem",
-    letterSpacing: 3,
+    ...theme.utils.btn,
     border: `3px solid white`,
-    textTransform: "uppercase",
     padding: "0.5rem 3rem 0.5rem 2rem",
     marginTop: "2rem",
     marginLeft: 0,

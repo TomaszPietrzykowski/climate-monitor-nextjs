@@ -5,8 +5,6 @@ import { Spring, animated, config } from "react-spring"
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    fontWeight: 300,
-    fontFamily: "Poppins",
     letterSpacing: 0.5,
     display: "flex",
     maxWidth: 1400,

@@ -3,12 +3,10 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "0 4rem 8rem",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   para: {
-    color: theme.palette.text.secondary,
     ...theme.utils.p,
+    color: theme.palette.text.secondary,
     maxWidth: "auto",
     padding: "0 4rem 0 0",
     marginBottom: "2rem",

@@ -29,13 +29,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "3.5rem",
     marginBottom: "10rem",
     listStyle: "none",
+    fontWeight: 400,
   },
   listItem: {
     border: "1px solid transparent",
     borderRadius: 4,
     display: "flex",
-    fontFamily: "Poppins",
-    fontWeight: 400,
     color: theme.palette.text.primary,
     fontSize: "1rem",
     margin: ".5rem 0 .5rem",
@@ -51,8 +50,6 @@ const useStyles = makeStyles((theme) => ({
   listItemActive: {
     borderRadius: 4,
     display: "flex",
-    fontFamily: "Poppins",
-    fontWeight: 400,
     border: `1px solid ${theme.palette.secondary.main}`,
     color: theme.palette.secondary.main,
     fontSize: "1rem",
@@ -117,7 +114,6 @@ const DataDisplay = ({ dataset }) => {
           content={`${datasets[dataset].header}, ${datasets[dataset].title}, Climate Monitor - free public REST API with json data on climate change`}
         />
       </Head>
-      {/* <SectionHeader>{datasets[dataset].header}</SectionHeader> */}
       <div className={classes.container}>
         <Hidden mdDown>
           <div className={classes.drawer}>
@@ -149,7 +145,9 @@ const DataDisplay = ({ dataset }) => {
         </Hidden>
         <div>
           {loading || !activeData.labels ? (
-            <div style={{ width: "100%", marginTop: "7rem" }}>
+            <div
+              style={{ width: "100%", marginTop: "7rem", marginBottom: "40vh" }}
+            >
               <Loader />
             </div>
           ) : (

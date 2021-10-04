@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
     ...theme.utils.container,
     ...theme.flex.row,
     justifyContent: "flex-start",
-    ...theme.typography.pop,
     padding: "4rem 2rem",
     [theme.breakpoints.down("xs")]: {
       padding: "1rem 0 0",
@@ -64,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     background: `white`,
   },
   sectionHeader: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
     fontSize: "4rem",
@@ -101,17 +99,6 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: ".5rem",
     },
   },
-  title: {
-    fontWeight: 300,
-    letterSpacing: 1,
-    fontSize: "1.6rem",
-    color: theme.palette.secondary.main,
-    marginBottom: "3rem",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1.6rem",
-      marginBottom: "3rem",
-    },
-  },
   form: {
     ...theme.flex.col,
     alignItems: "flex-start",
@@ -128,19 +115,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   submitBtn: {
+    ...theme.utils.btn,
     color: theme.palette.secondary.main,
-    borderRadius: "50px",
-    fontFamily: "Poppins, sans",
     fontSize: "1.2rem",
-    textTransform: "uppercase",
-    border: "3px solid",
     padding: "0.4rem 3.5rem 0.4rem 2.8rem",
     width: "min-content",
     transition: "all .2s ease",
     "&:hover": {
-      border: `3px solid ${theme.palette.secondary.main}`,
-      color: "white",
       background: theme.palette.secondary.main,
+      borderColor: theme.palette.secondary.main,
+      color: "white",
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1rem",
@@ -190,7 +174,6 @@ const useStyles = makeStyles((theme) => ({
   },
   checkboxLabel: {
     fontSize: ".9rem",
-    fontWeight: 300,
     color: theme.palette.text.secondary,
     [theme.breakpoints.down("xs")]: {
       fontSize: ".8rem",
@@ -198,7 +181,6 @@ const useStyles = makeStyles((theme) => ({
   },
   checkboxLabelError: {
     fontSize: ".9rem",
-    fontWeight: 300,
     color: "red",
     [theme.breakpoints.down("xs")]: {
       fontSize: ".8rem",
@@ -234,23 +216,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 700,
     padding: "0 2rem",
   },
-  // imageContainer: {
-  //   position: "relative",
-  //   "&::before": {
-  //     content: "''",
-  //     position: "absolute",
-  //     top: 30,
-  //     left: -30,
-  //     height: "98%",
-  //     width: "100%",
-  //     background: theme.palette.secondary.light,
-  //     zIndex: -1,
-  //     opacity: 0.2,
-  //     borderRadius: "4px 0 0 4px",
-  //   },
-  // },
   image: {
-    // borderRadius: "4px 0 0 4px",
     display: "block",
     maxWidth: "100%",
   },
@@ -343,7 +309,6 @@ const Contact = () => {
           style={{ marginLeft: "auto" }}
         >
           <main className={classes.content}>
-            {/* <h2 className={classes.title}>Send email</h2> */}
             {error && <div className={classes.error}>{error}</div>}
             {loading ? (
               <Loader />

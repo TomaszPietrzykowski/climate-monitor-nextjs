@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     background: `white`,
   },
   sectionHeader: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
     fontSize: "2.8rem",
@@ -47,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
   dashboard: {
     background: "#ffffff",
-    fontFamily: "Poppins",
     display: "block",
     margin: "0 4rem 4rem",
     padding: "2rem",
@@ -87,11 +85,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
+    ...theme.utils.btn,
+    letterSpacing: 1,
     color: theme.palette.primary.main,
-    borderRadius: "50px",
-    fontFamily: "Poppins, sans",
     fontSize: "1.2rem",
-    textTransform: "uppercase",
     border: "3px solid",
     padding: "0.6rem 3rem",
     transition: "all .2s ease",

@@ -11,17 +11,13 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "grid",
     gridTemplateColumns: "50% 50%",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   titleBar: {
     width: "100%",
     zIndex: theme.zIndex.drawer + 1,
     background: `white`,
-    // background: `linear-gradient(120deg, ${theme.palette.secondary.dark}, ${theme.palette.secondary.main})`,
   },
   sectionHeader: {
-    fontFamily: "Poppins",
     fontWeight: 400,
     color: theme.palette.secondary.main,
     fontSize: "4rem",
@@ -30,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "6rem",
     marginBottom: "2rem",
     padding: "1rem 2rem",
-    // borderBottom: `2px solid ${theme.palette.common.lightestBlue}`,
     [theme.breakpoints.down("md")]: {
       marginLeft: 20,
     },
@@ -47,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   contentContainer: {
-    // border: "1px solid blue",
     marginLeft: "auto",
     display: "flex",
     flexDirection: "column",
@@ -65,8 +59,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "3rem",
     marginBottom: "14rem",
     padding: "4rem 0 0 2rem",
-    fontFamily: "Poppins",
-    fontWeight: 300,
   },
   grid: {
     marginBottom: "6rem",
@@ -151,8 +143,7 @@ const About = () => {
               around scheduler reading data from multiple origins. Data is
               processed and stored in custom database for quick and reliable
               access, then served as json. Project is aimed at providing
-              frontend-focused web projects reliable source of pre-processed
-              data.
+              reliable, preprocessed data for frontend-focused web applications.
             </p>
           </div>
         </div>

@@ -11,8 +11,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     width: "100%",
-    fontWeight: 300,
-    fontFamily: "Poppins",
     letterSpacing: 1,
     position: "relative",
     "&::after": {
@@ -87,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    fontFamily: "Poppins, sans",
     fontSize: "2.8rem",
     color: "white",
     [theme.breakpoints.down("xs")]: {

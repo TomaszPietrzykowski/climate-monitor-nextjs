@@ -5,9 +5,7 @@ import CalIcon from "@material-ui/icons/CalendarTodayRounded"
 const useStyles = makeStyles((theme) => ({
   root: {
     textAlign: "left",
-    fontFamily: "Poppins",
     minWidth: "28%",
-    fontWeight: 300,
     color: theme.palette.text.secondary,
     [theme.breakpoints.down("md")]: {
       fontSize: "0.8rem",

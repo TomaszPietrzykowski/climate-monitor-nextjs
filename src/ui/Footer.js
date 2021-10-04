@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "1.5rem",
     zIndex: 1,
     "&>*>*": {
-      fontFamily: "Poppins, sans",
       color: "white",
       marginLeft: "25px",
       paddingTop: ".35rem",

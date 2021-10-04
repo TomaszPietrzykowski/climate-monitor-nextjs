@@ -80,9 +80,6 @@ const Content = ({ activeData, gradient }) => {
   return (
     <div className={classes.contentContainer}>
       <div className={classes.title}>{activeData.title}</div>
-      {displayData.trend && displayData.trend.length > 1 && (
-        <h3 style={{ marginLeft: "5rem" }}>show trend</h3>
-      )}
       <br />
       <Chart
         displayData={displayData}

@@ -13,10 +13,7 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
-    fontFamily: "Poppins",
     letterSpacing: 0.5,
-    fontWeight: 300,
-    // paddingBottom: "4rem",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
     },
@@ -28,9 +25,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
     borderRadius: 0,
   },
-  cardContent: {
-    // minWidth: 350,
-  },
+  cardContent: {},
   label: {
     fontSize: "1.6rem",
     opacity: 0,
@@ -64,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
   },
   labelSecondary: {
     fontSize: "1.1rem",
-    // fontWeight: 500,
     [theme.breakpoints.down("md")]: {
       fontSize: "1rem",
     },
@@ -98,8 +92,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     justifyContent: "flex-start",
     fontSize: "2.5rem",
-    // marginTop: "0.5rem",
-    // marginBottom: "1rem",
     color: theme.palette.secondary.main,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.6rem",
@@ -187,7 +179,6 @@ const LatestPrimaryCard = ({ latest, methane }) => {
     val: latest.values[0],
     from: { val: 300 },
     config: { duration: 2000 },
-    // config: { mass: 5, tension: 400, friction: 150, clamp: true },
   })
   const props0 = useSpring({
     to: { opacity: 1 },
