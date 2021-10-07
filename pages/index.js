@@ -11,8 +11,8 @@ const Index = () => {
     <Fragment>
       <Hero />
       {/* <LatestReadings /> */}
-      {/* <Amazon /> */}
-      <Description />
+      <Amazon />
+      {/* <Description /> */}
       {/* <GetInvolved /> */}
     </Fragment>
   )

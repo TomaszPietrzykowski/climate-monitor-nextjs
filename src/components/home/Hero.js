@@ -62,13 +62,12 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
-      letterSpacing: 1.2,
+      letterSpacing: 1.5,
       lineHeight: 1,
       fontSize: "2rem",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.7rem",
-      letterSpacing: 1.1,
     },
   },
   subtitle: {
@@ -113,13 +112,16 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       letterSpacing: 2,
-      marginTop: "1.5rem",
+      marginTop: "1rem",
       fontSize: "0.9rem",
       fontWeight: 400,
       padding: "0.25rem 2rem 0.25rem 1rem",
       border: "2px solid",
       color: theme.palette.common.neonBlue,
       borderColor: theme.palette.common.neonBlue,
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.2rem 1.3rem 0.15rem 0.6rem",
     },
   },
 }))

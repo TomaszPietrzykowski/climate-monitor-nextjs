@@ -36,12 +36,15 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "flex",
     justifyContent: "space-between",
-    minHeight: "60vh",
     alignItems: "center",
     padding: "12rem 0",
     [theme.breakpoints.down("md")]: {
+      padding: "6rem 1rem",
+    },
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      padding: "1rem",
+      alignItems: "flex-start",
+      padding: "1rem 2rem",
     },
   },
   tabLeft: {
@@ -51,10 +54,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     alignItems: "flex-start",
     zIndex: 2,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
-      marginTop: "6rem",
-      textAlign: "center",
+      marginTop: "4rem",
       alignItems: "flex-end",
     },
   },
@@ -65,12 +67,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "right",
     alignItems: "flex-end",
     zIndex: 2,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       marginRight: 0,
       marginTop: "6rem",
-      marginBottom: "6rem",
-      textAlign: "center",
+      marginBottom: "4rem",
+      textAlign: "left",
       alignItems: "flex-end",
+    },
+  },
+  title: {
+    fontSize: "2.8rem",
+    color: "white",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.2rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.8rem",
     },
   },
   text: {
@@ -80,17 +95,25 @@ const useStyles = makeStyles((theme) => ({
     textShadow: "0px 0px 15px rgba(0, 0, 0, 1)",
     marginTop: "1rem",
     lineHeight: 1.5,
-    [theme.breakpoints.down("xs")]: {
+    maxWidth: 400,
+    [theme.breakpoints.down("md")]: {
+      maxWidth: 300,
       fontSize: "0.9rem",
+      fontWeight: 300,
+      marginTop: "0.5rem",
     },
-  },
-  title: {
-    fontSize: "2.8rem",
-    color: "white",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1rem",
+      maxWidth: 350,
+      lineHeight: 1.2,
+      fontWeight: 200,
+      marginTop: "0.5rem",
+    },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.6rem",
+      fontSize: "1rem",
     },
   },
+
   btn: {
     ...theme.typography.tab,
     color: "white",
@@ -109,10 +132,21 @@ const useStyles = makeStyles((theme) => ({
       background: "white",
       transition: "all .2s ease",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+      padding: "0.4rem 2.5rem",
+      marginTop: "1.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      letterSpacing: 2,
+      marginTop: "1rem",
+      fontSize: "0.9rem",
+      fontWeight: 400,
+      padding: "0.25rem 2rem",
+      border: "2px solid",
+    },
     [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1rem",
-      fontSize: "0.8rem",
-      fontWeight: 500,
+      padding: "0.25rem 1.2rem",
     },
   },
 }))
@@ -146,11 +180,8 @@ const Amazon = ({ setValue }) => {
                 <animated.div style={props} ref={ref1}>
                   <div className={classes.title}>Climate News</div>
                   <div className={classes.text}>
-                    Latest news on climate change,
-                    <br />
-                    actions and challanges we take on
-                    <br />
-                    in our effort to stabilize climate.
+                    Latest news on climate change, actions and challanges we
+                    take on in our effort to stabilize climate.
                   </div>
                   <Link href="/news">
                     <Button className={classes.btn} variant="outlined">
@@ -175,10 +206,8 @@ const Amazon = ({ setValue }) => {
                 <animated.div style={props} ref={ref2}>
                   <div className={classes.title}>Public API</div>
                   <div className={classes.text}>
-                    Climate data just milliseconds away.
-                    <br />
-                    Free to use, rich public API <br />
-                    with most crucial climate factors.
+                    Climate data just milliseconds away. Free to use, rich
+                    public API with most crucial climate factors.
                   </div>
                   <Link href="/public_api">
                     <Button className={classes.btn} variant="outlined">
