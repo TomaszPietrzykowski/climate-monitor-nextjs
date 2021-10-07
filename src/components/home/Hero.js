@@ -32,6 +32,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "flex-start",
     zIndex: 2,
+    [theme.breakpoints.down("lg")]: {
+      padding: "3.5rem",
+      margin: "6rem auto",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem",
+      margin: "4rem auto 3rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: "3rem auto 2.5rem",
+      padding: "1.5rem",
+    },
   },
   title: {
     fontSize: "4rem",
@@ -41,31 +53,43 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     margin: ".5rem 0",
 
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "3.5rem",
+    },
     [theme.breakpoints.down("md")]: {
-      fontSize: "4rem",
+      fontSize: "3rem",
+      marginBlock: 0,
     },
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
-      fontSize: "2.8rem",
+      letterSpacing: 1.2,
+      lineHeight: 1,
+      fontSize: "2rem",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "2.3rem",
+      fontSize: "1.7rem",
+      letterSpacing: 1.1,
     },
   },
   subtitle: {
     fontSize: "2rem",
     fontWeight: 200,
-    letterSpacing: 4,
+    letterSpacing: 3,
     color: "rgba(20, 238, 255, 1)",
     zIndex: 2,
-    [theme.breakpoints.down("md")]: {
-      fontSize: "2rem",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1.8rem",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       fontSize: "1.4rem",
     },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1rem",
+      letterSpacing: 1.5,
+      marginBottom: "0.2rem",
+    },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.2rem",
+      fontSize: "1rem",
     },
   },
   btn: {
@@ -76,13 +100,26 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     transition: "all .2s ease",
     "&:hover": {
-      color: "rgba(20, 238, 255, 1)",
-      borderColor: "rgba(20, 238, 255, 1)",
+      color: theme.palette.common.neonBlue,
+      borderColor: theme.palette.common.neonBlue,
     },
-    [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1rem",
-      fontSize: "0.8rem",
-      fontWeight: 500,
+    [theme.breakpoints.down("lg")]: {
+      marginTop: "1rem",
+    },
+    [theme.breakpoints.down("md")]: {
+      letterSpacing: 2.5,
+      fontSize: "1.2rem",
+      padding: "0.4rem 2.5rem 0.4rem 1.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      letterSpacing: 2,
+      marginTop: "1.5rem",
+      fontSize: "0.9rem",
+      fontWeight: 400,
+      padding: "0.25rem 2rem 0.25rem 1rem",
+      border: "2px solid",
+      color: theme.palette.common.neonBlue,
+      borderColor: theme.palette.common.neonBlue,
     },
   },
 }))
@@ -101,7 +138,7 @@ const Hero = () => {
         </div>
         <Link href="/public_api">
           <Button className={classes.btn} variant="outlined">
-            &rarr;&nbsp; Public API
+            &rarr;&nbsp;Public API
           </Button>
         </Link>
       </div>

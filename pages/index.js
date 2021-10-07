@@ -6,14 +6,14 @@ import Description from "../src/components/home/Description"
 import Amazon from "../src/components/home/Amazon"
 import GetInvolved from "../src/components/home/GetInvolved"
 
-const Index = ({ setValue }) => {
+const Index = () => {
   return (
     <Fragment>
       <Hero />
-      <LatestReadings />
-      <Amazon />
+      {/* <LatestReadings /> */}
+      {/* <Amazon /> */}
       <Description />
-      <GetInvolved />
+      {/* <GetInvolved /> */}
     </Fragment>
   )
 }

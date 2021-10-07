@@ -308,8 +308,7 @@ const About = () => {
               worldwide news and breaking headlines.
             </p>
             <p className={classes.p}>
-              Articles are not older then 30 days and content is refreshed
-              multiple time per day.
+              Presented articles are not older then 30 days.
             </p>
             <p className={classes.p}>
               <a

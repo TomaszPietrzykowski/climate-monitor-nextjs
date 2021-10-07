@@ -73,11 +73,6 @@ export default createMuiTheme({
       main: "#0076B2", // star command blue
     },
   },
-  // typography: {
-  //   pop: {
-  //     fontFamily: "Poppins, sans",
-  //   },
-  // },
   flex: {
     col: {
       display: "flex",
@@ -143,8 +138,8 @@ export default createMuiTheme({
       xs: 360,
       sm: 410,
       md: 600,
-      lg: 980,
-      xl: 1200,
+      lg: 1000,
+      xl: 1440,
     },
   },
 })

@@ -12,7 +12,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useTheme } from "@material-ui/core/styles"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import IconButton from "@material-ui/core/IconButton"
-import MenuIcon from "@material-ui/icons/Menu"
+import MenuIcon from "@material-ui/icons/MenuRounded"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
@@ -50,7 +50,10 @@ const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     height: 80,
     [theme.breakpoints.down("sm")]: {
-      marginBottom: 0,
+      height: 64,
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: 56,
     },
   },
   logoContainer: {
@@ -59,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "white",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       paddingLeft: "1rem",
     },
   },
@@ -68,10 +71,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem 0rem",
     [theme.breakpoints.down("sm")]: {
       margin: "0rem",
-      height: "2rem",
+      height: "2.4rem",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "1.8rem",
+      height: "2.2rem",
     },
   },
   tabContainer: {
@@ -101,34 +104,33 @@ const useStyles = makeStyles((theme) => ({
   iconButtonContainer: {
     marginLeft: "auto",
     marginRight: "1rem",
+    padding: 6,
     color: theme.palette.primary.main,
     "&:hover": {
       backgroundColor: "transparent",
     },
-    [theme.breakpoints.down("sm")]: {
-      marginRight: "0.5rem",
+    [theme.breakpoints.down("md")]: {
+      marginRight: "0.6rem",
     },
     [theme.breakpoints.down("xs")]: {
       marginRight: "0.2rem",
     },
   },
+
+  /*
+   *
+   *
+   *  ----------------------------------------------- Drawer Styles
+   *
+   */
   drawerIcon: {
-    height: "30px",
-    width: "30px",
+    height: "42px",
+    width: "42px",
   },
   drawer: {
     backgroundColor: "white",
   },
-  drawerItem: {
-    ...theme.typography.tab,
-    color: theme.palette.primary.main,
-    letterSpacing: 1.3,
-    "&:hover": {
-      color: theme.palette.primary.light,
-    },
-  },
   drawerBackground: {
-    paddingRight: "3rem",
     "&:hover": {
       backgroundColor: theme.palette.action.disabledBackground,
     },
@@ -139,20 +141,40 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.primary.main,
     },
   },
+  drawerItem: {
+    ...theme.typography.tab,
+    padding: "0.8rem 6rem 0.8rem 2rem",
+    color: theme.palette.primary.main,
+    letterSpacing: 1.3,
+    "&:hover": {
+      color: theme.palette.primary.light,
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "0.8rem 6rem 0.8rem 1rem",
+    },
+  },
   drawerItemAPI: {
     ...theme.typography.tab,
+    padding: "0.8rem 6rem 0.8rem 2rem",
     letterSpacing: 1.3,
     backgroundColor: "transparent",
     color: "white",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0.8rem 6rem 0.8rem 1rem",
+    },
   },
-  selectedText: {
+  drawerItemActive: {
     ...theme.typography.tab,
+    padding: "0.8rem 6rem 0.8rem 2rem",
     color: theme.palette.primary.main,
     letterSpacing: 1.3,
     "&:hover": {
       color: theme.palette.primary.light,
     },
     opacity: 0.5,
+    [theme.breakpoints.down("sm")]: {
+      padding: "0.8rem 6rem 0.8rem 1rem",
+    },
   },
 }))
 
@@ -256,7 +278,7 @@ const Header = ({ value, setValue }) => {
                     i === routes.length - 1
                       ? classes.drawerItemAPI
                       : value === i
-                      ? classes.selectedText
+                      ? classes.drawerItemActive
                       : classes.drawerItem
                   }
                 >
