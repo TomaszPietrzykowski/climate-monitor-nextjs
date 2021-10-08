@@ -19,8 +19,16 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1500,
     position: "relative",
     transition: "color .2s ease",
+    margimTop: "18rem",
+    [theme.breakpoints.down("lg")]: {
+      marginTop: "12rem",
+    },
     [theme.breakpoints.down("md")]: {
+      marginTop: "8rem",
       minHeight: "4rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "6rem",
     },
   },
   footerImg: {

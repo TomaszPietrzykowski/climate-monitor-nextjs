@@ -9,10 +9,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     maxWidth: 1400,
     justifyContent: "space-between",
-    margin: "10rem auto 14rem",
+    margin: "10rem auto",
+    [theme.breakpoints.down("lg")]: {
+      margin: "8rem auto",
+    },
+    [theme.breakpoints.down("md")]: {
+      margin: "4rem 2rem",
+    },
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      marginTop: 0,
+      margin: "2rem 1rem 4rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: "2rem 0.5rem 4rem",
     },
   },
   tab: {
@@ -23,11 +32,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     height: "100%",
     [theme.breakpoints.down("md")]: {
-      margin: "1rem",
+      margin: "1rem 0",
       padding: "2rem 1rem",
     },
-    [theme.breakpoints.down("xs")]: {
-      padding: "2rem 0",
+    [theme.breakpoints.down("sm")]: {
+      margin: 0,
     },
   },
   title: {
@@ -35,13 +44,32 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     marginBottom: "1.5rem",
     [theme.breakpoints.down("md")]: {
-      fontSize: "1.4rem",
+      fontSize: "1.3rem",
       marginBottom: "1rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+      marginTop: "0.5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.6rem",
+      marginBottom: "0.5rem",
     },
   },
   text: {
     ...theme.utils.p,
     paddingTop: 0,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "0.9rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1rem",
+      lineHeight: 1.4,
+      fontWeight: 200,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    },
   },
 }))
 

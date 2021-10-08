@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 300,
     textAlign: "left",
     color: theme.palette.secondary.main,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+    },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.6rem",
     },
@@ -21,6 +24,15 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginTop: "1.5rem",
     paddingTop: 0,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1rem",
+      lineHeight: 1.4,
+      fontWeight: 200,
+      marginTop: "0.5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    },
   },
   blue: {
     color: theme.palette.secondary.main,
@@ -47,15 +59,20 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
       background: theme.palette.primary.main,
     },
-    [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1rem",
-      fontSize: "0.8rem",
-      fontWeight: 500,
-      marginTop: "1rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+      padding: "0.45rem 2.5rem",
+      marginTop: "1.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      letterSpacing: 2,
+      fontSize: "0.9rem",
+      fontWeight: 400,
+      padding: "0.4rem 2rem",
       border: "2px solid",
-      "&:hover": {
-        border: "2px solid",
-      },
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.35rem 1.5rem",
     },
   },
   // new styles
@@ -65,6 +82,24 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "grid",
     gridTemplateColumns: "50% 50%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: 1400,
+      gridTemplateColumns: "33% 66%",
+      "& + &": {
+        gridTemplateColumns: "66% 33%",
+        marginTop: "6rem",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      "& + &": {
+        gridTemplateColumns: "1fr",
+        marginTop: "6rem",
+        "& > :first-child": {
+          order: 2,
+        },
+      },
+    },
   },
   contentContainer: {
     display: "flex",
@@ -73,10 +108,27 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 700,
     padding: "2rem 6rem",
+    [theme.breakpoints.down("lg")]: {
+      padding: "2rem 4rem",
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: "2rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "5rem 2rem 0",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "5rem 1.5rem 0",
+    },
   },
   image: {
     display: "block",
     maxWidth: "100%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "auto",
+      height: "100%",
+      objectFit: "cover",
+    },
   },
 }))
 
@@ -133,7 +185,7 @@ const GetInvolved = () => {
           </Spring>
         </div>
       </div>
-      <div className={classes.containerTop} style={{ marginBottom: "18rem" }}>
+      <div className={classes.containerTop}>
         <div
           className={classes.contentContainer}
           style={{ marginLeft: "auto" }}

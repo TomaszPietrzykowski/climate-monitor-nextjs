@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "flex-start",
       padding: "1rem 2rem",
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: "1rem 1.5rem",
+    },
   },
   tabLeft: {
     display: "flex",
@@ -79,10 +82,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2.8rem",
     color: "white",
     [theme.breakpoints.down("md")]: {
-      fontSize: "2.2rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2.5rem",
+      fontSize: "2rem",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.8rem",
@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.1rem",
       maxWidth: 350,
-      lineHeight: 1.2,
+      lineHeight: 1.4,
       fontWeight: 200,
       marginTop: "0.5rem",
     },
