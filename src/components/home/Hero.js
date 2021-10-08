@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
-      letterSpacing: 1.5,
+      letterSpacing: 1.6,
       lineHeight: 1,
       fontSize: "2rem",
     },
@@ -120,8 +120,8 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 400,
       padding: "0.25rem 2rem 0.25rem 1rem",
       border: "2px solid",
-      color: theme.palette.common.neonBlue,
-      borderColor: theme.palette.common.neonBlue,
+      // color: theme.palette.common.neonBlue,
+      // borderColor: theme.palette.common.neonBlue,
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0.2rem 1.3rem 0.15rem 0.6rem",

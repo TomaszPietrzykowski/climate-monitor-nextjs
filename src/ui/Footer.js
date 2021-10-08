@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1500,
     position: "relative",
     transition: "color .2s ease",
-    margimTop: "18rem",
+    marginTop: "18rem",
     [theme.breakpoints.down("lg")]: {
       marginTop: "12rem",
     },
