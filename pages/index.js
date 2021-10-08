@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <Fragment>
       <Hero />
-      {/* <LatestReadings /> */}
+      <LatestReadings />
       <Amazon />
       {/* <Description /> */}
       {/* <GetInvolved /> */}

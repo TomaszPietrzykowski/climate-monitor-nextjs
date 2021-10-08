@@ -36,9 +36,11 @@ const useStyles = makeStyles((theme) => ({
       padding: "3.5rem",
       margin: "6rem auto",
     },
+    [theme.breakpoints.down("md")]: {
+      margin: "4rem auto 3rem",
+    },
     [theme.breakpoints.down("sm")]: {
       padding: "2rem",
-      margin: "4rem auto 3rem",
     },
     [theme.breakpoints.down("xs")]: {
       margin: "3rem auto 2.5rem",

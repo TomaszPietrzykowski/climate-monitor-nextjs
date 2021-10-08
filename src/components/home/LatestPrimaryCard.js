@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: "1fr 1fr 1fr",
     letterSpacing: 0.5,
     [theme.breakpoints.down("sm")]: {
-      justifyContent: "center",
+      gridTemplateColumns: "1fr 1fr",
+    },
+    [theme.breakpoints.down("xs")]: {
+      gridTemplateColumns: "1fr",
     },
   },
   root: {
@@ -24,20 +27,59 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     boxShadow: "none",
     borderRadius: 0,
+    [theme.breakpoints.down("lg")]: {
+      margin: "1rem 0 1rem 2rem",
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
+      "&:first-child": {
+        paddingLeft: "1rem",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      "&:first-child": {
+        paddingLeft: 0,
+      },
+      "&:last-child": {
+        gridColumn: "span 2",
+        [theme.breakpoints.down("xs")]: {
+          gridColumn: "span 1",
+        },
+        "& > *": {
+          display: "grid",
+          gridGap: "2rem",
+          gridTemplateColumns: "1fr 1fr",
+          [theme.breakpoints.down("xs")]: {
+            gridTemplateColumns: "1fr",
+            gridGap: "1rem",
+          },
+        },
+      },
+    },
   },
-  cardContent: {},
+  cardContent: {
+    [theme.breakpoints.down("md")]: {
+      padding: "1rem 1rem 0",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingInline: 0,
+    },
+    [theme.breakpoints.down("xs")]: {
+      "&:last-child": {
+        paddingBlock: 0,
+      },
+    },
+  },
   label: {
     fontSize: "1.6rem",
     opacity: 0,
     animation: "$fadeIn ease 2s forwards",
     [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.85rem",
+      fontSize: "1.1rem",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.75rem",
+      fontSize: "1.3rem",
+      lineHeight: 1,
     },
   },
   label2: {
@@ -48,25 +90,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1rem",
     animation: "$fadeIn 1s ease 1s forwards",
     [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
-    },
-    [theme.breakpoints.down("sm")]: {
       fontSize: "0.85rem",
     },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "0.75rem",
-    },
-  },
-  labelSecondary: {
-    fontSize: "1.1rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
-    },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "0.85rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "0.7rem",
+      marginBottom: 0,
     },
   },
   value: {
@@ -78,15 +105,18 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0,
     animation: "$fadeIn ease 2s forwards",
     [theme.breakpoints.down("md")]: {
-      fontSize: "2.7rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1.5rem",
+      fontSize: "3rem",
     },
   },
+
+  // secondary
+  labelSecondary: {
+    fontSize: "1.1rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "0.9rem",
+    },
+  },
+
   valueSecondary: {
     display: "flex",
     alignItems: "flex-end",
@@ -94,10 +124,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2.5rem",
     color: theme.palette.secondary.main,
     [theme.breakpoints.down("md")]: {
-      fontSize: "1.6rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1.2rem",
+      fontSize: "2rem",
     },
   },
   ppm: {
@@ -135,6 +162,12 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: "0.2rem",
     },
   },
+  methane: {
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+    },
+  },
   date: {
     fontSize: "1.3rem",
     [theme.breakpoints.down("md")]: {
@@ -149,12 +182,15 @@ const useStyles = makeStyles((theme) => ({
   },
   separator: {
     height: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   chartIcon: {
-    fontSize: "5rem",
-    margin: "0 0 0 -1rem",
+    fontSize: "2.5rem",
     color: theme.palette.secondary.light,
-    opacity: 0.2,
+    opacity: 0.3,
+    marginLeft: -8,
   },
   lineIcon: {
     fontSize: "2.5rem",
@@ -243,7 +279,6 @@ const LatestPrimaryCard = ({ latest, methane }) => {
               </div>
             </div>
           </animated.div>
-          <div className={classes.separator} />
           <animated.div style={props2}>
             <IndIcon className={classes.indIcon} />
             <div className={classes.labelSecondary}>
@@ -274,8 +309,6 @@ const LatestPrimaryCard = ({ latest, methane }) => {
               </div>
             </div>
           </animated.div>
-
-          <div className={classes.separator} />
           <animated.div style={props4}>
             <InsiteIcon className={classes.methIcon} />
             <div className={classes.labelSecondary}>Methane trend:</div>
