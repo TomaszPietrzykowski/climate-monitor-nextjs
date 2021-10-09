@@ -11,6 +11,24 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "grid",
     gridTemplateColumns: "50% 50%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: 1400,
+      gridTemplateColumns: "66% 33%",
+      "& + &": {
+        gridTemplateColumns: "33% 66%",
+        marginTop: "6rem",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      "& + &": {
+        gridTemplateColumns: "1fr",
+        marginTop: 0,
+        "& > :first-child": {
+          order: 2,
+        },
+      },
+    },
   },
   titleBar: {
     width: "100%",
@@ -27,7 +45,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
     padding: "1rem 2rem",
     [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
+      marginLeft: 0,
+      marginTop: "3rem",
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+      fontSize: "2rem",
     },
     position: "relative",
     "&::before": {
@@ -39,6 +63,18 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
+      [theme.breakpoints.down("md")]: {
+        fontSize: "7rem",
+        bottom: -20,
+        left: -15,
+        opacity: 0.04,
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "5rem",
+        bottom: -10,
+        left: 3,
+        opacity: 0.04,
+      },
     },
   },
   contentContainer: {
@@ -49,33 +85,75 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 700,
     padding: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "3rem 2rem 5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "3rem 1.5rem 4rem",
+    },
+    "div + &": {
+      marginLeft: 0,
+      marginRight: "auto",
+      paddingLeft: "6rem",
+      [theme.breakpoints.down("md")]: {
+        padding: "3rem 2rem rem 3rem 4rem",
+      },
+      [theme.breakpoints.down("sm")]: {
+        padding: "3rem 2rem",
+      },
+      [theme.breakpoints.down("xs")]: {
+        padding: "3rem 1.5rem",
+      },
+    },
   },
   image: {
     display: "block",
     maxWidth: "100%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "auto",
+      height: "100%",
+      objectFit: "cover",
+    },
   },
   container: {
     ...theme.utils.container,
     marginTop: "3rem",
     marginBottom: "14rem",
     padding: "4rem 0 0 2rem",
+    [theme.breakpoints.down("md")]: {
+      padding: "4rem 2rem 5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin: 0,
+      padding: "3rem 2rem 4rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "3rem 1.5rem 4rem",
+    },
   },
   grid: {
     marginBottom: "6rem",
     display: "grid",
     gridTemplateColumns: "25% 75%",
-  },
-  gridEven: {
-    marginBottom: "10rem",
-    display: "grid",
-    gridTemplateColumns: "67% 33%",
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      marginBottom: 0,
+    },
   },
   gridItemSM: {
     ...theme.flex.colStart,
     alignItems: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      alignItems: "flex-start",
+      width: "33%",
+      // padding: 0,
+    },
   },
   gridItemL: {
     padding: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 0",
+    },
   },
   logoImg: {
     objectFit: "contain",
@@ -112,13 +190,23 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     objectFit: "cover",
   },
+  root: {
+    "& > :last-child": {
+      [theme.breakpoints.down("lg")]: {
+        gridTemplateColumns: "33% 66%",
+      },
+      [theme.breakpoints.down("sm")]: {
+        gridTemplateColumns: "1fr",
+      },
+    },
+  },
 }))
 
 const About = () => {
   const classes = useStyles()
 
   return (
-    <div>
+    <div className={classes.root}>
       <Head>
         <title key="title">About | Climate Monitor</title>
         <meta
@@ -155,10 +243,7 @@ const About = () => {
         <div className={classes.imageContainer}>
           <img src="/noaa-vessel.jpeg" className={classes.image} />
         </div>
-        <div
-          className={classes.contentContainer}
-          style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
-        >
+        <div className={classes.contentContainer}>
           <div className={classes.content}>
             <h2 className={classes.h2}>Credits</h2>
             <p className={classes.p}>
@@ -180,7 +265,7 @@ const About = () => {
           </div>
         </div>
         <div className={classes.grid}>
-          <div className={classes.gridItemSM} style={{ padding: "2rem" }}>
+          <div className={classes.gridItemSM}>
             <Image
               src={"/NOAA_logo.png"}
               alt={"NOAA logo"}
@@ -293,14 +378,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className={classes.containerTop} style={{ marginBottom: "12rem" }}>
+      <div className={classes.containerTop}>
         <div className={classes.imageContainer}>
           <img src="/flood.jpeg" className={classes.image} />
         </div>
-        <div
-          className={classes.contentContainer}
-          style={{ marginLeft: 0, marginRight: "auto", paddingLeft: "6rem" }}
-        >
+        <div className={classes.contentContainer}>
           <div className={classes.content}>
             <h2 className={classes.h2}>Climate headlines</h2>
             <p className={classes.p}>
