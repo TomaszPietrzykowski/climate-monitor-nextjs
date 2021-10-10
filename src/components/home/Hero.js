@@ -40,11 +40,11 @@ const useStyles = makeStyles((theme) => ({
       margin: "4rem auto 3rem",
     },
     [theme.breakpoints.down("sm")]: {
-      margin: "5rem auto 3rem",
+      margin: "3rem auto 3rem",
       padding: "2rem",
     },
     [theme.breakpoints.down("xs")]: {
-      margin: "4rem auto 2.5rem",
+      margin: "2.5rem auto 2.5rem",
       padding: "1.5rem",
     },
   },
@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
       letterSpacing: 1.6,
-      lineHeight: 1,
       fontSize: "2rem",
     },
     [theme.breakpoints.down("xs")]: {

@@ -121,14 +121,18 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "14rem",
     padding: "4rem 0 0 2rem",
     [theme.breakpoints.down("md")]: {
-      padding: "4rem 2rem 5rem",
+      padding: "4rem 2rem 2rem",
+      margin: 0,
     },
     [theme.breakpoints.down("sm")]: {
       margin: 0,
-      padding: "3rem 2rem 4rem",
+      padding: "2.5rem 2rem 2rem",
+      "& > :last-child > :last-child": {
+        paddingTop: 0,
+      },
     },
-    [theme.breakpoints.down("sm")]: {
-      padding: "3rem 1.5rem 4rem",
+    [theme.breakpoints.down("xs")]: {
+      padding: "1.5rem 1.5rem 4rem",
     },
   },
   grid: {
@@ -146,17 +150,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       alignItems: "flex-start",
       width: "33%",
-      // padding: 0,
     },
   },
   gridItemL: {
     padding: "2rem",
     [theme.breakpoints.down("sm")]: {
-      padding: "2rem 0",
+      padding: "0.5rem 0 2rem",
     },
   },
   logoImg: {
     objectFit: "contain",
+    // [theme.breakpoints.down("sm")]: {
+    //
+    // },
   },
   h2: {
     color: theme.palette.secondary.main,
@@ -164,6 +170,17 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 1.5,
     fontSize: "2rem",
     marginBottom: "2rem",
+    textAlign: "left",
+    [theme.breakpoints.down("lg")]: {
+      marginBottom: 0,
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.8rem",
+      marginBottom: "1rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.6rem",
+    },
   },
   pHead: {
     fontSize: "1.3rem",
@@ -174,11 +191,19 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "800px",
   },
   p: {
+    ...theme.utils.p,
     color: theme.palette.text.secondary,
-    lineHeight: 1.5,
-    letterSpacing: 0.3,
-    padding: "1rem 2rem 0 0",
-    maxWidth: "800px",
+    marginTop: "1.5rem",
+    paddingTop: 0,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1rem",
+      lineHeight: 1.5,
+      fontWeight: 200,
+      marginBlock: "1.5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    },
   },
   link: {
     color: theme.palette.secondary.dark,
@@ -269,8 +294,8 @@ const About = () => {
             <Image
               src={"/NOAA_logo.png"}
               alt={"NOAA logo"}
-              width={180}
-              height={180}
+              width={205}
+              height={205}
               className={classes.logoImg}
             />
           </div>

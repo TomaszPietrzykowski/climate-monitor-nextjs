@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     color: theme.palette.secondary.main,
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
+      fontSize: "1.8rem",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.6rem",
@@ -26,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 0,
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.1rem",
-      lineHeight: 1.4,
+      lineHeight: 1.5,
       fontWeight: 200,
-      marginTop: "0.5rem",
+      marginTop: "1rem",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1rem",

@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "1rem",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
+      fontSize: "1.8rem",
       marginTop: "0.5rem",
     },
     [theme.breakpoints.down("xs")]: {
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.1rem",
-      lineHeight: 1.4,
+      lineHeight: 1.5,
       fontWeight: 200,
     },
     [theme.breakpoints.down("xs")]: {
