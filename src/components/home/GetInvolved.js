@@ -135,8 +135,14 @@ const useStyles = makeStyles((theme) => ({
 const GetInvolved = () => {
   const classes = useStyles()
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     trigger: 1,
+    threshold: 0.2,
+  })
+  const [ref1, inView1] = useInView({
+    triggerOnce: true,
+    trigger: 1,
+    threshold: 0.2,
   })
 
   return (
@@ -157,7 +163,7 @@ const GetInvolved = () => {
           >
             {(props) => (
               <animated.div style={props} ref={ref} className={classes.flex}>
-                <div className={classes.sloganText}>Get involved</div>
+                <h2 className={classes.sloganText}>Get involved</h2>
                 <div className={classes.about}>
                   The<span className={classes.blue}> climate monitor </span>
                   project is a living initiative, aimed at providing you hard
@@ -185,26 +191,45 @@ const GetInvolved = () => {
           </Spring>
         </div>
       </div>
+
       <div className={classes.containerTop}>
         <div
           className={classes.contentContainer}
           style={{ marginLeft: "auto" }}
         >
-          <h2 className={classes.sloganText}>Data sources</h2>
-          <div className={classes.about}>
-            Climate monitor relies on three data sources: The Global Monitoring
-            Laboratory of the National Oceanic and Atmospheric Administration
-            for greenhouse gases levels, NASA Jet Propulsion Laboratory
-            California Insititute of Technology Physical Oceanography
-            Distributed Active Archive Center for data on ocean levels and
-            glaciers ice mass and Berkeley Earth for global temperature
-            measurements.
-          </div>
-          <Link href="/about">
-            <Button variant="outlined" color="primary" className={classes.btn}>
-              About
-            </Button>
-          </Link>
+          <Spring
+            from={{ opacity: 0, marginTop: 30, marginBottom: -30 }}
+            to={{
+              opacity: inView1 ? 1 : 0,
+              marginTop: inView1 ? 0 : 30,
+              marginBottom: inView1 ? 0 : -30,
+            }}
+            config={config.gentle}
+          >
+            {(props) => (
+              <animated.div style={props} ref={ref1} className={classes.flex}>
+                <h2 className={classes.sloganText}>Data sources</h2>
+                <div className={classes.about}>
+                  Climate monitor relies on three data sources: The Global
+                  Monitoring Laboratory of the National Oceanic and Atmospheric
+                  Administration for greenhouse gases levels, NASA Jet
+                  Propulsion Laboratory California Insititute of Technology
+                  Physical Oceanography Distributed Active Archive Center for
+                  data on ocean levels and glaciers ice mass and Berkeley Earth
+                  for global temperature measurements.
+                </div>
+                <Link href="/about">
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    className={classes.btn}
+                  >
+                    About
+                  </Button>
+                </Link>
+              </animated.div>
+            )}
+          </Spring>
         </div>
         <div className={classes.imageContainer}>
           <img src="/baloon.jpeg" className={classes.image} />

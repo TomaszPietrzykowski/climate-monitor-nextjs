@@ -78,6 +78,7 @@ const Description = () => {
   const intersectionOptions = {
     triggerOnce: true,
     trigger: 1,
+    threshold: 0.3,
   }
   const [ref1, inView1] = useInView(intersectionOptions)
   const [ref2, inView2] = useInView(intersectionOptions)

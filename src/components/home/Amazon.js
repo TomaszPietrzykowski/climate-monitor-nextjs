@@ -155,10 +155,12 @@ const Amazon = ({ setValue }) => {
   const [ref1, inView1] = useInView({
     triggerOnce: true,
     trigger: 1,
+    threshold: 0.3,
   })
   const [ref2, inView2] = useInView({
     triggerOnce: true,
     trigger: 1,
+    threshold: 0.3,
   })
 
   return (
