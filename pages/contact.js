@@ -48,15 +48,9 @@ const CustomCheckbox = withStyles((theme) => ({
 }))(Checkbox)
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    ...theme.utils.container,
-    ...theme.flex.row,
-    justifyContent: "flex-start",
-    padding: "4rem 2rem",
-    [theme.breakpoints.down("xs")]: {
-      padding: "1rem 0 0",
-    },
-  },
+  /*
+   * header
+   */
   titleBar: {
     width: "100%",
     zIndex: theme.zIndex.drawer + 1,
@@ -72,31 +66,94 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
     padding: "1rem 2rem",
     [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
+      marginLeft: 0,
+      marginTop: "3rem",
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+      fontSize: "2rem",
     },
     position: "relative",
     "&::before": {
       content: "'Contact'",
       position: "absolute",
-      bottom: -45,
+      bottom: -38,
       left: -50,
       fontSize: "10rem",
       opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
+      [theme.breakpoints.down("md")]: {
+        fontSize: "7rem",
+        bottom: -20,
+        left: -25,
+        opacity: 0.04,
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "5rem",
+        bottom: -10,
+        left: -15,
+        opacity: 0.04,
+      },
     },
   },
+  /*
+   * layout
+   */
+  containerTop: {
+    width: "100%",
+    maxWidth: 1920,
+    margin: "6rem auto 8rem",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: 1400,
+      gridTemplateColumns: "66% 33%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      marginTop: 0,
+    },
+  },
+  contentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    maxWidth: 700,
+    padding: "0 2rem",
+    marginLeft: "auto",
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: 0,
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 1.5rem",
+    },
+  },
+  image: {
+    display: "block",
+    maxWidth: "100%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "auto",
+      height: "100%",
+      objectFit: "cover",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "3rem",
+    },
+  },
+  /*
+   * email form
+   */
   content: {
     position: "relative",
     [theme.breakpoints.down("sm")]: {
-      padding: "1.5rem",
+      padding: 0,
     },
     [theme.breakpoints.down("xs")]: {
       width: "min-content",
-      minWidth: "80%",
-      margin: "0 auto 2rem",
-      padding: "1.5rem",
-      paddingRight: ".5rem",
+      minWidth: "100%",
     },
   },
   form: {
@@ -109,31 +166,9 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       marginBottom: "2rem",
       width: 380,
-      [theme.breakpoints.down("xs")]: {
-        width: 280,
-      },
-    },
-  },
-  submitBtn: {
-    ...theme.utils.btn,
-    color: theme.palette.secondary.main,
-    fontSize: "1.2rem",
-    padding: "0.4rem 3.5rem 0.4rem 2.8rem",
-    width: "min-content",
-    transition: "all .2s ease",
-    "&:hover": {
-      background: theme.palette.secondary.main,
-      borderColor: theme.palette.secondary.main,
-      color: "white",
-    },
-    [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1rem",
-      fontSize: "0.8rem",
-      fontWeight: 500,
-      marginTop: "1rem",
-      border: "2px solid",
-      "&:hover": {
-        border: "2px solid",
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+        maxWidth: 560,
       },
     },
   },
@@ -186,6 +221,29 @@ const useStyles = makeStyles((theme) => ({
       fontSize: ".8rem",
     },
   },
+  submitBtn: {
+    ...theme.utils.btn,
+    color: theme.palette.secondary.main,
+    fontSize: "1.2rem",
+    padding: "0.4rem 3.5rem 0.4rem 2.8rem",
+    width: "min-content",
+    transition: "all .2s ease",
+    "&:hover": {
+      background: theme.palette.secondary.main,
+      borderColor: theme.palette.secondary.main,
+      color: "white",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+      marginTop: "1.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      letterSpacing: 2,
+      fontWeight: 400,
+      padding: "0.4rem 3rem 0.4rem 2.5rem",
+      border: "2px solid",
+    },
+  },
   info: {
     color: theme.palette.secondary.main,
     textDecoration: "underline",
@@ -198,32 +256,15 @@ const useStyles = makeStyles((theme) => ({
     color: "red",
     padding: "2rem 2rem 2rem 0",
   },
-  // new styles
-  containerTop: {
-    width: "100%",
-    maxWidth: 1920,
-    margin: "6rem auto 8rem",
-    display: "grid",
-    gridTemplateColumns: "50% 50%",
-    fontFamily: "Poppins",
-    fontWeight: 300,
-  },
-  contentContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    width: "100%",
-    maxWidth: 700,
-    padding: "0 2rem",
-  },
-  image: {
-    display: "block",
-    maxWidth: "100%",
-  },
+
   sendIcon: {
     fontSize: "1.8rem",
     marginRight: ".6rem",
     marginTop: "-0.15rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.6rem",
+      marginTop: "-0.1rem",
+    },
   },
 }))
 
@@ -304,10 +345,7 @@ const Contact = () => {
         <h1 className={classes.sectionHeader}>Contact</h1>
       </div>
       <div className={classes.containerTop}>
-        <div
-          className={classes.contentContainer}
-          style={{ marginLeft: "auto" }}
-        >
+        <div className={classes.contentContainer}>
           <main className={classes.content}>
             {error && <div className={classes.error}>{error}</div>}
             {loading ? (
