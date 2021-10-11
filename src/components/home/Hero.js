@@ -110,20 +110,18 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       letterSpacing: 2.5,
       fontSize: "1.2rem",
-      padding: "0.4rem 2.5rem 0.4rem 1.5rem",
+      padding: "0.45rem 2.5rem 0.45rem 1.5rem",
     },
     [theme.breakpoints.down("sm")]: {
       letterSpacing: 2,
       marginTop: "1rem",
       fontSize: "0.9rem",
       fontWeight: 400,
-      padding: "0.25rem 2rem 0.25rem 1rem",
+      padding: "0.4rem 2rem 0.4rem 1rem",
       border: "2px solid",
-      // color: theme.palette.common.neonBlue,
-      // borderColor: theme.palette.common.neonBlue,
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0.2rem 1.3rem 0.15rem 0.6rem",
+      padding: "0.35rem 1.3rem 0.35rem 0.6rem",
     },
   },
 }))

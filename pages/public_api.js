@@ -8,31 +8,9 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import FloatButton from "../src/components/public_api/FloatButtonAPI"
 
 const useStyles = makeStyles((theme) => ({
-  // new styles
-  containerTop: {
-    width: "100%",
-    maxWidth: 1920,
-    margin: "6rem auto 0rem",
-    display: "grid",
-    gridTemplateColumns: "50% 50%",
-  },
-  contentContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    width: "100%",
-    maxWidth: 700,
-    padding: "2rem 6rem 2rem 2rem",
-  },
-  image: {
-    display: "block",
-    maxWidth: "100%",
-  },
-  // new styles end --------------
-  container: {
-    ...theme.utils.container,
-    padding: "0 2rem",
-  },
+  /*
+   * header
+   */
   sectionHeader: {
     fontWeight: 400,
     color: theme.palette.secondary.main,
@@ -43,7 +21,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
     padding: "1rem 2rem",
     [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
+      marginLeft: 0,
+      marginTop: "3rem",
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+      fontSize: "2rem",
     },
     position: "relative",
     "&::before": {
@@ -55,86 +39,67 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
+      [theme.breakpoints.down("md")]: {
+        fontSize: "7rem",
+        bottom: -20,
+        left: -15,
+        opacity: 0.04,
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "5rem",
+        bottom: -10,
+        left: -10,
+        opacity: 0.04,
+      },
     },
   },
-  h2: {
-    color: theme.palette.secondary.main,
-    fontWeight: 300,
-    letterSpacing: 1.5,
-    fontSize: "2rem",
-    paddingTop: "6rem",
-  },
-  p: {
-    color: theme.palette.text.secondary,
-    ...theme.utils.p,
-  },
-  pHead: {
-    fontSize: "1.6rem",
-    color: theme.palette.text.primary,
-    lineHeight: 1.8,
-    letterSpacing: 0.8,
-    padding: "4rem 0 0",
-  },
-  code: {
-    fontSize: "1rem",
-    lineHeight: 1.8,
-    letterSpacing: 1.3,
-    color: theme.palette.common.lightestBlue,
-  },
-  secondaryCode: {
-    fontSize: "1rem",
-    lineHeight: 1.5,
-    color: theme.palette.secondary.light,
-  },
-  codeblock: {
-    width: "max-content",
-    padding: "2rem 5rem 2rem 2rem",
-    margin: "1rem 0 0",
-    background: theme.palette.primary.dark,
-    borderRadius: 7,
-  },
-  codeLine: {
-    width: "max-content",
-    padding: "1rem 5rem 1rem 2rem",
-    margin: "1rem 0",
-    background: theme.palette.primary.dark,
-    borderRadius: 7,
-  },
-
-  //
-  // code format colorizer
-  //
-  rootEnd: {
-    color: theme.palette.common.lightestBlue,
-  },
-  factor: {
-    color: theme.palette.common.orange,
-  },
-  query: {
-    color: theme.palette.common.neonBlue,
-  },
-  property: {
-    color: theme.palette.common.lightBlue,
-  },
-  string: {
-    color: theme.palette.common.orange,
-  },
-  number: {
-    color: theme.palette.common.green,
-  },
-  gridParent: {
+  /*
+   * hero section
+   */
+  containerTop: {
+    width: "100%",
+    maxWidth: 1920,
+    margin: "6rem auto 0rem",
     display: "grid",
-    gridTemplateColumns: "2fr 1fr",
-    border: "1px solid green",
+    gridTemplateColumns: "50% 50%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: 1400,
+      gridTemplateColumns: "66% 33%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      marginTop: 0,
+    },
   },
-  link: {
-    color: theme.palette.primary.main,
-    fontWeight: 500,
-    textDecoration: "underline",
+  contentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    maxWidth: 700,
+    padding: "2rem 6rem 2rem 2rem",
+    [theme.breakpoints.down("md")]: {
+      padding: "3rem 2rem 5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 2rem 5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "1rem 1.5rem 4rem",
+    },
   },
-  section: {
-    marginTop: "6rem",
+  image: {
+    display: "block",
+    maxWidth: "100%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: "auto",
+      height: "100%",
+      objectFit: "cover",
+    },
   },
+  /*
+   * docs refs menu
+   */
   ref: {
     color: theme.palette.secondary.main,
     fontWeight: 400,
@@ -163,13 +128,144 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
-  refSmallSub: {
-    "&:hover": {
-      textDecoration: "none",
-    },
-  },
   scrollPadding: {
     height: "2rem",
+  },
+  /*
+   * docs section
+   */
+  container: {
+    ...theme.utils.container,
+    padding: "0 2rem",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 1.5rem",
+    },
+  },
+  section: {
+    marginTop: "6rem",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "3rem",
+    },
+  },
+  /*
+   * copy
+   */
+  h2: {
+    color: theme.palette.secondary.main,
+    fontWeight: 300,
+    letterSpacing: 1.5,
+    fontSize: "2rem",
+    paddingTop: "6rem",
+    [theme.breakpoints.down("lg")]: {
+      marginBottom: 0,
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.8rem",
+      paddingTop: 0,
+      marginBottom: 0,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.6rem",
+    },
+  },
+  p: {
+    ...theme.utils.p,
+    color: theme.palette.text.secondary,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      fontWeight: 200,
+      paddingTop: "1rem",
+    },
+  },
+  pHead: {
+    fontSize: "1.6rem",
+    color: theme.palette.text.primary,
+    lineHeight: 1.8,
+    letterSpacing: 0.8,
+    padding: "4rem 0 0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "4rem 0 0",
+      fontSize: "1.4rem",
+      lineHeight: 1.3,
+      letterSpacing: 0.5,
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 0 0",
+      fontSize: "1.3rem",
+      lineHeight: 1.1,
+    },
+  },
+  /*
+   * code styles
+   */
+  code: {
+    fontSize: "1rem",
+    lineHeight: 1.8,
+    letterSpacing: 1.3,
+    color: theme.palette.common.lightestBlue,
+    [theme.breakpoints.down("sm")]: {
+      lineHeight: 1.6,
+      letterSpacing: 1,
+    },
+  },
+  secondaryCode: {
+    fontSize: "1rem",
+    lineHeight: 1.5,
+    color: theme.palette.secondary.light,
+  },
+  codeblock: {
+    width: "max-content",
+    padding: "2rem 5rem 2rem 2rem",
+    margin: "1rem 0 0",
+    background: theme.palette.primary.dark,
+    borderRadius: 7,
+    maxWidth: "100%",
+    overflow: "auto",
+    whiteSpace: "nowrap",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 3rem 2rem 1.5rem",
+    },
+  },
+  codeLine: {
+    width: "max-content",
+    padding: "1rem 5rem 1rem 2rem",
+    margin: "1rem 0",
+    background: theme.palette.primary.dark,
+    borderRadius: 7,
+    maxWidth: "100%",
+    overflow: "auto",
+    whiteSpace: "nowrap",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0.7rem 3rem 0.7rem 1.5rem",
+    },
+  },
+
+  //
+  // code format colorizer
+  //
+  rootEnd: {
+    color: theme.palette.common.lightestBlue,
+  },
+  factor: {
+    color: theme.palette.common.orange,
+  },
+  query: {
+    color: theme.palette.common.neonBlue,
+  },
+  property: {
+    color: theme.palette.common.lightBlue,
+  },
+  string: {
+    color: theme.palette.common.orange,
+  },
+  number: {
+    color: theme.palette.common.green,
+  },
+  link: {
+    color: theme.palette.primary.main,
+    fontWeight: 500,
+    textDecoration: "underline",
   },
 }))
 
@@ -208,18 +304,18 @@ const PublicAPI = () => {
           className={classes.contentContainer}
           style={{ marginLeft: "auto" }}
         >
-          <p className={classes.h2} style={{ paddingTop: 0 }}>
+          <h2 className={classes.h2} style={{ paddingTop: 0 }}>
             Climate data
-          </p>
+          </h2>
           <p className={classes.p}>
-            There are seven main factors in focus. Four atmospheric greenhouse
-            gases: carbon dioxide (co2), methane (ch4), sulfur hexafluoride
-            (sf6), dinitrogen oxide (n2o), global temperatures, global ocean
-            levels and finally condition of Greenland's and Antarctica's
-            glaciers. Within each of the factors you will find multiple sets of
-            data, usually based on data scope: monthly, weekly or annual data,
-            some datasets are available for global values and values calculated
-            for Mauna Loa Observatory Hawaii separately.
+            There are seven factors in focus. Four atmospheric greenhouse gases:
+            carbon dioxide (co2), methane (ch4), sulfur hexafluoride (sf6),
+            dinitrogen oxide (n2o), global temperatures, global ocean levels and
+            finally condition of Greenland's and Antarctica's glaciers. Within
+            each of the factors you will find multiple sets of data, usually
+            based on data scope: monthly, weekly or annual data, some datasets
+            are available for global values and values calculated for Mauna Loa
+            Observatory Hawaii separately.
           </p>
           <p className={classes.p}>
             Data is read from ftp servers or obtained within a NASA's EarthData
@@ -240,8 +336,7 @@ const PublicAPI = () => {
       </div>
       <div className={classes.container} ref={menuRef}>
         <section className={classes.section}>
-          <p className={classes.h2}>Documentation</p>
-          <br />
+          <h2 className={classes.h2}>Documentation</h2>
           <br />
           <p
             className={classes.refBig}
@@ -430,7 +525,7 @@ const PublicAPI = () => {
               }
             >
               {" "}
-              all available endpoints
+              all&nbsp;available&nbsp;endpoints
             </span>
           </p>
           <div className={classes.codeblock}>

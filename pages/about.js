@@ -5,31 +5,9 @@ import Image from "next/image"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
-  containerTop: {
-    width: "100%",
-    maxWidth: 1920,
-    margin: "auto",
-    display: "grid",
-    gridTemplateColumns: "50% 50%",
-    [theme.breakpoints.down("lg")]: {
-      maxWidth: 1400,
-      gridTemplateColumns: "66% 33%",
-      "& + &": {
-        gridTemplateColumns: "33% 66%",
-        marginTop: "6rem",
-      },
-    },
-    [theme.breakpoints.down("sm")]: {
-      gridTemplateColumns: "1fr",
-      "& + &": {
-        gridTemplateColumns: "1fr",
-        marginTop: 0,
-        "& > :first-child": {
-          order: 2,
-        },
-      },
-    },
-  },
+  /*
+   * header
+   */
   titleBar: {
     width: "100%",
     zIndex: theme.zIndex.drawer + 1,
@@ -77,6 +55,34 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  /*
+   * hero section
+   */
+  containerTop: {
+    width: "100%",
+    maxWidth: 1920,
+    margin: "auto",
+    display: "grid",
+    gridTemplateColumns: "50% 50%",
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: 1400,
+      gridTemplateColumns: "66% 33%",
+      "& + &": {
+        gridTemplateColumns: "33% 66%",
+        marginTop: "6rem",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      "& + &": {
+        gridTemplateColumns: "1fr",
+        marginTop: 0,
+        "& > :first-child": {
+          order: 2,
+        },
+      },
+    },
+  },
   contentContainer: {
     marginLeft: "auto",
     display: "flex",
@@ -115,6 +121,9 @@ const useStyles = makeStyles((theme) => ({
       objectFit: "cover",
     },
   },
+  /*
+   * data sources grid
+   */
   container: {
     ...theme.utils.container,
     marginTop: "3rem",
@@ -160,10 +169,10 @@ const useStyles = makeStyles((theme) => ({
   },
   logoImg: {
     objectFit: "contain",
-    // [theme.breakpoints.down("sm")]: {
-    //
-    // },
   },
+  /*
+   * copy
+   */
   h2: {
     color: theme.palette.secondary.main,
     fontWeight: 300,
@@ -196,13 +205,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "1.5rem",
     paddingTop: 0,
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.1rem",
+      fontSize: "1rem",
       lineHeight: 1.5,
       fontWeight: 200,
       marginBlock: "1.5rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1rem",
     },
   },
   link: {
@@ -211,10 +217,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "underline",
     fontWeight: 500,
   },
-  img: {
-    height: "100%",
-    objectFit: "cover",
-  },
+  /*
+   * target last section
+   */
   root: {
     "& > :last-child": {
       [theme.breakpoints.down("lg")]: {
