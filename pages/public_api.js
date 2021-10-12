@@ -184,7 +184,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.8,
     letterSpacing: 0.8,
     padding: "4rem 0 0",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       padding: "4rem 0 0",
       fontSize: "1.4rem",
       lineHeight: 1.3,

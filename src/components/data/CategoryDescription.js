@@ -3,6 +3,12 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: "0 4rem 8rem",
+    [theme.breakpoints.down("md")]: {
+      padding: "0 2rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 1.5rem",
+    },
   },
   para: {
     ...theme.utils.p,
@@ -10,6 +16,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "auto",
     padding: "0 4rem 0 0",
     marginBottom: "2rem",
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      fontWeight: 200,
+      marginBlock: "1.5rem",
+    },
   },
 }))
 const CategoryDescription = ({ desc, link }) => {

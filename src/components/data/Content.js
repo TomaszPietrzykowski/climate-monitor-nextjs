@@ -23,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.2rem",
-      paddingRight: "1rem",
+      padding: "2rem 2rem 0",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1rem",
+      padding: "2rem 1.5rem 0",
     },
   },
   sliderLabel: {
@@ -52,10 +53,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2rem",
     padding: "2rem 4rem 4rem",
     [theme.breakpoints.down("md")]: {
-      padding: "3rem",
+      padding: "2rem 2rem 0",
+      fontSize: "1.1rem",
     },
-    [theme.breakpoints.down("sm")]: {
-      padding: "2rem",
+    [theme.breakpoints.down("xs")]: {
+      padding: "1rem 1.5rem 0",
+      fontSize: "1rem",
+      lineHeight: 1.3,
     },
   },
 }))
@@ -80,13 +84,11 @@ const Content = ({ activeData, gradient }) => {
   return (
     <div className={classes.contentContainer}>
       <div className={classes.title}>{activeData.title}</div>
-      <br />
       <Chart
         displayData={displayData}
         label={activeData.title}
         grad={gradient}
       />
-      <br />
       <div className={classes.sliderLabel}>Data scope:</div>
       <RangeSlider
         activeData={activeData}

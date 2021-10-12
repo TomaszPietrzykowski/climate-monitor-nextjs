@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-start",
     marginTop: "4rem",
+    [theme.breakpoints.down("md")]: {
+      marginTop: 0,
+    },
   },
   drawer: {
     minWidth: drawerWidth,
