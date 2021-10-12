@@ -16,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1400,
     margin: "auto",
     marginTop: "4rem",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "1rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: 0,
+    },
   },
   drawer: {
     minWidth: drawerWidth,

@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       margin: "auto",
       height: "auto",
       marginTop: "3rem",
-      maxWidth: "100%",
+      maxWidth: 300,
     },
   },
   tabImg: {
@@ -78,13 +78,14 @@ const useStyles = makeStyles((theme) => ({
   tabTitle: {
     fontSize: "1rem",
     fontWeight: 500,
-    color: theme.palette.text.primary,
+    color: theme.palette.secondary.main,
     padding: "1rem 1rem .5rem 0rem",
     textAlign: "left",
   },
   tabText: {
-    fontSize: "0.85rem",
+    fontSize: "0.9rem",
     fontWeight: 400,
+    lineHeight: 1.4,
     color: theme.palette.text.secondary,
     padding: "0rem 1rem .6rem 0rem",
     textAlign: "left",

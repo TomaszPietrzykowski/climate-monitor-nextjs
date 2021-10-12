@@ -3,6 +3,7 @@ import Link from "next/link"
 import Head from "next/head"
 //mui
 import { makeStyles } from "@material-ui/core/styles"
+import { useMediaQuery } from "@material-ui/core"
 import Hidden from "@material-ui/core/Hidden"
 import BackIcon from "@material-ui/icons/ArrowBackIos"
 // custom
@@ -10,6 +11,7 @@ import { datasets } from "../../src/components/data/Datasets"
 import Content from "../../src/components/data/Content"
 import CategoryDescription from "../../src/components/data/CategoryDescription"
 import Loader from "../../src/ui/Loader"
+import FloatButtonData from "../../src/components/data/FloatButtonData"
 
 const drawerWidth = "360px"
 
@@ -80,6 +82,8 @@ const DataDisplay = ({ dataset }) => {
   const [index, setIndex] = useState(0)
   const [loading, setLoading] = useState(false)
   const classes = useStyles()
+
+  const mobile = useMediaQuery("(max-width:1000px)")
 
   useEffect(() => {
     getData(datasets[dataset].scopes[0].endpoint)
@@ -162,6 +166,12 @@ const DataDisplay = ({ dataset }) => {
           />
         </div>
       </div>
+      {mobile && (
+        <FloatButtonData
+          cb={() => console.log("triggered")}
+          className={classes.float}
+        />
+      )}
     </Fragment>
   )
 }
