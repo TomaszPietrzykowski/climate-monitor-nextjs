@@ -3,11 +3,16 @@ import Head from "next/head"
 // mui
 import { makeStyles } from "@material-ui/core/styles"
 import Pagination from "@material-ui/lab/Pagination"
+import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 // custom
 import NewsTab from "../src/components/news/NewsTab"
 import Loader from "../src/ui/Loader"
+import FloatButton from "../src/components/public_api/FloatButtonAPI"
 
 const useStyles = makeStyles((theme) => ({
+  /*
+   * header
+   */
   sectionHeader: {
     fontWeight: 400,
     color: theme.palette.secondary.main,
@@ -17,8 +22,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "6rem",
     marginBottom: "2rem",
     padding: "1rem 2rem",
+    overflow: "none",
     [theme.breakpoints.down("md")]: {
-      marginLeft: 20,
+      marginLeft: 0,
+      marginTop: "3rem",
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+      marginBottom: 0,
+      fontSize: "2rem",
     },
     position: "relative",
     "&::before": {
@@ -30,6 +43,18 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
+      [theme.breakpoints.down("md")]: {
+        fontSize: "7rem",
+        bottom: -20,
+        left: -15,
+        opacity: 0.04,
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "5rem",
+        bottom: -10,
+        left: -10,
+        opacity: 0.04,
+      },
     },
   },
   poweredBy: {
@@ -46,6 +71,14 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.primary,
         textDecoration: "underline",
       },
+    },
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "flex-start",
+      margin: "0 2rem 2rem 2.2rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "flex-start",
+      margin: "0 2rem 0 2.2rem",
     },
   },
   container: {
@@ -69,6 +102,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    padding: "1rem",
     [theme.breakpoints.down("md")]: {
       padding: "1rem",
       paddingTop: 0,
@@ -112,6 +146,12 @@ const News = () => {
     // eslint-disable-next-line
   }, [page])
 
+  // float button trigger on scroll
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 800,
+  })
+
   return (
     <>
       <Head>
@@ -148,16 +188,18 @@ const News = () => {
           </div>
         )}
         {!loading && pages > 1 && (
-          <div
-            className={classes.paginationContainer}
-            style={{ marginBottom: "3rem" }}
-          >
+          <div className={classes.paginationContainer}>
             <div className={classes.paginationRoot}>
               <Pagination count={pages} page={page} onChange={handleChange} />
             </div>
           </div>
         )}
       </div>
+      {trigger && (
+        <FloatButton
+          cb={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        />
+      )}
     </>
   )
 }

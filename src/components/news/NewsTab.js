@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     height: 280,
     width: 266,
-    margin: "2rem",
+    margin: "1rem",
     display: "grid",
     gridTemplateRows: "60% 40%",
     cursor: "pointer",
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       margin: "auto",
-      marginTop: "3rem",
+      marginTop: "1.5rem",
     },
   },
   badge: {
@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   tabContent: {
     width: "100%",
     overflow: "hidden",
+    lineHeight: 1.4,
   },
   tabTitle: {
     fontSize: "1rem",

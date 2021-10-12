@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       gridTemplateColumns: "1fr",
-      marginTop: 0,
+      marginBlock: 0,
     },
   },
   contentContainer: {
