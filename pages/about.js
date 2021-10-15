@@ -1,6 +1,5 @@
 import React from "react"
 import Head from "next/head"
-import Image from "next/image"
 // mui
 import { makeStyles } from "@material-ui/core/styles"
 
@@ -38,20 +37,18 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.04,
+      opacity: 0.08,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
         fontSize: "7rem",
         bottom: -20,
         left: -15,
-        opacity: 0.04,
       },
       [theme.breakpoints.down("sm")]: {
         fontSize: "5rem",
         bottom: -10,
         left: 3,
-        opacity: 0.04,
       },
     },
   },
@@ -169,6 +166,12 @@ const useStyles = makeStyles((theme) => ({
   },
   logoImg: {
     objectFit: "contain",
+    maxWidth: "100%",
+    height: "auto ",
+    marginTop: "3rem",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "1.5rem",
+    },
   },
   /*
    * copy
@@ -296,7 +299,7 @@ const About = () => {
         </div>
         <div className={classes.grid}>
           <div className={classes.gridItemSM}>
-            <Image
+            <img
               src={"/NOAA_logo.png"}
               alt={"NOAA logo"}
               width={205}
@@ -335,7 +338,7 @@ const About = () => {
         </div>
         <div className={classes.grid}>
           <div className={classes.gridItemSM}>
-            <Image
+            <img
               src={"/NASA_logo.png"}
               alt={"NASA logo"}
               width={220}
@@ -375,7 +378,7 @@ const About = () => {
         </div>
         <div className={classes.grid}>
           <div className={classes.gridItemSM}>
-            <Image
+            <img
               src={"/berkeley-earth.png"}
               alt={"Berkeley Earth logo"}
               width={240}

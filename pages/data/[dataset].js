@@ -162,9 +162,7 @@ const DataDisplay = ({ dataset }) => {
   const getData = async (endpoint) => {
     setLoading(true)
     try {
-      const res = await fetch(
-        `https://api.climatemonitor.info/api/v1/chartdata/${endpoint}`
-      )
+      const res = await fetch(`/api/v1/chartdata/${endpoint}`)
       const data = await res.json()
       setActiveData(data.data)
       setLoading(false)

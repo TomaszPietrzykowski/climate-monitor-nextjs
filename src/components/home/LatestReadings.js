@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -30,
       left: -20,
       fontSize: "8rem",
-      opacity: 0.06,
+      opacity: 0.08,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("lg")]: {
@@ -174,9 +174,7 @@ const LatestReadings = () => {
   const getLatestCO2 = async () => {
     try {
       setLoading(true)
-      const res = await fetch(
-        "https://api.climatemonitor.info/api/v1/chartdata/latest_co2"
-      )
+      const res = await fetch("/api/v1/chartdata/latest_co2")
       const { data } = await res.json()
       setLatest(data)
       setLoading(false)
@@ -188,9 +186,7 @@ const LatestReadings = () => {
   const getLatestCH4 = async () => {
     try {
       setLoadingCH4(true)
-      const res = await fetch(
-        "https://api.climatemonitor.info/api/v1/chartdata/monthly_ch4_gl"
-      )
+      const res = await fetch("/api/v1/chartdata/monthly_ch4_gl")
       const { data } = await res.json()
       setLatestCH4(data)
       setLoadingCH4(false)

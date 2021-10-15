@@ -1,6 +1,5 @@
 import React from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles((theme) => ({
@@ -63,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "4px 4px 0 0",
     [theme.breakpoints.down("xs")]: {
       objectFit: "cover",
-      height: 400,
+      width: "100%",
     },
   },
   tabContent: {
@@ -100,7 +99,7 @@ const DataTabs = () => {
       <div className={classes.container}>
         <Link href="/data/co2" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/co2tab.jpg"}
               alt={"earth atmospheric carbon dioxide"}
               width={278}
@@ -118,7 +117,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/ch4" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/ch4tab.jpg"}
               alt={"earth atmospheric methane"}
               width={278}
@@ -136,7 +135,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/sf6" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/sf6tab.jpg"}
               alt={"earth atmospheric sulfur hexafluoride"}
               width={278}
@@ -154,7 +153,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/n2o" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/n2otab.jpg"}
               alt={"earth atmospheric dinitogen oxide"}
               width={278}
@@ -172,7 +171,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/temperatures" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/temperaturestab.jpg"}
               alt={"earth temperature anomalies"}
               width={278}
@@ -190,7 +189,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/sealevels" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/sealevelstab.jpg"}
               alt={"sea levels"}
               width={278}
@@ -208,7 +207,7 @@ const DataTabs = () => {
         </Link>
         <Link href="/data/glaciers" className={classes.link}>
           <div className={classes.tab}>
-            <Image
+            <img
               src={"/glacierstab.jpg"}
               alt={"glaciers"}
               width={278}

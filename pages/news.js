@@ -40,20 +40,18 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.04,
+      opacity: 0.08,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
         fontSize: "7rem",
         bottom: -20,
         left: -15,
-        opacity: 0.04,
       },
       [theme.breakpoints.down("sm")]: {
         fontSize: "5rem",
         bottom: -10,
         left: -10,
-        opacity: 0.04,
       },
     },
   },
@@ -122,7 +120,7 @@ const News = () => {
   const getNews = async () => {
     setLoading(true)
     try {
-      const res = await fetch(`http://localhost:5000/api/news?page=${page}`)
+      const res = await fetch(`/api/news?page=${page}`)
       const data = await res.json()
       setArticles(data.articles)
       setPages(data.pages)

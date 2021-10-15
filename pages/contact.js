@@ -81,20 +81,18 @@ const useStyles = makeStyles((theme) => ({
       bottom: -38,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.04,
+      opacity: 0.08,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
         fontSize: "7rem",
         bottom: -20,
         left: -25,
-        opacity: 0.04,
       },
       [theme.breakpoints.down("sm")]: {
         fontSize: "5rem",
         bottom: -10,
         left: -15,
-        opacity: 0.04,
       },
     },
   },
@@ -292,7 +290,7 @@ const Contact = () => {
     try {
       setLoading(true)
       const { data } = await axios.post(
-        "http://localhost:5000/api/email",
+        "/api/email",
         { name, email, message },
         {
           headers: { "Content-type": "application/json" },
