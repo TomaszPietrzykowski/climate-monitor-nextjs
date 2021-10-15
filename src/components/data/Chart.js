@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     width: "65vw",
     maxWidth: 1000,
     padding: "1rem 2rem",
-    // work on media landscape, fine tune chart to all devices TO DO
     [theme.breakpoints.down("md")]: {
       height: "65vh",
       width: "100vw",
@@ -19,16 +18,16 @@ const useStyles = makeStyles((theme) => ({
       padding: "1rem",
     },
     "@media (max-width: 700px) and (orientation: portrait)": {
-      height: "45vh",
-    },
-    "@media (max-width: 700px) and (orientation: landscape)": {
-      height: "70vh",
-    },
-    "@media (max-width: 410px) and (orientation: portrait)": {
       height: "40vh",
     },
+    "@media (max-width: 1000px) and (orientation: landscape)": {
+      height: "85vh",
+    },
+    "@media (max-width: 410px) and (orientation: portrait)": {
+      height: "35vh",
+    },
     "@media (max-width: 410px) and (orientation: landscape)": {
-      height: "70vh",
+      height: "90vh",
     },
   },
 }))

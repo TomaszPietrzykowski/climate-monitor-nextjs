@@ -24,8 +24,8 @@ const FloatButtonData = ({ cb }) => {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <Fab color="secondary" aria-label="add" onClick={cb}>
+    <div className={classes.root} onClick={cb}>
+      <Fab color="secondary" aria-label="add">
         <ImportantDevicesIcon style={{ color: "white" }} />
       </Fab>
     </div>
