@@ -180,11 +180,11 @@ const useStyles = makeStyles((theme) => ({
 
 const routes = [
   { name: "Home", link: "/", activeIndex: 0 },
-  { name: "Data", link: "/data", activeIndex: 1 },
-  { name: "News", link: "/news", activeIndex: 2 },
-  { name: "About", link: "/about", activeIndex: 3 },
-  { name: "Contact", link: "/contact", activeIndex: 4 },
-  { name: "Public API", link: "/public_api", activeIndex: 5 },
+  { name: "Data", link: "/data/", activeIndex: 1 },
+  { name: "News", link: "/news/", activeIndex: 2 },
+  { name: "About", link: "/about/", activeIndex: 3 },
+  { name: "Contact", link: "/contact/", activeIndex: 4 },
+  { name: "Public API", link: "/public_api/", activeIndex: 5 },
 ]
 
 const Header = ({ value, setValue }) => {
@@ -201,7 +201,7 @@ const Header = ({ value, setValue }) => {
     const found = routes.find(({ link }) => link === path)
     if (found) {
       setValue(found.activeIndex)
-    } else if (path.includes("/data")) {
+    } else if (path.includes("/data/")) {
       setValue(1)
     }
   }

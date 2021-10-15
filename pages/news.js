@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "10rem",
       opacity: 0.08,
       whiteSpace: "nowrap",
+      overflowX: "hidden",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
         fontSize: "7rem",
