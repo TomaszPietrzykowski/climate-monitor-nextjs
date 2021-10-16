@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -30,
       left: -20,
       fontSize: "8rem",
-      opacity: 0.08,
+      opacity: 0.06,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("lg")]: {

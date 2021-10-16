@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "6rem",
     marginBottom: "2rem",
     padding: "1rem 2rem",
-    overflow: "none",
     [theme.breakpoints.down("md")]: {
+      maxWidth: "100%",
       marginLeft: 0,
       marginTop: "3rem",
       fontSize: "2.5rem",
@@ -40,9 +40,8 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.08,
+      opacity: 0.05,
       whiteSpace: "nowrap",
-      overflowX: "hidden",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
         fontSize: "7rem",
@@ -83,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.utils.container,
     minHeight: "85vh",
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "100%",
+      overflow: "hidden",
+    },
   },
   paginationContainer: {
     margin: "auto",
@@ -161,10 +164,10 @@ const News = () => {
           content="Latest climate news at Climate Monitor - free public REST API with json data on climate change."
         />
       </Head>
-      <div className={classes.titleBar}>
-        <h1 className={classes.sectionHeader}>Climate News</h1>
-      </div>
       <div className={classes.container}>
+        <div className={classes.titleBar}>
+          <h1 className={classes.sectionHeader}>Climate News</h1>
+        </div>
         <div className={classes.poweredBy}>
           <span>Powered by: </span>
           <a

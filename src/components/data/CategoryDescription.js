@@ -32,7 +32,11 @@ const CategoryDescription = ({ desc, link }) => {
   return (
     <div className={classes.container}>
       {desc &&
-        desc.map((string, i) => <p className={classes.para}>{string}</p>)}
+        desc.map((string, i) => (
+          <p className={classes.para} key={i}>
+            {string}
+          </p>
+        ))}
       <p className={classes.source}>
         <a href={link} target="_blank">
           Read more
