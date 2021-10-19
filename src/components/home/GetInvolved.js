@@ -149,7 +149,11 @@ const GetInvolved = () => {
     <>
       <div className={classes.containerTop}>
         <div className={classes.imageContainer}>
-          <img src="/jellies.jpg" className={classes.image} />
+          <img
+            src="/jellies.jpg"
+            alt="get involved"
+            className={classes.image}
+          />
         </div>
         <div className={classes.contentContainer}>
           <Spring
@@ -232,7 +236,7 @@ const GetInvolved = () => {
           </Spring>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/baloon.jpg" className={classes.image} />
+          <img src="/baloon.jpg" alt="data sources" className={classes.image} />
         </div>
       </div>
     </>
