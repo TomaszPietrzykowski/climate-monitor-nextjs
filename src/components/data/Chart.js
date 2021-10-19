@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme) => ({
       margin: 0,
       padding: "1rem",
     },
+    // 4K
+    "@media (min-width: 2000px) and (orientation: portrait)": {
+      height: "15vh",
+    },
+    "@media (min-width: 2000px) and (orientation: landscape)": {
+      height: "25vh",
+    },
     "@media (max-width: 700px) and (orientation: portrait)": {
       height: "40vh",
     },
