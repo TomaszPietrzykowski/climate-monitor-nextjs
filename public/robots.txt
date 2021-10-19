@@ -1,3 +1,0 @@
-User-agent: *
-Sitemap: https://climatemonitor.info/sitemap_local.xml
-Disallow:
