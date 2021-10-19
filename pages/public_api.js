@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.05,
+      opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
@@ -329,7 +329,7 @@ const PublicAPI = () => {
           </p>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/desert.jpeg" className={classes.image} />
+          <img src="/desert.jpg" className={classes.image} />
         </div>
       </div>
       <div className={classes.container} ref={menuRef}>

@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.05,
+      opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
@@ -269,12 +269,12 @@ const About = () => {
           </div>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/satellite.jpeg" className={classes.image} />
+          <img src="/satellite.jpg" className={classes.image} />
         </div>
       </div>
       <div className={classes.containerTop}>
         <div className={classes.imageContainer}>
-          <img src="/noaa-vessel.jpeg" className={classes.image} />
+          <img src="/noaa-vessel.jpg" className={classes.image} />
         </div>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
@@ -413,7 +413,7 @@ const About = () => {
       </div>
       <div className={classes.containerTop}>
         <div className={classes.imageContainer}>
-          <img src="/flood.jpeg" className={classes.image} />
+          <img src="/flood.jpg" className={classes.image} />
         </div>
         <div className={classes.contentContainer}>
           <div className={classes.content}>

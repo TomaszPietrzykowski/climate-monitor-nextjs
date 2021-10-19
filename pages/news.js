@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -45,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.05,
+      opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {

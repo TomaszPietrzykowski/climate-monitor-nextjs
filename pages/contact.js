@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: -38,
       left: -50,
       fontSize: "10rem",
-      opacity: 0.05,
+      opacity: 0.04,
       whiteSpace: "nowrap",
       color: theme.palette.secondary.light,
       [theme.breakpoints.down("md")]: {
@@ -425,7 +425,7 @@ const Contact = () => {
           </main>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/cannoes.jpeg" className={classes.image} />
+          <img src="/cannoes.jpg" className={classes.image} />
         </div>
       </div>
     </Fragment>

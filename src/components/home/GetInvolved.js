@@ -149,7 +149,7 @@ const GetInvolved = () => {
     <>
       <div className={classes.containerTop}>
         <div className={classes.imageContainer}>
-          <img src="/jellies.jpeg" className={classes.image} />
+          <img src="/jellies.jpg" className={classes.image} />
         </div>
         <div className={classes.contentContainer}>
           <Spring
@@ -232,7 +232,7 @@ const GetInvolved = () => {
           </Spring>
         </div>
         <div className={classes.imageContainer}>
-          <img src="/baloon.jpeg" className={classes.image} />
+          <img src="/baloon.jpg" className={classes.image} />
         </div>
       </div>
     </>

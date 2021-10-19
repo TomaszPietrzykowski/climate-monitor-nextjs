@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="manifest" href="../manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#003666" />
           <meta name="apple-mobile-web-app-status-bar" content="#003666" />
           <link rel="icon" href="/favicon.png" />
