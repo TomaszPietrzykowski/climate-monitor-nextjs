@@ -72,6 +72,13 @@ export default createMuiTheme({
     secondary: {
       main: "#0076B2", // star command blue
     },
+    text: {
+      primary: "rgba(0, 0, 0, 0.9)",
+      secondary: "rgba(0, 0, 0, 0.6)",
+      disabled: "rgba(0, 0, 0, 0.38)",
+      hint: "rgba(0, 0, 0, 0.38)",
+      divider: "rgba(0, 0, 0, 0.12)",
+    },
   },
   flex: {
     col: {

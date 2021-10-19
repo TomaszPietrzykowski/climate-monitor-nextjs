@@ -120,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     width: "100%",
     maxWidth: 700,
-    padding: "0 2rem",
+    padding: "2rem",
     marginLeft: "auto",
     [theme.breakpoints.down("lg")]: {
       marginLeft: 0,
