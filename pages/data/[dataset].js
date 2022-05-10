@@ -217,7 +217,7 @@ const DataDisplay = ({ dataset }) => {
         <meta
           name="description"
           key="description"
-          content={`${datasets[dataset].header}, ${datasets[dataset].title}, Climate Monitor - free public REST API with json data on climate change`}
+          content={`${datasets[dataset].header}, ${datasets[dataset].desc[0]}`}
         />
       </Head>
       <div className={classes.container}>
