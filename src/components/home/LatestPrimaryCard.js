@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   label2: {
-    color: "#c3c3c3",
+    color: "#555555",
     fontSize: "1rem",
     fontWeight: 200,
     opacity: 0,

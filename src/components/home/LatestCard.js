@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     fontSize: "1rem",
-    color: "#c3c3c3",
+    color: "#555555",
     fontWeight: 200,
     letterSpacing: 1,
     [theme.breakpoints.down("sm")]: {
